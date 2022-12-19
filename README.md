@@ -1,5 +1,7 @@
 # PerturbDecode
-An end-to-end computational pipeline for large Perturb-seq screens
+## "An end-to-end computational pipeline for large Perturb-seq screens"
+
+data QC and preprocessing; (2) identification of the effects of perturbations on genes; (3) learning the regulatory topology of perturbed and impacted genes for single and/or combinatorial perturbations; and (4) relating the regulatory (genetic) topology to physical interactions 
 
 
 
