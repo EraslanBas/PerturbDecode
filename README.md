@@ -18,4 +18,4 @@ PerturbDecode is a framework developed for the automated analysis of large Pertu
 
 
 
-SRC/ManuscriptFigures folder contains the analysis scripts developed for generating the result presented in "Systematically characterizing the roles of E3-ligase family members in inflammatory responses with massively parallel Perturb-seq", Geiger-Schuller, Eraslan et al.
+SRC/ManuscriptFigures folder contains the analysis scripts developed for generating the figures presented in "Systematically characterizing the roles of E3-ligase family members in inflammatory responses with massively parallel Perturb-seq", Geiger-Schuller, Eraslan et al.
