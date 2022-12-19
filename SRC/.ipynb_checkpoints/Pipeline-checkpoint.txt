@@ -1,0 +1,123 @@
+#01-upstream-qc
+#02-downstream-qc
+Read transcriptome files and combine the cells in one anndata object after basic transcriptome QC checks.
+
+#03-mergeWithHash
+Merge with hashing data to get the singlets.
+
+#04-mergeWithCrispr
+Merge with feature barcodes. Set UMI=1 to 0 and accepts features whose UMI count > 0.2 * Total Cell Feature UMI to be reliably assigned to the cell.
+
+#05-downstream-integrated
+Normalize, log transform, generate UMAP clusters and find cluster marker genes.
+
+#06_analyseAllFeatureDist
+An overall basic analysis of the feature barcode matrix.
+
+#07_01_SplitSingleKOComb
+Split the cells as "single KO" and "multiple KO" based on the number of guides assigned to them. The ones with only 1 assigned guide goes to "single KO cells" while all of the rest (ie. even though they would have 2 guides targeting the same gene) goes to "multiple KO cells".
+
+#07_02_analseGuideDistSingleKOCells
+Analysis of the feature barcode matrix just for the single KO cells.
+
+#07_03_AnalyseGuideDistPerCluster
+#R/00_AnalyseGuideDistAcrossClusters
+See whether any guides are specifically enriched in any clusters / sub-cell types by doing a fisher test per guide per cluster.
+
+#07_04_SelectGoodControlGuides
+Find the outlier control guides. This is done by first fitting a linear model on the transcriptome values corrected for the leiden clusters. Then, the outliers are determined by 4 different methods based on the coefficient matrix. The guides that are detected to be outliers by at least 3 out of these 4 methods are selected to be removed.
+
+##07_05_FurtherFilterGenes
+Filter out the outlier guides and remove lowly expressed genes.
+
+##07_06_FitLinearModel.ipynb
+Fit linear model for each KO guide, where leiden clusters are added as extra covariates.
+
+## R/00_CombineLinerModelFits
+Combine the output fits of several linear models for differense response var. genes.
+
+## R/02-SelectGoodGuides
+Based on the linear model outputs select guides that agree well.
+
+##07_06_ReduceToGenes
+Combine the selected guides and generate the guide matrix in terms of KO genes for single KO cells. Remove the cells that have
+ineffective guides.
+
+##07_06_ReduceToGenes-MultipleKo
+Combine the selected guides and generate the guide matrix in terms of KO genes for single KO cells. Remove the cells that have
+ineffective guides.
+
+##08_RunEM
+Run 1 step EM to find the high quality single KO cells.
+
+##R/03_ProcessEMOutputs
+Process EM outputs and get the selected cells.
+
+##08_SelectCellsAfterEM
+Adjust the anndata object and select only the cells selected after the EM step.
+
+##08-00-CombineSingleAndMultipleKO
+Combine the single and multiple KO anndata objects to create one unified data set.
+
+##08-00-MixedEffectLinearRegressionModel
+Fit the mixed effect linear regression model -leiden clusters are random effects- to find the effected genes per KO.
+
+##R/04_ProcessMixedEfLMPValues
+Process the mixed effect LM outputs and combine them into 1 coefficients matrix. 
+
+##R/04_ProcessMixedEfLMPValues-Control
+Process the mixed effect LM outputs of control cells and combine them into 1 coefficients matrix. 
+
+
+##R/05_FilterSignificantKOsGenes
+Select the final KO and effected gene list for downstream analysis.
+
+##R/06_IdentifyGeneGuideModules
+Identify gene and KO modules by clustering the covariance of the genes/ KOs.
+
+##08-01-ReduceAnndataToSelectedKOsGenes
+Filter out the genes that are not affected by the perturbations and the cells that did not have the effective KOs.
+
+##08-01-SelectedKOGuides_ClusterInteractions
+Assess the interactions between KO perturbations and the leiden clusters.
+
+##R/08_CombineKOLeidenInteractions
+Combine the results of parallel execution of 08-01-SelectedKOGuides_ClusterInteractions.
+
+##08-02-PlotGuideGroupDistributions
+Plot the density of the single KO cells that belong to different perturbation groups.
+
+##R/07_FactorizeBetaMatrix_ICA
+Factorize the beta matrix selected KOs x Effected genes into ICA factors.
+
+##08-04-ScoreICARes
+Score the gene modules identified by the ICA decomposition.
+
+
+##08-03-LinearRegressionModelWithInteractions
+Fit the linear model to see the interactions between KO modules.
+
+##R/08_CombineGroupInteractLMFits
+Combine the LM fits into one result matrix and display the significant module interactions.
+
+##R/09_IdentifyGeneModulesForCombPredictions
+Identify gene modules for their use in the prediction tasks instead of the individual gene expression values.
+
+##09_ComputeGeneModuleExpressions
+Compute the average gene module expressions (of 82 gene modules )in count and log expression values for the prediction tasks. 
+
+##09_KOGroupInteractionsBasedOnGeneModules
+Fit the linear model to see the interactions between KO modules based on the gene module expressions.
+
+##R/10_CombineGroupInteractLMFitsGeneModules
+Plot KO group interactions based on gene modules.
+
+##R/11_SelectCellPartitionsForTraining
+Select different percentages of comb. KO cells for the training. These selected cells will be used for 50% and 80% 
+selection of cells of certain KO groups.
+
+
+##### Comb KO Predictions #############
+
+
+
