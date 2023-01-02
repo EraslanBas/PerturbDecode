@@ -14,6 +14,7 @@ par_empty_drops_fdr_cutoff = 0.01
 par_empty_drops_retain = 1000
 par_cutoff_min_counts = 1000
 par_cutoff_min_genes = 300
+par_cutoff_min_cells = 400
 par_cutoff_max_genes = None
 par_final_empty_drops_fdr_cutoff = 0.01
 par_remove_mito_genes = True
