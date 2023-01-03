@@ -38,8 +38,8 @@ par_save_filename_1 = "outputs/anndata/adata.h5ad"
 par_save_filename_2 = "outputs/anndata/adata_hash.h5ad"
 ## After crispr feature barcode integration
 par_save_filename_3 = "outputs/anndata/adata-hash-features_singlets_05232020.h5ad"
-## After downstream integration ()
-par_save_filename_3 = "outputs/anndata/adata-hash-features_singlets_05232020.h5ad"
+## After downstream integration (ie. normalization, log transformation etc.)
+par_save_filename_4 = "outputs/anndata/adata-hash-features_singlets_05242020.h5ad"
 par_save_filename_group = "outputs/anndata/adata-group-%s.h5ad"
 par_remove_doublets = True
 par_generate_plots_per_group = True
@@ -53,3 +53,4 @@ par_per_group_de = True
 par_save_filename_de = "outputs/reports/de-genes.xlsx"
 par_save_filename_de_group = "outputs/reports/de-genes-%s.xlsx"
 par_leiden_clustering_resolution=0.5
+par_predefined_genesets_filename='PositiveControls/DC_cellstate_genes.csv'
