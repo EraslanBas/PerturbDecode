@@ -30,9 +30,13 @@ par_downstream_n_neighbors = 15
 par_downstream_louvain_resolution = 1
 par_downstream_neighbor_metric = "euclidean"
 par_save_filename_sample = "outputs/anndata/adata-sample-%s.h5ad"
+#### File names of the saved anndata objects:
+## After transcriptome integration
 par_save_filename_1 = "outputs/anndata/adata.h5ad"
-par_save_filename_2 = "outputs/anndata/adata_singlets.h5ad"
-par_save_filename_3 = "outputs/anndata/adata_singlets.h5ad"
+## After hashing info integration
+par_save_filename_2 = "outputs/anndata/adata_hash.h5ad"
+## After crispr feature barcode integration
+par_save_filename_3 = "outputs/anndata/adata_hash_crispr.h5ad"
 par_save_filename_group = "outputs/anndata/adata-group-%s.h5ad"
 par_remove_doublets = True
 par_generate_plots_per_group = True
