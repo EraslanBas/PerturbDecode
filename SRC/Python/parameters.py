@@ -16,6 +16,7 @@ par_cutoff_min_counts = 1000
 par_cutoff_min_genes = 300
 par_cutoff_min_cells = 400
 par_cutoff_max_genes = None
+par_cutoff_crispr_chimeric_reads = 0.2
 par_final_empty_drops_fdr_cutoff = 0.01
 par_remove_mito_genes = True
 par_mito_cutoff = 0.15
@@ -36,7 +37,9 @@ par_save_filename_1 = "outputs/anndata/adata.h5ad"
 ## After hashing info integration
 par_save_filename_2 = "outputs/anndata/adata_hash.h5ad"
 ## After crispr feature barcode integration
-par_save_filename_3 = "outputs/anndata/adata_hash_crispr.h5ad"
+par_save_filename_3 = "outputs/anndata/adata-hash-features_singlets_05232020.h5ad"
+## After downstream integration ()
+par_save_filename_3 = "outputs/anndata/adata-hash-features_singlets_05232020.h5ad"
 par_save_filename_group = "outputs/anndata/adata-group-%s.h5ad"
 par_remove_doublets = True
 par_generate_plots_per_group = True
@@ -49,3 +52,4 @@ par_de_method = "t-test_overestim_var"
 par_per_group_de = True
 par_save_filename_de = "outputs/reports/de-genes.xlsx"
 par_save_filename_de_group = "outputs/reports/de-genes-%s.xlsx"
+par_leiden_clustering_resolution=0.5
