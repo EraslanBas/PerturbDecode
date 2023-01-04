@@ -40,6 +40,11 @@ par_save_filename_2 = "outputs/anndata/adata_hash.h5ad"
 par_save_filename_3 = "outputs/anndata/adata-hash-features_singlets_05232020.h5ad"
 ## After downstream integration (ie. normalization, log transformation etc.)
 par_save_filename_4 = "outputs/anndata/adata-hash-features_singlets_05242020.h5ad"
+## Anndata object containing the cells with single gene KOs
+par_save_filename_5 = "outputs/anndata/adata-hash-features_singlets_SingleKO_05242020.h5ad"
+## Anndata object containing the cells with multiple gene KOs
+par_save_filename_6 = "outputs/anndata/adata-hash-features_singlets_KO_05242020.h5ad"
+
 par_save_filename_group = "outputs/anndata/adata-group-%s.h5ad"
 par_remove_doublets = True
 par_generate_plots_per_group = True
