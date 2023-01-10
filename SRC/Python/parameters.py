@@ -60,3 +60,4 @@ par_save_filename_de_group = "outputs/reports/de-genes-%s.xlsx"
 par_leiden_clustering_resolution=0.5
 par_predefined_genesets_filename='PositiveControls/DC_cellstate_genes.csv'
 par_initial_guide_pool_file='./PositiveControls/GuidePoolSummary_2.csv'
+par_outlier_controlguides_file='./TextFiles/OutlierControlGuides.csv'
