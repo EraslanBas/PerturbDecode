@@ -43,7 +43,10 @@ par_save_filename_4 = "outputs/anndata/adata-hash-features_singlets_05242020.h5a
 ## Anndata object containing the cells with single gene KOs
 par_save_filename_5 = "outputs/anndata/adata-hash-features_singlets_SingleKO_05242020.h5ad"
 ## Anndata object containing the cells with multiple gene KOs
-par_save_filename_6 = "outputs/anndata/adata-hash-features_singlets_KO_05242020.h5ad"
+par_save_filename_6 = "outputs/anndata/adata-hash-features_singlets_MultipleKO_05242020.h5ad"
+## Anndata object containing the cells and guides for guide effect testing
+par_save_filename_7 = "outputs/anndata/adata-hash-features_singlets_SingleKO_05242020_Filtered.h5ad"
+
 
 par_save_filename_group = "outputs/anndata/adata-group-%s.h5ad"
 par_remove_doublets = True
@@ -61,3 +64,9 @@ par_leiden_clustering_resolution=0.5
 par_predefined_genesets_filename='PositiveControls/DC_cellstate_genes.csv'
 par_initial_guide_pool_file='./PositiveControls/GuidePoolSummary_2.csv'
 par_outlier_controlguides_file='./TextFiles/OutlierControlGuides.csv'
+## Number of minimum number of cells considered for selecting the tested genes
+par_mincells_for_testedgenes=20000
+## Number of genes a cell should have to be used while testing the guide effects
+par_mincellgenes_for_testedgenes=800
+## Number of cells a guide should have to reliably assess its effect on gene expression
+par_ncell_test_threshold=20
