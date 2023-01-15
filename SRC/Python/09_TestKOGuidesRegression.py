@@ -18,15 +18,17 @@ def RunRegression(KOGuides_altStr, setIndex_1, setIndex_2,
     allGuideMat = pd.concat([controlGuideMat,
                              geneGuideMat])
     
+    allVars = pd.Series(KOGuides_altStr[setIndex_1:setIndex_2]) 
+    myForm = pd.concat([allVars, pd.Series(["n_genes","mt_frac","leiden"])])
+
+    myFormula = "+".join(myForm)
+    my_formula = "y~" + myFormula
+ 
     allRes = pd.DataFrame()
+    
     
     for i in range(0,len(geneExpressionMat.columns),1):
 
-        allVars = pd.Series(KOGuides_altStr[setIndex_1:setIndex_2]) 
-        myForm = pd.concat([allVars, pd.Series(["n_genes","mt_frac","leiden"])])
-
-        myFormula = "+".join(myForm)
-        my_formula = "y~" + myFormula
         allGuideMat["y"] = allExpMat[:,i]
         
         if par_test_guide_method == 'NB':
@@ -43,7 +45,8 @@ def RunRegression(KOGuides_altStr, setIndex_1, setIndex_2,
         
         allRes = pd.concat([allRes,res])
     
-    allRes.to_csv("./TmpReg/GuideRegTest_"+str(setIndex_1)+"_"+str(setIndex_2)+".csv", index=False)
+    allRes.to_csv("./TmpReg/GuideRegTest_"+str(setIndex_1)+"_"+str(setIndex_2)+".csv", 
+                  index=False)
 
 
 
@@ -142,6 +145,7 @@ if __name__ == "__main__":
 
         res =pd.read_csv("./TmpReg/GuideRegTest_"+str(setIndex_1)+"_"+str(setIndex_2)+".csv")
         allRes = pd.concat([allRes,res])
+        os.remove("./TmpReg/GuideRegTest_"+str(setIndex_1)+"_"+str(setIndex_2)+".csv")
         
     allRes.columns = ['guides', 'coef', 'stderr', 'z', 'pval', '[0.025', '0.975', 'respGene'] 
     allRes = allRes[~allRes.guides.isin(['Intercept', 'n_genes', 'mt_frac', 'NaN']) & 

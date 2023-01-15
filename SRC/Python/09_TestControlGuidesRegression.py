@@ -9,25 +9,22 @@ import multiprocessing
 import time
 
 
-def RunRegression(KOGuides_altStr, setIndex_1, setIndex_2, 
-                    controlExpressionMat, controlGuideMat, 
-                    geneExpressionMat, geneGuideMat):
+def RunRegression(adataControl, controlGuides, guideIndex, expressionMatrix):
     
-    allExpMat = np.concatenate((controlExpressionMat, 
-                                geneExpressionMat))
-    allGuideMat = pd.concat([controlGuideMat,
-                             geneGuideMat])
+    geneCol = controlGuides[[guideIndex]].tolist() + ["n_genes", "mt_frac", "leiden"]
     
+    allGuideMat = adataControl.obs[geneCol]
+    
+    allVars = pd.Series(geneCol) 
+    all_columns = "+".join(allVars)
+    my_formula = "y~" + all_columns
+    
+
     allRes = pd.DataFrame()
     
-    for i in range(0,len(geneExpressionMat.columns),1):
+    for j in range(0,10,1):
 
-        allVars = pd.Series(KOGuides_altStr[setIndex_1:setIndex_2]) 
-        myForm = pd.concat([allVars, pd.Series(["n_genes","mt_frac","leiden"])])
-
-        myFormula = "+".join(myForm)
-        my_formula = "y~" + myFormula
-        allGuideMat["y"] = allExpMat[:,i]
+        allGuideMat["y"] = np.array(expressionMatrix)[:,j]
         
         if par_test_guide_method == 'NB':
             mod1 = smf.glm(formula=my_formula,
@@ -39,13 +36,18 @@ def RunRegression(KOGuides_altStr, setIndex_1, setIndex_2,
             
         k = mod1.summary()
         res = pd.DataFrame( k.tables[1])
-        res["respGene"] = geneExpressionMat.columns[i]
+        res["respGene"] = expressionMatrix.columns[j]
         
         allRes = pd.concat([allRes,res])
     
-    allRes.to_csv("./TmpReg/GuideRegTest_"+str(setIndex_1)+"_"+str(setIndex_2)+".csv", index=False)
+    allRes.to_csv("./TmpReg/GuideControlRegTest_"+str(guideIndex)+".csv", 
+                  index=False)
+    return()
+      
 
 
+    
+### Test each control guide one-versus-rest
 
 if __name__ == "__main__":
     
@@ -56,40 +58,31 @@ if __name__ == "__main__":
     start_time = time.perf_counter()
 
     adata = sc.read(par_save_filename_7)
-
     allGeneNames = adata.uns['AllExpGeneNames']
-    allBarcodeNames = adata.uns['feature_barcode_names']
     
-    controlBarcodes = allBarcodeNames[[(x.startswith((par_not_target_control_prefix, 
-                                                      par_nongene_site_control_prefix))) for x in allBarcodeNames]]
+    controlGuides = adata.obs.columns[[ (x.startswith(par_nongene_site_control_prefix) or 
+                                             x.startswith(par_not_target_control_prefix))
+                                           for x in adata.obs.columns]]
     
-    adata.obs["ControlGuidesAll"] = adata.obs[controlBarcodes].sum(axis=1)
-
-    guideMatrix = adata.obs[adata.uns['feature_KO_barcode_names_filtered']]
-    KOGuides = pd.Series(adata.uns['feature_KO_barcode_names_filtered'])
-    ##Gene names that start with a number are replaced with "X"+gene_name
-    KOGuides_altStr = ["X"+x if x[0].isdigit() else x for x in KOGuides ]
-    KOGuides_altStr = [x.replace("-","_") for x in KOGuides_altStr ]
-    guideMatrix.columns = KOGuides_altStr
-
-
-
-    df = adata.obs[["n_genes", "mt_frac", "leiden" ]]
-    guideMatrix = guideMatrix.join(df)
-
+    
+    
+    fBarMat = adata.obs[controlGuides]
+    
+    
+    fBarMat[fBarMat>0] = 1
+    adataControl = adata[fBarMat.sum(axis=1) > 0,:]
+    
+    
     if par_test_guide_method == 'NB':
-        expressionMatrix = pd.DataFrame(adata.raw.X.A)
+        expressionMatrix = pd.DataFrame(adataControl.raw.X.A)
         expressionMatrix.columns = allGeneNames.iloc[:,0]
-        expressionMatrix = expressionMatrix[adata.var_names]
-        expressionMatrix.index = adata.obs.index
+        expressionMatrix = expressionMatrix[adataControl.var_names]
+        expressionMatrix.index = adataControl.obs.index
     elif par_test_guide_method == 'OLS':
-        expressionMatrix = pd.DataFrame(adata.X)
-        expressionMatrix.columns = adata.var_names
-        expressionMatrix.index = adata.obs.index
+        expressionMatrix = pd.DataFrame(adataControl.X)
+        expressionMatrix.columns = adataControl.var_names
+        expressionMatrix.index = adataControl.obs.index
 
-
-    controlExpressionMat = expressionMatrix.loc[adata.obs["ControlGuidesAll"] == 1,]
-    controlGuideMat = guideMatrix.loc[adata.obs["ControlGuidesAll"] == 1,]
     
     processes = []
     
@@ -97,27 +90,12 @@ if __name__ == "__main__":
     if not os.path.exists("./TmpReg/"):
         os.mkdir("./TmpReg/")
     
-    for i in range(0,len(KOGuides),par_test_guide_interval):
-        setIndex_1 = i
+    for i in range(0,len(controlGuides),1):
         
-        if setIndex_1 + par_test_guide_interval < len(KOGuides):
-            setIndex_2 = setIndex_1 + par_test_guide_interval
-        else:
-            setIndex_2 = len(KOGuides)
-        
-        
-        selColumns = pd.concat([pd.Series(KOGuides_altStr[setIndex_1:setIndex_2]), 
-                                pd.Series(["n_genes", "mt_frac", "leiden"])])
-
-        geneExpressionMat = expressionMatrix.loc[adata.obs[KOGuides[setIndex_1:setIndex_2]].sum(axis=1) > 0,]
-        geneGuideMat = guideMatrix.loc[adata.obs[KOGuides[setIndex_1:setIndex_2]].sum(axis=1) > 0,]
-        geneGuideMat=geneGuideMat[selColumns]
-        
-        controlGuideMatSel=controlGuideMat[selColumns]
-
-        p = multiprocessing.Process(target = RunRegression, args=(KOGuides_altStr, setIndex_1, setIndex_2,
-                                                                   controlExpressionMat, controlGuideMatSel,
-                                                                   geneExpressionMat, geneGuideMat))
+        p = multiprocessing.Process(target = RunRegression, args=(adataControl, 
+                                                                  controlGuides, 
+                                                                  i, 
+                                                                  expressionMatrix))
         p.start()
         processes.append(p)
     
@@ -131,17 +109,12 @@ if __name__ == "__main__":
     print(f"Program finished in {finish_time-start_time} seconds")
     
     ##Combine all results
+    
     allRes = pd.DataFrame()
-    for i in range(0,len(KOGuides),par_test_guide_interval):
-        setIndex_1 = i
-
-        if setIndex_1 + par_test_guide_interval < len(KOGuides):
-            setIndex_2 = setIndex_1 + par_test_guide_interval
-        else:
-            setIndex_2 = len(KOGuides)
-
-        res =pd.read_csv("./TmpReg/GuideRegTest_"+str(setIndex_1)+"_"+str(setIndex_2)+".csv")
+    for i in range(0,len(controlGuides),1):
+        res =pd.read_csv("./TmpReg/GuideControlRegTest_"+str(i)+".csv")
         allRes = pd.concat([allRes,res])
+        os.remove("./TmpReg/GuideControlRegTest_"+str(i)+".csv")
         
     allRes.columns = ['guides', 'coef', 'stderr', 'z', 'pval', '[0.025', '0.975', 'respGene'] 
     allRes = allRes[~allRes.guides.isin(['Intercept', 'n_genes', 'mt_frac', 'NaN']) & 
@@ -149,7 +122,7 @@ if __name__ == "__main__":
                     ~allRes.guides.str.contains("leiden", case=False, na=False) ]
  
     
-    allRes.to_csv(par_guide_testres_file, index=False)
+    allRes.to_csv(par_control_testres_file, index=False)
     
    
     
