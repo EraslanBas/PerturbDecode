@@ -70,3 +70,8 @@ par_mincells_for_testedgenes=20000
 par_mincellgenes_for_testedgenes=800
 ## Number of cells a guide should have to reliably assess its effect on gene expression
 par_ncell_test_threshold=20
+par_not_target_control_prefix="NO_TARGET_"
+par_nongene_site_control_prefix="ONE_NONGENE_SITE_"
+par_guide_testres_file='./TextFiles/GuideNBTestRes.csv'
+par_test_guide_interval=200
+par_test_guide_method='OLS'
