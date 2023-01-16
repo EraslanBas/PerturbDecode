@@ -22,7 +22,7 @@ def RunRegression(adataControl, controlGuides, guideIndex, expressionMatrix):
 
     allRes = pd.DataFrame()
     
-    for j in range(0,10,1):
+    for j in range(0,20,1):
 
         allGuideMat["y"] = np.array(expressionMatrix)[:,j]
         

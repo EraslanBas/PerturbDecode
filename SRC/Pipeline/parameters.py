@@ -35,17 +35,21 @@ par_save_filename_sample = "outputs/anndata/adata-sample-%s.h5ad"
 ## After transcriptome integration
 par_save_filename_1 = "outputs/anndata/adata.h5ad"
 ## After hashing info integration
-par_save_filename_2 = "outputs/anndata/adata_hash.h5ad"
+par_save_filename_2 = par_save_filename_1
 ## After crispr feature barcode integration
-par_save_filename_3 = "outputs/anndata/adata-hash-features_singlets_05232020.h5ad"
+par_save_filename_3 = par_save_filename_1
 ## After downstream integration (ie. normalization, log transformation etc.)
-par_save_filename_4 = "outputs/anndata/adata-hash-features_singlets_05242020.h5ad"
+par_save_filename_4 = par_save_filename_1
 ## Anndata object containing the cells with single gene KOs
-par_save_filename_5 = "outputs/anndata/adata-hash-features_singlets_SingleKO_05242020.h5ad"
+par_save_filename_5 = "outputs/anndata/adata-SingleKO.h5ad"
 ## Anndata object containing the cells with multiple gene KOs
-par_save_filename_6 = "outputs/anndata/adata-hash-features_singlets_MultipleKO_05242020.h5ad"
+par_save_filename_6 = "outputs/anndata/adata-MultipleKO.h5ad"
 ## Anndata object containing the cells and guides for guide effect testing
-par_save_filename_7 = "outputs/anndata/adata-hash-features_singlets_SingleKO_05242020_Filtered.h5ad"
+par_save_filename_7 = par_save_filename_5
+## Single KO anndata object after KO guides are merged at the target gene level
+par_save_filename_8 = "outputs/anndata/adata-SingleKO_PerGENE.h5ad"
+## Multiple KO anndata object after KO guides are merged at the target gene level
+par_save_filename_9 = 'outputs/anndata/adata-MultipleKO_PerGENE.h5ad'
 
 
 par_save_filename_group = "outputs/anndata/adata-group-%s.h5ad"
@@ -76,3 +80,4 @@ par_guide_testres_file='./TextFiles/GuideKOTestRes.csv'
 par_control_testres_file='./TextFiles/GuideControlTestRes.csv'
 par_test_guide_interval=200
 par_test_guide_method='OLS'
+par_bad_KO_guides_file = './TextFiles/GuideSelect_BadKOGuides.csv'
