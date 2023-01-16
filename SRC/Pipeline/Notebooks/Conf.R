@@ -1,0 +1,11 @@
+dataDir="/home/eraslab1/Projects/E3Ligase/analysisSingle/outputs/anndata/"
+davidDir="/home/eraslab1/Projects/E3Ligase/analysisSingle/outputs/DAVID_queries/"
+rDir="/home/eraslab1/Projects/E3Ligase/analysisSingle/R/"
+rdsDir="/home/eraslab1/Projects/E3Ligase/analysisSingle/R/RDSFiles/"
+projectDir="/home/eraslab1/Projects/E3Ligase/analysisSingle"
+par_guide_testres_file='./TextFiles/GuideKOTestRes.csv'
+par_control_testres_file='./TextFiles/GuideControlTestRes.csv'
+par_not_target_control_prefix="NO_TARGET_"
+par_nongene_site_control_prefix="ONE_NONGENE_SITE_"
+par_good_KO_guides_file = './TextFiles/GuideSelect_GoodKOGuides.csv'
+par_bad_KO_guides_file = './TextFiles/GuideSelect_BadKOGuides.csv'
