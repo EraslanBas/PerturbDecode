@@ -1,7 +1,7 @@
 from libraries import *
 from parameters import *
 
-def keepKOGuidesAtTargetGneLevel(adata, selectedBarcodes, saveFileName, isMulti): 
+def keepKOGuidesAtTargetGeneLevel(adata, selectedBarcodes, saveFileName, isMulti): 
     
     
     adata.uns['feature_barcode_names_filtered'] = selectedBarcodes
@@ -31,14 +31,12 @@ def keepKOGuidesAtTargetGneLevel(adata, selectedBarcodes, saveFileName, isMulti)
     koGene.columns = "GENE_"+koGene.columns
 
     adata.obs = adata.obs.join(koGene,how="inner")
+    
+    adata.obs['GENE_CONTROL_'] = 0
+    adata.obs['GENE_CONTROL_'][adata.obs['Cell_category'] == "CONTROL_"] = 1
+    
     adata.uns['feature_barcode_names_filtered_GENES'] = [ x for x in adata.obs.columns if (x.startswith("GENE_"))]
-    
-    adata.obs['GENE_CONTROL_'] = adata.obs['Cell_category']
-    adata.obs['GENE_CONTROL_'][adata.obs['GENE_CONTROL_'] != "CONTROL_"] = 0
-    adata.obs['GENE_CONTROL_'][adata.obs['GENE_CONTROL_'] == "CONTROL_"] = 1
-    adata.obs['GENE_CONTROL_'] = adata.obs['GENE_CONTROL_'].astype('int64')
-    
-    
+
     adata.obs = adata.obs.drop(labels=list(adata.uns['feature_barcode_names_filtered']), axis=1).copy()
     
     if isMulti:
@@ -66,14 +64,14 @@ if __name__ == "__main__":
     selectedBarcodes = adata.uns['feature_barcode_names_filtered']
     selectedBarcodes = selectedBarcodes[~pd.Series(selectedBarcodes).isin(badKOGuides.guides.to_list())]
     
-    keepKOGuidesAtTargetGneLevel(adata, 
+    keepKOGuidesAtTargetGeneLevel(adata, 
                                  selectedBarcodes, 
                                  par_save_filename_8, 
                                  False)
     
     adata_multi = sc.read(par_save_filename_6)
     
-    keepKOGuidesAtTargetGneLevel(adata_multi, 
+    keepKOGuidesAtTargetGeneLevel(adata_multi, 
                                  selectedBarcodes, 
                                  par_save_filename_9, 
                                  True)
