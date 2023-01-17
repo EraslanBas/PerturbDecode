@@ -50,6 +50,8 @@ par_save_filename_7 = par_save_filename_5
 par_save_filename_8 = "outputs/anndata/adata-SingleKO_PerGENE.h5ad"
 ## Multiple KO anndata object after KO guides are merged at the target gene level
 par_save_filename_9 = 'outputs/anndata/adata-MultipleKO_PerGENE.h5ad'
+## Single KO anndata object after unperturbed cells are filtered out
+par_save_filename_10 = par_save_filename_8
 
 
 par_save_filename_group = "outputs/anndata/adata-group-%s.h5ad"
