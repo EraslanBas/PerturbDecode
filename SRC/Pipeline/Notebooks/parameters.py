@@ -83,7 +83,3 @@ par_control_testres_file='./TextFiles/GuideControlTestRes.csv'
 par_test_guide_interval=200
 par_test_guide_method='OLS'
 par_bad_KO_guides_file = './TextFiles/GuideSelect_BadKOGuides.csv'
-par_test_target_dist='NB'
-par_test_target_model='MixedEfNB'
-par_test_target_interval=10
-par_test_target_file='./TextFiles/TargetTestRes_2.csv'
