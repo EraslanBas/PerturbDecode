@@ -2,11 +2,11 @@
 ## An end-to-end computational pipeline for large Perturb-seq screens
 
 
-PerturbDecode is a framework developed for the automated analysis of large Perturb-seq screens. The workflow in PerturbDecode consists of: 
+PerturbDecode is a framework developed for the automated analysis of large-scale Perturb-seq screens. The workflow in PerturbDecode consists of: 
 
 
-  * Data QC and preprocessing; 
-  * Identification of the effects of perturbations on genes
+  * Data QC and preprocessing
+  * Identification of the effects of perturbations on genes with parallel processes
   * Learning the regulatory topology of perturbed and impacted genes for single and/or combinatorial perturbations
   * Relating the regulatory (genetic) topology to physical interactions 
 
