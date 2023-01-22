@@ -20,12 +20,7 @@ import torch
 from torch import optim
 
 import click
-from CVAE_model import E3ScreenDataset, VAE, Encoder, Decoder, get_loss_fn, EmbeddingLayer
-#from CVAE_model_noGuideEmbedding import E3ScreenDataset, VAE, Encoder, Decoder, get_loss_fn
-#from CVAE_multilableClas_model_2 import *
-#from CVAE_model_conditionOnlyInDecoder import E3ScreenDataset, VAE, Encoder, Decoder, get_loss_fn, EmbeddingLayer
-#from DenoisingAE_model import *
-#from CVAE_modelAdditiveCondition import E3ScreenDataset, VAE, Encoder, Decoder, get_loss_fn, EmbeddingLayer
+from CVAE_model import ScreenDataset, VAE, Encoder, Decoder, get_loss_fn, EmbeddingLayer
 
 @click.command()
 # save and directory options
@@ -154,7 +149,7 @@ def main(trainfile, controlfile, valfile, save_dir, model_dir,seed, n_cond_in, n
     logger.info(" ".join(sys.argv[1:]))        
         
     
-    trainset = E3ScreenDataset(trainfile)
+    trainset = ScreenDataset(trainfile)
     trainloader = DataLoader(trainset,
                               batch_size=batch_size,
                          drop_last=True,
@@ -162,7 +157,7 @@ def main(trainfile, controlfile, valfile, save_dir, model_dir,seed, n_cond_in, n
                          num_workers=num_workers)
     
     
-    testset = E3ScreenDataset(valfile)
+    testset = ScreenDataset(valfile)
     testloader = DataLoader(testset,
                             batch_size=batch_size,
                          drop_last=True,

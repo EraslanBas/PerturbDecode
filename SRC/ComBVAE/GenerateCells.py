@@ -1,8 +1,6 @@
 from libraries import *
 from logger import setup_logger
-from CVAE_model import E3ScreenDataset, VAE, Encoder, Decoder, get_loss_fn, EmbeddingLayer
-#from CVAE_multilableClas_model import E3ScreenDataset, MultiLabClassVAE, MultilabClass, Encoder, Decoder, get_loss_fn, EmbeddingLayer
-#from CVAE_multilableClas_model_2 import *
+from CVAE_model import ScreenDataset, VAE, Encoder, Decoder, get_loss_fn, EmbeddingLayer
 from Training import train_model_CVAE, train_model_multilab, evaluate_model_CVAE, evaluate_model_CVAE_multilab
 
 import torch
@@ -102,7 +100,7 @@ def GenerateCells(n_cond_in, n_inputs, n_cond, n_latents, save_dir, model_dir, m
     net.load_state_dict(torch.load(os.path.join(save_dir,model_dir,"best.pth"))['state_dict'])
     
     
-    dataset = E3ScreenDataset(controlfile)
+    dataset = ScreenDataset(controlfile)
     dataloader = DataLoader(dataset, 
                             batch_size=batch_size,
                             drop_last=False,

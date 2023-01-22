@@ -1,15 +1,12 @@
-scripts to run in order:
+#### scripts to run in order ######
 
-bash Scripts/RunAllModels.sh
+1) python RunModels.py  --alpha=0.5 --model_dir=model_0 &
 
-bash Scripts/ComputeReconstFC.sh
+2) python InspectReconstruction.py --model_dir=model_0 &
 
-R/ReconsTrainLFCComp.ipynb
+3) python GenerateCells.py --model_dir=model_0 &
 
-bash Scripts/GenerateAllCells.sh
+4) python ComputeLogFCOfPredictionsAll.py --model_dir=model_0 &
 
-bash Scripts/ComputeAllLogFCOfPredictions.sh
-
-R/EvaluateAllResults.ipynb
 
 

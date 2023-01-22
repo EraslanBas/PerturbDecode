@@ -1,12 +1,6 @@
 from libraries import *
 from logger import setup_logger
-from CVAE_model import E3ScreenDataset, VAE, Encoder, Decoder, get_loss_fn, EmbeddingLayer
-#from CVAE_model_noGuideEmbedding import E3ScreenDataset, VAE, Encoder, Decoder, get_loss_fn
-
-#from CVAE_model_2 import E3ScreenDataset, VAE, Encoder, Decoder, get_loss_fn, EmbeddingLayer
-#from CVAE_multilableClas_model_2 import *
-#from DenoisingAE_model import *
-
+from CVAE_model import ScreenDataset, VAE, Encoder, Decoder, get_loss_fn, EmbeddingLayer
 
 from Training import train_model_CVAE, train_model_multilab, evaluate_model_CVAE, evaluate_model_CVAE_multilab
 
@@ -109,7 +103,7 @@ def computeReconstSinglesFC(trainfile, model_type, n_inputs, n_latents, n_cond, 
     net.load_state_dict(torch.load(os.path.join(save_dir,model_dir,"best.pth"))['state_dict'])
     
     
-    dataset = E3ScreenDataset(trainfile)
+    dataset = ScreenDataset(trainfile)
     dataloader = DataLoader(dataset,
                             batch_size=batch_size,
                             drop_last=False,

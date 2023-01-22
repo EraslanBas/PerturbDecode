@@ -16,12 +16,12 @@ import torch
 from torch import optim
 
 
-class E3ScreenDataset(Dataset):
+class ScreenDataset(Dataset):
     def __init__(self, h5adfile):
         self.data = sc.read(h5adfile)
-        self.covariates = ["K_0", "K_1", "K_2", "K_3", "K_4", "K_5"]
+        self.covariates = adata.uns["covariates"]
         self.X = self.data.obs[ self.covariates ].to_numpy()
-        self.y = self.data.layers["ClusterResiduals"]
+        self.y = self.data.X
 
 
     def __len__(self):
@@ -90,12 +90,6 @@ class Encoder(nn.Module):
         super().__init__()
 
         self.encoder = nn.Sequential(nn.Linear(n_inputs+n_cond, 512),
-                                     # nn.BatchNorm1d(512),
-                                     # nn.ReLU(inplace=True),
-                                     # nn.Linear(512, 512),
-                                     # nn.BatchNorm1d(512),
-                                     # nn.ReLU(inplace=True),
-                                     # nn.Linear(512, 512),
                                      nn.BatchNorm1d(512),
                                      nn.ReLU(inplace=True),
                                      nn.Linear(512, 512),
@@ -118,10 +112,6 @@ class Decoder(nn.Module):
         super().__init__()
 
         self.decoder = nn.Sequential(nn.Linear(n_latents + n_cond, 512),
-                                     # nn.ReLU(inplace=True),
-                                     # nn.Linear(512, 512),
-                                     # nn.ReLU(inplace=True),
-                                     # nn.Linear(512, 512),
                                      nn.ReLU(inplace=True),
                                      nn.Linear(512, n_inputs),
                                     )
@@ -130,8 +120,6 @@ class Decoder(nn.Module):
         x = torch.cat((z, c), dim=1)
         x = self.decoder(x)
         return x
-
-       #x= self.decoder(z+c)
 
         
 def get_loss_fn(alpha, beta):
