@@ -27,8 +27,7 @@ def RunRegression(KOGuides_altStr, setIndex_1, setIndex_2,
     allRes = pd.DataFrame()
     
     
-    #for i in range(0,len(geneExpressionMat.columns),1):
-    for i in range(0,20,1):
+    for i in range(0,len(geneExpressionMat.columns),1):
 
         allGuideMat["y"] = allExpMat[:,i]
         
