@@ -22,5 +22,6 @@ PerturbDecode pipeline consists of a set of Python and R Jupyter notebooks and s
 
 
 
+## 
 
 SRC/ManuscriptFigures folder contains the analysis scripts developed for generating the figures presented in "Systematically characterizing the roles of E3-ligase family members in inflammatory responses with massively parallel Perturb-seq", Geiger-Schuller, Eraslan et al.
