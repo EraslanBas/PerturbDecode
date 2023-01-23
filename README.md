@@ -19,7 +19,7 @@ PerturbDecode is a framework developed for the automated analysis of large-scale
 
 PerturbDecode pipeline consists of a set of Python and R Jupyter notebooks and scripts. Analysis steps which require visual inspection are coded as Jupyter notebooks, while the rest are called from the command line. SRC/Pipeline/parameters.py file contains all the user defined parameters and input/output file names.    
 
-Detailed explanations of the steps will be included soon.
+Detailed explanations of each step will be included here soon.
 
 
 
