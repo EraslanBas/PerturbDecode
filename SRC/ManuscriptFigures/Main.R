@@ -12,3 +12,13 @@ library(data.table)
 #library("LSD")
 library("reshape2")
 
+library("factoextra")
+library("maptree")
+library("ggpubr")
+library("ica")
+library(ICtest)
+
+library(repr)
+
+library(repr)
+library(plyr)

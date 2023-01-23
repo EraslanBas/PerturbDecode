@@ -87,3 +87,4 @@ par_test_target_dist='NB'
 par_test_target_model='MixedEfNB'
 par_test_target_interval=10
 par_test_target_file='./TextFiles/TargetTestRes_2.csv'
+par_selected_coef_matrix_file='./TextFiles/TargetTestRes_2.csv'
