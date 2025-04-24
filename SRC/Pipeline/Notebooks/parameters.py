@@ -34,12 +34,6 @@ par_save_filename_sample = "outputs/anndata/adata-sample-%s.h5ad"
 #### File names of the saved anndata objects:
 ## After transcriptome integration
 par_save_filename_1 = "outputs/anndata/adata.h5ad"
-## After hashing info integration
-par_save_filename_2 = par_save_filename_1
-## After crispr feature barcode integration
-par_save_filename_3 = par_save_filename_1
-## After downstream integration (ie. normalization, log transformation etc.)
-par_save_filename_4 = par_save_filename_1
 ## Anndata object containing the cells with single gene KOs
 par_save_filename_5 = "outputs/anndata/adata-SingleKO.h5ad"
 ## Anndata object containing the cells with multiple gene KOs
