@@ -61,7 +61,7 @@ par_per_group_de = True
 par_save_filename_de = "outputs/reports/de-genes.xlsx"
 par_save_filename_de_group = "outputs/reports/de-genes-%s.xlsx"
 par_leiden_clustering_resolution=0.5
-par_predefined_genesets_filename='PositiveControls/DC_cellstate_genes.csv'
+par_predefined_genesets_filename='TextFiles/PositiveControls/DC_cellstate_genes.csv'
 par_initial_guide_pool_file='./PositiveControls/GuidePoolSummary_2.csv'
 par_outlier_controlguides_file='./TextFiles/OutlierControlGuides.csv'
 ## Number of minimum number of cells considered for selecting the tested genes
