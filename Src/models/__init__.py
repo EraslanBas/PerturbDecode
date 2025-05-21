@@ -1,1 +1,2 @@
-from .networks import *
+from .CVAE_basic import *
+from .CVAE_GumbelMasked import *
