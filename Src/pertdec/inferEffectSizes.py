@@ -100,7 +100,6 @@ def inferEffectSizes(adata, perturbationsColumn, referenceLevel, covariates, par
         allExpMat = pd.concat([controlExpressionMat, tmpExpressionMat], axis=0)
         allGuideMat = pd.concat([controlDesignMatrixSel, tmpDesignMatrix], axis=0)
 
-        allExpMat = allExpMat.iloc[:, 0:5]
         p = multiprocessing.Process(
             target=fit_one_batch,
             args=(allGuideMat, allExpMat[:], f"Results_{setIndex_1}_{setIndex_2}")

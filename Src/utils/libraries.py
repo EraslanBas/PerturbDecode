@@ -1,5 +1,6 @@
 import scanpy as sc
 import os as os
+import gc
 
 
 # Plotting
