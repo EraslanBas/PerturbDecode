@@ -51,7 +51,10 @@ class ScreenDataset(Dataset):
         self.X = one_hot_pert_id.to_numpy()
         
         ## Log normalized expression matrix 
-        self.y = self.data.X
+        if scipy.sparse.issparse(self.data.X):
+            self.y = self.data.X.toarray()
+        else:
+            self.y = self.data.X
         
        
 

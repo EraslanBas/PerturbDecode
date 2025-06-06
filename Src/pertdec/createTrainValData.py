@@ -40,7 +40,7 @@ def createTrainValData(inAdata, perturbationColumn, pertCategories, dataDir, val
                                                     ordered=True) 
     allSet = set(range(inAdata.shape[0]))
 
-    valSet =  set(random.sample(allSet, int(inAdata.shape[0]*0.2)))
+    valSet =  set(random.sample(list(allSet), int(inAdata.shape[0]*0.2)))
     trainSet = allSet - valSet
     
     inAdataTrain = inAdata[list(trainSet),:].copy()

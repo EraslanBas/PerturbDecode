@@ -55,7 +55,7 @@ def fit_one_batch(allGuideMat, allExpMat, batchName, n_jobs: int = None):
     gc.collect()
 
 def inferEffectSizes(adata, perturbationsColumn, referenceLevel, covariates, par_test_target_interval=250):
-    targetPerturbations = list(adata.obs["SelectedPerturbations"].unique())
+    targetPerturbations = list(adata.obs[perturbationsColumn].unique())
     targetPerturbations.sort()
     targetPerturbations = [referenceLevel] + \
                           targetPerturbations[:targetPerturbations.index(referenceLevel)] + \
@@ -76,8 +76,12 @@ def inferEffectSizes(adata, perturbationsColumn, referenceLevel, covariates, par
     covariate_df = adata.obs[covariates]
     designMatrix = pd.concat([designMatrix, covariate_df], axis=1)
 
-    expressionMatrix = pd.DataFrame(adata.X, index=adata.obs.index, columns=adata.var_names)
+    if scipy.sparse.issparse(adata.X):
+        expressionMatrix = pd.DataFrame(adata.X.toarray(), index=adata.obs.index, columns=adata.var_names)
+    else:
+        expressionMatrix = pd.DataFrame(adata.X, index=adata.obs.index, columns=adata.var_names)
 
+    expressionMatrix = expressionMatrix.iloc[:,0:20]
     control_mask = adata.obs[perturbationsColumn] == referenceLevel
     controlExpressionMat = expressionMatrix.loc[control_mask]
     controlDesignMatrix = designMatrix.loc[control_mask]
