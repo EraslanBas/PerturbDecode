@@ -5,6 +5,8 @@ import gc
 import multiprocessing
 from multiprocessing import Pool, cpu_count
 from statsmodels.api import OLS, add_constant
+import time
+from statsmodels.stats.multitest import multipletests
 
 # Global variable to avoid copying X into each worker
 X_shared = None
@@ -55,7 +57,10 @@ def fit_one_batch(allGuideMat, allExpMat, batchName, n_jobs: int = None):
     gc.collect()
 
 def inferEffectSizes(adata, perturbationsColumn, referenceLevel, covariates, par_test_target_interval=250):
-    targetPerturbations = list(adata.obs[perturbationsColumn].unique())
+    
+    start_time = time.perf_counter()
+        
+    targetPerturbations = list(adata.obs["SelectedPerturbations"].unique())
     targetPerturbations.sort()
     targetPerturbations = [referenceLevel] + \
                           targetPerturbations[:targetPerturbations.index(referenceLevel)] + \
@@ -76,44 +81,69 @@ def inferEffectSizes(adata, perturbationsColumn, referenceLevel, covariates, par
     covariate_df = adata.obs[covariates]
     designMatrix = pd.concat([designMatrix, covariate_df], axis=1)
 
-    if scipy.sparse.issparse(adata.X):
-        expressionMatrix = pd.DataFrame(adata.X.toarray(), index=adata.obs.index, columns=adata.var_names)
-    else:
-        expressionMatrix = pd.DataFrame(adata.X, index=adata.obs.index, columns=adata.var_names)
+    expressionMatrix = pd.DataFrame(adata.X, index=adata.obs.index, columns=adata.var_names)
 
-    expressionMatrix = expressionMatrix.iloc[:,0:20]
     control_mask = adata.obs[perturbationsColumn] == referenceLevel
     controlExpressionMat = expressionMatrix.loc[control_mask]
     controlDesignMatrix = designMatrix.loc[control_mask]
 
-    processes = []
+#     processes = []
 
+#     for i in range(0, len(perturbationNames), par_test_target_interval):
+#         print(f"Processing batch starting at index {i}")
+#         setIndex_1 = i
+#         setIndex_2 = min(i + par_test_target_interval, len(perturbationNames))
+
+#         selected_perturbations = perturbationNames[setIndex_1:(setIndex_2-1)]
+#         selColumns = list(selected_perturbations) + list(covariates)
+
+#         selected_mask = designMatrix[selected_perturbations].sum(axis=1) > 0
+#         tmpExpressionMat = expressionMatrix.loc[selected_mask]
+#         tmpDesignMatrix = designMatrix.loc[selected_mask, selColumns]
+#         controlDesignMatrixSel = controlDesignMatrix[selColumns]
+
+#         allExpMat = pd.concat([controlExpressionMat, tmpExpressionMat], axis=0)
+#         allGuideMat = pd.concat([controlDesignMatrixSel, tmpDesignMatrix], axis=0)
+
+#         p = multiprocessing.Process(
+#             target=fit_one_batch,
+#             args=(allGuideMat, allExpMat[:], f"Results_{setIndex_1}_{setIndex_2}")
+#         )
+#         p.start()
+#         processes.append(p)
+
+#     for p in processes:
+#         p.join()
+
+
+    finish_time = time.perf_counter()
+    
+    print(f"Program finished in {finish_time-start_time} seconds")
+    
+    ##Combine all results
+    allRes = pd.DataFrame()
     for i in range(0, len(perturbationNames), par_test_target_interval):
-        print(f"Processing batch starting at index {i}")
+        
         setIndex_1 = i
         setIndex_2 = min(i + par_test_target_interval, len(perturbationNames))
 
-        selected_perturbations = perturbationNames[setIndex_1:setIndex_2]
-        selColumns = list(selected_perturbations) + list(covariates)
-
-        selected_mask = designMatrix[selected_perturbations].sum(axis=1) > 0
-        tmpExpressionMat = expressionMatrix.loc[selected_mask]
-        tmpDesignMatrix = designMatrix.loc[selected_mask, selColumns]
-        controlDesignMatrixSel = controlDesignMatrix[selColumns]
-
-        allExpMat = pd.concat([controlExpressionMat, tmpExpressionMat], axis=0)
-        allGuideMat = pd.concat([controlDesignMatrixSel, tmpDesignMatrix], axis=0)
-
-        p = multiprocessing.Process(
-            target=fit_one_batch,
-            args=(allGuideMat, allExpMat[:], f"Results_{setIndex_1}_{setIndex_2}")
-        )
-        p.start()
-        processes.append(p)
-
-    for p in processes:
-        p.join()
-
-
-
-
+        res =pd.read_csv("./TmpOLSOuts/" + f"Results_{setIndex_1}_{setIndex_2}.csv")
+        allRes = pd.concat([allRes,res])
+        #os.remove("./TmpMixedEffectNBLMOuts/coefs_"+str(setIndex_1)+".csv")
+        
+    allRes = allRes.drop_duplicates(subset=['dependent_variable', 'independent_variable'])
+    
+    coefs_df = allRes.pivot(index='dependent_variable', 
+                            columns='independent_variable',
+                            values='coefficient')
+    pvals_df = allRes.pivot(index='dependent_variable', 
+                            columns='independent_variable',
+                            values='p_value')
+ 
+    coefs_df.to_csv("./TmpOLSOuts/LogFCs.csv")
+    pvals_df.to_csv("./TmpOLSOuts/Pvalues.csv")
+    
+    
+    allRes.to_csv(f"./TmpOLSOuts/EffectSizeEstimates.csv", index=False)
+  
+    
