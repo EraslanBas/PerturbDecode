@@ -1,0 +1,132 @@
+# ============================================================
+# CODE AND CONFIGURATION ONLY -- no data files, ever.
+# Strategy: ignore everything, then re-include known source types.
+# Anything not listed below is excluded by default.
+# ============================================================
+
+# 1) Ignore everything...
+*
+# 2) ...but still descend into subdirectories
+!*/
+
+# ---- Code ----
+!*.py
+!*.pyx
+!*.ipynb
+!*.R
+!*.r
+!*.Rmd
+!*.sh
+!*.bash
+!*.pl
+!*.jl
+!*.cpp
+!*.c
+!*.h
+!*.hpp
+!*.js
+!*.sql
+!*.smk
+!Snakefile
+!Makefile
+!Dockerfile
+!*.nf
+
+# ---- Configuration ----
+!*.yaml
+!*.yml
+!*.toml
+!*.cfg
+!*.ini
+!*.conf
+!*.json
+!.gitignore
+!.gitattributes
+!.dockerignore
+!environment.yml
+!requirements*.txt
+!setup.py
+!setup.cfg
+!pyproject.toml
+!MANIFEST.in
+!DESCRIPTION
+!NAMESPACE
+
+# ---- Documentation ----
+!*.md
+!*.rst
+!README*
+!LICENSE*
+!CITATION*
+
+# ---- Re-exclude cruft that would otherwise slip through ----
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.egg-info/
+.virtual_documents/
+wandb/
+mlruns/
+lightning_logs/
+
+# ---- pre-existing project rules ----
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints
+**/.ipynb_checkpoints/
+
+# Virtual environment directories
+env/
+.venv/
+venv/
+
+# Pipenv / Poetry files
+Pipfile.lock
+poetry.lock
+
+# Environment files
+.env
+*.env
+*.yaml
+*.yml
+
+# VS Code, PyCharm, and other IDE/editor settings
+.vscode/
+.idea/
+*.swp
+
+# Build artifacts (Python + Sphinx)
+build/
+dist/
+*.egg-info/
+*.egg
+docs/_build/
+
+# R / RStudio
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+
+# OS-specific junk
+.DS_Store
+Thumbs.db
+
+# Custom data/output folders
+data/
+output/
+results/
+
+# Allow a placeholder to be kept
+!data/README.md
+
