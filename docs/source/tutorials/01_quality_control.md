@@ -46,7 +46,9 @@ in a different format replaces step 4 with its own join.
 
 The figures and counts below come from running these notebooks on the full E3
 ligase screen, described in
-[Eraslan et al., bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.01.23.525198v1).
+[Geiger-Schuller, Eraslan et al., bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.01.23.525198v1),
+*Systematically characterizing the roles of E3-ligase family members in
+inflammatory responses with massively parallel Perturb-seq*.
 
 :::{note}
 These steps consume per-channel CellRanger output, hashtag demultiplexing

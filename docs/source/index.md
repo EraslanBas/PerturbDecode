@@ -93,8 +93,10 @@ See {doc}`installation` for the optional R integration and development setup.
 
 ## Example data
 
-The walkthrough uses a genome-scale Perturb-seq screen of E3 ligases in primary
-mouse dendritic cells, available from
+The walkthrough uses the genome-scale Perturb-seq screen of E3 ligases in
+primary mouse dendritic cells from
+[Geiger-Schuller, Eraslan et al., bioRxiv 2023](https://doi.org/10.1101/2023.01.23.525198),
+available from
 [GEO GSE327057](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE327057).
 
 ## Citation

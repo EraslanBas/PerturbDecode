@@ -4,6 +4,11 @@ These notebooks are **not part of the PerturbDecode package**. They are provided
 as a worked example of how to assemble the combined `AnnData` object that the
 package takes as its starting point.
 
+They come from the E3 ligase Perturb-seq screen of Geiger-Schuller, Eraslan et al.,
+*Systematically characterizing the roles of E3-ligase family members in
+inflammatory responses with massively parallel Perturb-seq*, bioRxiv 2023,
+[doi:10.1101/2023.01.23.525198](https://doi.org/10.1101/2023.01.23.525198).
+
 The steps here are highly experiment dependent. They reflect the design of the
 E3 ligase screen (multiplexed channels, hashtag oligos, a CRISPR feature-barcode
 library) and are meant to be read and adapted rather than run unchanged.
