@@ -331,6 +331,35 @@ adata.obs["KONo"]   = fbar.sum(axis=1).to_numpy()
 adata.obs["KOType"] = np.where(adata.obs.KONo > 1, "MultipleKO", "SingleKO")
 ```
 
+### When the population is not homogeneous
+
+The clustering above is not only descriptive. If the screen contains genuinely
+distinct cell states, and in particular if the **control cells** occupy several
+states, a single model fitted across all of them will confound perturbation
+effects with cell state. A perturbation enriched in one state will appear to
+have the transcriptional signature of that state.
+
+There are two ways to handle this:
+
+**Condition on cell state.** Add the state label as a further conditioning
+variable alongside perturbation identity, so the model accounts for it
+explicitly.
+
+**Fit one model per cell state.** Analyse each state separately. This is the
+cleaner option when states are strongly distinct, but it requires each
+perturbation to retain enough cells within each state to be estimable, which
+becomes the limiting constraint in a large screen.
+
+In the E3 ligase screen the model was fitted on the **DC2 population alone**,
+the largest of the states identified above, giving **144,138 cells**. That
+sidesteps the confounding entirely at the cost of discarding the other states,
+and is a reasonable choice when one population dominates.
+
+:::{note}
+Whichever route you take, decide it here. Everything from this point rests on
+the assumption that the cells being compared are comparable.
+:::
+
 ## 3. Fitting ComBVAE three times
 
 The model is not fitted once. Quality control runs it three times, each on a
@@ -377,12 +406,19 @@ phenotypes are concordant, given the controls.
 Code, figures and counts for this subsection still to be written.
 :::
 
+For the E3 ligase screen this fit ran on the DC2 population with 2,132 guide
+covariates over 6,685 genes, using 64 latent dimensions and a 64 dimensional
+perturbation embedding, trained for 1,000 epochs.
+
 <!-- TODO:
-     - Functions: runTrainingComBVAE, extract_model_embeddings,
+     - Show the call: runTrainingComBVAE, extract_model_embeddings,
        visualizePerturbationEmbeddings, selectWorkingGuides.
      - Figures: guide embedding space; control guide distribution with outliers
        marked; concordance statistics for retained versus dropped guides.
-     - Counts: guides in, guides out, at each of the two removal criteria.
+     - Counts at each removal criterion. Source material available:
+       PerturbMap/SRC/Outputs/model_4 (best.pth, TrainTestErrors.csv over 1000
+       epochs), E3Ligase TextFiles/GuideSelect_GoodKOGuides.csv (1752 rows) and
+       GuideSelect_BadKOGuides.csv (1145 rows).
 -->
 
 ### Second fit: at the target gene level
