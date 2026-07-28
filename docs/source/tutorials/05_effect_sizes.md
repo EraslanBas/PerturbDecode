@@ -12,6 +12,13 @@ This page is a scaffold. Content to be written.
 
 Estimate the transcriptional effect of each perturbation relative to controls, producing the beta matrix that downstream stages consume.
 
+## The problem this step addresses
+
+<!-- TODO: write this section. Points to cover:
+     - Why computation becomes the limiting factor at screen scale, and how estimation is batched.
+     - How multiplicity is handled across the full perturbation-by-gene matrix.
+-->
+
 ## What this stage does
 
 <!-- TODO: 2-3 paragraphs of narrative. What biological/technical problem does

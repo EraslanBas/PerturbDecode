@@ -12,6 +12,16 @@ This page is a scaffold. Content to be written.
 
 Train the conditional variational autoencoder and extract a continuous embedding of perturbation responses.
 
+## The problem this step addresses
+
+<!-- TODO: write this section. Points to cover:
+     - Why single-gene perturbation effects are hard to detect: signal is sparse and subtle.
+     - Why the whole perturbation space is modelled jointly rather than one perturbation at a time.
+     - What the beta weighting buys: disentangled program embeddings, and why that makes small shifts detectable.
+     - Why measuring shifts at the embedding level beats measuring them per gene, given correlation structure across genes (the unequal-pathway-size problem).
+     - Why a non-linear model is needed at all.
+-->
+
 ## What this stage does
 
 <!-- TODO: 2-3 paragraphs of narrative. What biological/technical problem does

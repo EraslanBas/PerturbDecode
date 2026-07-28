@@ -12,6 +12,13 @@ This page is a scaffold. Content to be written.
 
 Factorise the beta matrix to group genes into co-regulated programmes and knockouts into functionally similar groups.
 
+## The problem this step addresses
+
+<!-- TODO: write this section. Points to cover:
+     - Why correlating gene-level effect vectors is a fragile way to connect perturbations.
+     - How grouping on latent factors instead gives a more robust measure of functional connection.
+-->
+
 ## What this stage does
 
 <!-- TODO: 2-3 paragraphs of narrative. What biological/technical problem does

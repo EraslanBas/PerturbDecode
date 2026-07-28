@@ -19,142 +19,48 @@ A PROBABILISTIC FRAMEWORK FOR LARGE SINGLE CELL PERTURBATION SCREENS
 
 ---
 
-Pooled CRISPR screens read out by single-cell sequencing promise a causal map of
-gene function. Getting there means confronting a specific set of problems, most
-of which are usually handled with disconnected heuristics applied after the fact.
+PerturbDecode analyses pooled CRISPR screens read out by single-cell
+sequencing. At its centre is **ComBVAE**, a conditional beta-VAE that learns a
+disentangled representation of perturbation effects, used both to decide which
+measurements to trust and to predict responses that were never assayed.
 
-PerturbDecode approaches them with a single generative model, **ComBVAE**, used
-first to decide *which measurements are real* and then to *predict measurements
-that were never made*.
-
-:::{admonition} Development status
-:class: note
-PerturbDecode is under active development. Each challenge below is marked with
-its current state, and the {doc}`pipeline table <tutorials/index>` shows which
-stages are usable today. Nothing here is claimed as working before it is.
-:::
-
-## The challenges
-
-:::::{grid} 1 1 2 2
+::::{grid} 1 2 2 2
 :gutter: 3
 
-::::{grid-item-card} Perturbation effects are sparse
-{bdg-success}`Available`
-^^^
-Single-gene perturbations detected by Perturb-seq produce sparse, subtle
-transcriptional changes. Testing each perturbation gene by gene against controls
-is badly underpowered.
+:::{grid-item-card} {octicon}`rocket;1.5em;sd-mr-1` Getting started
+:link: installation
+:link-type: doc
 
-**Approach.** ComBVAE learns the geometry of the whole perturbation space at
-once, so each perturbation is estimated with support from the entire screen
-rather than from its own cells alone.
+Install the package and run your first analysis.
+:::
 
-Because it is a **beta-VAE**, the model also learns the embeddings of
-transcriptional programs in a disentangled fashion, which makes subtle shifts in
-the transcriptome detectable.
+:::{grid-item-card} {octicon}`book;1.5em;sd-mr-1` Walkthrough
+:link: tutorials/index
+:link-type: doc
 
-Measuring perturbation shifts at the level of these embeddings is more
-informative than measuring them gene by gene, where the estimate is confounded
-by correlation structure between genes. Consider a perturbation that affects two
-distinct pathways, one containing 1,000 genes and the other 10. A gene-level
-analysis is dominated by the larger pathway, and the smaller one is effectively
-invisible. At the embedding level both pathways are represented as programs, so
-each registers on its own terms.
+A complete Perturb-seq analysis, one stage at a time, on real screen data.
+:::
+
+:::{grid-item-card} {octicon}`beaker;1.5em;sd-mr-1` Concepts
+:link: concepts/index
+:link-type: doc
+
+The models and statistics behind each stage.
+:::
+
+:::{grid-item-card} {octicon}`code;1.5em;sd-mr-1` API reference
+:link: api/index
+:link-type: doc
+
+Every public function and class.
+:::
+
 ::::
-
-::::{grid-item-card} The effect varies across cells
-{bdg-secondary}`Planned`
-^^^
-Not every cell carrying a guide is properly perturbed. Incomplete editing and
-escaping cells mean a perturbation label is not the same thing as a perturbed
-cell, and including unperturbed cells dilutes every downstream estimate.
-
-**Approach.** Beyond filtering guides, PerturbDecode will filter *individual
-cells* that show no evidence of perturbation, using the model's cell-level
-representation. The method is defined; the implementation is not yet in the
-package.
-::::
-
-::::{grid-item-card} Guide consistency is only knowable after the experiment
-{bdg-success}`Available`
-^^^
-Whether the guides targeting a gene actually agree cannot be determined at
-design time. It is a property of the data you have already generated.
-
-**Approach.** ComBVAE learns an embedding per guide; guides nominally targeting
-the same gene are then tested for concordant phenotypes by partial correlation
-conditioned on the control guides, which removes shared technical structure
-before any judgement is made. See
-{func}`~perturbdecode.selectWorkingGuides`.
-::::
-
-::::{grid-item-card} Perturbation effects are non-linear
-{bdg-success}`Available`
-^^^
-Linear models cannot represent effects that depend on cell state or that combine
-non-additively, which is much of the interesting biology.
-
-**Approach.** The conditional VAE uses non-linear encoders and decoders, so
-perturbation effects are modelled as non-linear functions of latent state rather
-than as additive shifts.
-::::
-
-::::{grid-item-card} Connecting perturbations to each other
-{bdg-secondary}`Planned`
-^^^
-Deciding which perturbed genes act together is usually done by correlating
-their gene-level effect vectors. That measure inherits every problem described
-above: it is dominated by large, highly correlated gene sets, so two
-perturbations can look connected merely because both touch the same broad
-program, while a shared effect on a small pathway goes unnoticed.
-
-**Approach.** Perturbations are compared by *which disentangled latent factors
-they affect* rather than by raw expression correlation. Because the beta-VAE
-separates transcriptional programs into distinct factors, two perturbations
-that act on the same small program register as connected even when their
-gene-level profiles are dominated by something else. Grouping at the factor
-level is therefore a more robust measure of functional connection than
-correlating effect vectors.
-::::
-
-::::{grid-item-card} No tool handles multiome perturbation screens
-{bdg-secondary}`Planned`
-^^^
-Screens with joint RNA and chromatin-accessibility readouts have no dedicated
-analysis tool, despite the readout being increasingly common.
-
-**Approach.** Extending the conditional framework to multiple simultaneous
-modalities is on the roadmap.
-::::
-
-::::{grid-item-card} Unseen combinations must be predicted, not measured
-{bdg-secondary}`Planned`
-^^^
-With a thousand targets there are half a million pairs. Predicting which
-combinations are worth running is what makes screen design efficient.
-
-**Approach.** Because perturbations occupy a continuous latent space rather than
-a lookup table, the model can generate expected responses to combinations that
-were never assayed.
-::::
-
-::::{grid-item-card} Computation becomes the bottleneck at scale
-{bdg-warning}`In development`
-^^^
-At hundreds of thousands of cells and thousands of perturbations, naive
-implementations stop being practical.
-
-**Approach.** GPU training for the model, and batched, parallel estimation for
-the effect-size stage. The parallel effect-size path is written but not yet
-wired up. See the {doc}`release notes <changelog>`.
-::::
-
-:::::
 
 ## The pipeline
 
-Each stage is an importable function operating on {class}`~anndata.AnnData`.
+Each stage is an importable function operating on {class}`~anndata.AnnData`, so
+you can enter the pipeline at any point.
 
 | | Stage | Status | What it produces |
 |---|---|---|---|
@@ -168,13 +74,10 @@ Each stage is an importable function operating on {class}`~anndata.AnnData`.
 | 08 | [Enrichment](tutorials/08_enrichment.md) | {bdg-secondary}`Planned` | Complexes, transcription factors, pathways |
 
 :::{note}
-Stages 03 and 04 are what distinguish PerturbDecode. The generative model is not
-only a downstream analysis. It is the instrument used to decide which of your
-measurements to trust.
-
-Stages marked *v1 notebooks* were performed for the manuscript using
-[PerturbDecode_v1](https://github.com/EraslanBas/PerturbDecode_v1) and are
-documented here as a methods record; they are not yet part of the package API.
+PerturbDecode is under active development, and each stage above carries its
+current state. Stages marked *v1 notebooks* were performed for the manuscript
+using [PerturbDecode_v1](https://github.com/EraslanBas/PerturbDecode_v1) and are
+documented here as a methods record rather than as package API.
 :::
 
 ## Installation
@@ -185,32 +88,17 @@ pip install PerturbDecode
 
 See {doc}`installation` for the optional R integration and development setup.
 
-## Quick example
-
-```python
-import perturbdecode as pd
-
-# Train the model on every guide in the screen
-pd.createTrainValData(adata, "guide_id", guides, dataDir="out/")
-pd.runTrainingComBVAE(model_dir="out/models", ...)
-
-# Use the learned embedding to find the guides that actually worked
-_, _, embeddings, guide_list = pd.extract_model_embeddings(...)
-pert_embed, _ = pd.visualizePerturbationEmbeddings(embeddings, guide_list)
-working, stats = pd.selectWorkingGuides(pert_embed, ["NTC"], numberOfGuidesPerTarget=4)
-```
-
 ## Example data
 
-The tutorials use a genome-scale Perturb-seq screen of ~1,130 E3 ligases in
-primary mouse dendritic cells, available from
+The walkthrough uses a genome-scale Perturb-seq screen of E3 ligases in primary
+mouse dendritic cells, available from
 [GEO GSE327057](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE327057).
 
 ## Citation
 
 If you use PerturbDecode in your research, please cite the accompanying
-manuscript. See {doc}`about/citation`. The analysis code used for the
-manuscript is archived at
+manuscript. See {doc}`about/citation`. The analysis code used for the manuscript
+is archived at
 [PerturbDecode_v1](https://github.com/EraslanBas/PerturbDecode_v1); it predates
 this package and does not reflect the current API.
 

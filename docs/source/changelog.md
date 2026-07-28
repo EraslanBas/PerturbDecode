@@ -22,3 +22,16 @@ First packaged release.
 - The L1 penalty on the perturbation embedding present in earlier versions of
   the model code was computed but never added to the optimised loss, so it did
   not affect training. The packaged model omits it.
+
+## Roadmap
+
+Planned capabilities not yet scheduled against a release:
+
+- Filtering individual cells that carry a guide but show no perturbation
+  response, in addition to filtering guides.
+- Grouping perturbations on disentangled latent factors rather than on
+  gene-level effect correlation.
+- Prediction of responses to unmeasured perturbation combinations.
+- Support for screens with single-cell multiome readouts, for which no
+  dedicated analysis tool currently exists.
+- Parallel effect-size estimation for large screens.

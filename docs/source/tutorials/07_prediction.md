@@ -12,6 +12,13 @@ This page is a scaffold. Content to be written.
 
 Predict the transcriptional response to perturbation combinations that were not measured, and evaluate those predictions.
 
+## The problem this step addresses
+
+<!-- TODO: write this section. Points to cover:
+     - Why the combinatorial space cannot be measured exhaustively, and what that means for experiment design.
+     - How a continuous perturbation representation supports generating unseen combinations.
+-->
+
 ## What this stage does
 
 <!-- TODO: 2-3 paragraphs of narrative. What biological/technical problem does

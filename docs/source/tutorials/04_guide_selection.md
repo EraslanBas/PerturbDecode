@@ -12,6 +12,14 @@ This page is a scaffold. Content to be written.
 
 Identify guides that are depleted or non-functional, choose a trustworthy set of control guides, and filter the targets carried forward.
 
+## The problem this step addresses
+
+<!-- TODO: write this section. Points to cover:
+     - Why guide efficacy cannot be established before the experiment, only from the data it produced.
+     - How concordance between guides for the same target is tested, and why conditioning on controls matters.
+     - Planned: filtering individual cells that carry a guide but show no perturbation response.
+-->
+
 ## What this stage does
 
 <!-- TODO: 2-3 paragraphs of narrative. What biological/technical problem does
