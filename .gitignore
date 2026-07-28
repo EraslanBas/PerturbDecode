@@ -130,3 +130,6 @@ results/
 # Allow a placeholder to be kept
 !data/README.md
 
+
+# ---- built documentation ----
+/docs/_build/

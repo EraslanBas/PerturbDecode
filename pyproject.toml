@@ -47,7 +47,14 @@ dependencies = [
 # R interoperability is optional: the core pipeline imports cleanly without it.
 r = ["rpy2>=3.4", "anndata2ri>=1.0"]
 dev = ["pytest>=7.0", "pytest-cov", "ruff"]
-docs = ["sphinx>=5.0", "sphinx_rtd_theme", "myst-parser"]
+docs = [
+    "sphinx>=5.0",
+    "pydata-sphinx-theme>=0.14",
+    "myst-nb>=0.17",
+    "sphinx-copybutton>=0.5",
+    "sphinx-design>=0.5",
+    "linkify-it-py>=2.0",
+]
 
 [project.urls]
 Homepage = "https://github.com/EraslanBas/PerturbDecode"
