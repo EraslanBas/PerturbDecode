@@ -19,10 +19,13 @@ A PROBABILISTIC FRAMEWORK FOR LARGE SINGLE CELL PERTURBATION SCREENS
 
 ---
 
-PerturbDecode analyses pooled CRISPR screens read out by single-cell
-sequencing. At its centre is **ComBVAE**, a conditional beta-VAE that learns a
-disentangled representation of perturbation effects, used both to decide which
-measurements to trust and to predict responses that were never assayed.
+Pooled CRISPR screens read out by single-cell sequencing promise a causal map of
+gene function. Getting there means confronting a specific set of problems, most
+of which are usually handled with disconnected heuristics applied after the fact.
+
+PerturbDecode approaches them with a single generative model, **ComBVAE**, used
+first to decide *which measurements are real* and then to *predict measurements
+that were never made*.
 
 ::::{grid} 1 2 2 2
 :gutter: 3
