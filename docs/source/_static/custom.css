@@ -1,0 +1,54 @@
+/* PerturbDecode documentation - theme overrides.
+   Kept deliberately small; the pydata theme handles light/dark natively and
+   these variables are defined for both schemes so nothing hard-codes a colour. */
+
+html[data-theme="light"] {
+    --pd-accent: #1a6b8f;
+    --pd-accent-soft: #e8f2f7;
+    --pd-border: #d7dde3;
+}
+
+html[data-theme="dark"] {
+    --pd-accent: #6db8d8;
+    --pd-accent-soft: #16242c;
+    --pd-border: #2f3a42;
+}
+
+/* Landing-page hero spacing */
+.bd-main .bd-content .sd-card {
+    border: 1px solid var(--pd-border);
+    transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.bd-main .bd-content .sd-card:hover {
+    border-color: var(--pd-accent);
+    transform: translateY(-2px);
+}
+
+.sd-card-title {
+    font-weight: 600;
+}
+
+/* Pipeline tables: keep them readable and let wide ones scroll rather than
+   forcing the page to scroll horizontally. */
+.bd-content table {
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+/* Draft banners should read as provisional, not alarming. */
+.admonition.caution {
+    border-left-color: var(--pd-accent);
+}
+
+/* Tighter code blocks inside cards */
+.sd-card .highlight pre {
+    font-size: 0.85em;
+}
+
+/* Notebook output areas */
+div.cell_output {
+    max-height: 40em;
+    overflow-y: auto;
+}

@@ -1,0 +1,19 @@
+name: PerturbDecodeMulti
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python>=3.8
+  - numpy>=1.20.0
+  - pytorch>=1.9.0
+  - r-base>=4.0  # R language
+  - matplotlib
+  - umap-learn
+  - rpy2                # If you're calling R from Python
+  - pip
+  - pip:
+    - pytest>=6.0.0
+    - sphinx>=4.0.0
+    - sphinx_rtd_theme>=0.5.0
+    # - rpy2>=3.4.0  # Uncomment if you need R integration

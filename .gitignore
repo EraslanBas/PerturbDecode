@@ -52,6 +52,11 @@
 !DESCRIPTION
 !NAMESPACE
 
+# ---- Web assets (documentation theme) ----
+!*.css
+!*.svg
+!*.ico
+
 # ---- Documentation ----
 !*.md
 !*.rst
@@ -89,11 +94,10 @@ venv/
 Pipfile.lock
 poetry.lock
 
-# Environment files
+# Environment files (secrets only - do NOT blanket-ignore YAML:
+# .readthedocs.yaml and .github/workflows/*.yml must stay tracked)
 .env
 *.env
-*.yaml
-*.yml
 
 # VS Code, PyCharm, and other IDE/editor settings
 .vscode/
