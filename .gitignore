@@ -57,6 +57,11 @@
 !*.svg
 !*.ico
 
+# ---- Documentation figures ----
+# Scoped to docs/ on purpose: raster images elsewhere in the repo are result
+# figures and stay excluded by the allowlist.
+!docs/source/_static/figures/**
+
 # ---- Documentation ----
 !*.md
 !*.rst
