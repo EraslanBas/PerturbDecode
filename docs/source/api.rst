@@ -1,39 +1,75 @@
 API Reference
-============
+=============
 
-Core
-----
+Pipeline steps
+--------------
 
-.. automodule:: Src.core.functions
+The functions below are the pipeline entry points and are re-exported at the
+package root, so ``perturbdecode.createTrainValData`` and
+``perturbdecode.pertdec.createTrainValData`` are the same object.
+
+.. automodule:: perturbdecode.pertdec.createTrainValData
    :members:
-   :undoc-members:
-   :show-inheritance:
+
+.. automodule:: perturbdecode.pertdec.runTrainingComBVAE
+   :members:
+
+.. automodule:: perturbdecode.pertdec.extract_model_embeddings
+   :members:
+
+.. automodule:: perturbdecode.pertdec.selectWorkingGuides
+   :members:
+
+.. automodule:: perturbdecode.pertdec.inferEffectSizes
+   :members:
+
+.. automodule:: perturbdecode.pertdec.visualizePerturbationEmbeddings
+   :members:
 
 Models
 ------
 
-.. automodule:: Src.models.networks
+.. automodule:: perturbdecode.models.CVAE_basic
    :members:
-   :undoc-members:
-   :show-inheritance:
 
-Utilities
----------
-
-.. automodule:: Src.utils.r_bridge
+.. automodule:: perturbdecode.models.CVAE_GumbelMasked
    :members:
-   :undoc-members:
-   :show-inheritance:
-
-.. automodule:: Src.utils.data_utils
-   :members:
-   :undoc-members:
-   :show-inheritance:
 
 Data
 ----
 
-.. automodule:: Src.data.dataset
+.. automodule:: perturbdecode.data.ScreenDataset
    :members:
-   :undoc-members:
-   :show-inheritance:
+
+Training
+--------
+
+.. automodule:: perturbdecode.training.Training
+   :members:
+
+Utilities
+---------
+
+.. automodule:: perturbdecode.utils.Utils
+   :members:
+
+.. automodule:: perturbdecode.utils.data_utils
+   :members:
+
+.. automodule:: perturbdecode.utils.r_bridge
+   :members:
+
+.. automodule:: perturbdecode.utils.logger
+   :members:
+
+Core
+----
+
+.. automodule:: perturbdecode.core.functions
+   :members:
+
+Command line
+------------
+
+.. automodule:: perturbdecode.cli
+   :members:

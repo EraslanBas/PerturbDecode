@@ -1,5 +1,5 @@
-from Src.utils.Utils import *
-from Src.utils.libraries import *
+from perturbdecode.utils.Utils import *
+from perturbdecode.utils.libraries import *
 
 import gc
 import multiprocessing

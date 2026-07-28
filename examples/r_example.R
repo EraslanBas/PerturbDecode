@@ -13,5 +13,5 @@ print(paste("Result:", result))
 # Example of calling Python from R using reticulate
 # Uncomment if you have reticulate installed
 # library(reticulate)
-# py <- import("PerturbDecodeMulti")
+# py <- import("perturbdecode")
 # # Call Python functions here

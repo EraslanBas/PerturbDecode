@@ -1,9 +1,9 @@
-from Src.utils.Utils import *
-from Src.utils.libraries import *
-from Src.utils.logger import *
-from Src.data.ScreenDataset import *
-from Src.models.CVAE_basic import *
-from Src.models.CVAE_GumbelMasked import *
+from perturbdecode.utils.Utils import *
+from perturbdecode.utils.libraries import *
+from perturbdecode.utils.logger import *
+from perturbdecode.data.ScreenDataset import *
+from perturbdecode.models.CVAE_basic import *
+from perturbdecode.models.CVAE_GumbelMasked import *
 import torch.multiprocessing as mp
 
 

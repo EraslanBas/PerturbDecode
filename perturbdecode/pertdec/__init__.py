@@ -1,9 +1,8 @@
-# PerturbDecodeMulti package
-"""
-PerturbDecodeMulti - API
-"""
+"""PerturbDecode - pipeline step API.
 
-__version__ = '0.1.0'
+Each function in this module is one step of the screen-analysis pipeline and
+operates on :class:`anndata.AnnData` objects.
+"""
 
 
 # Import API functions from submodules
@@ -21,9 +20,5 @@ __all__ = [
     "extract_model_embeddings",
     "visualizePerturbationEmbeddings",
     "selectWorkingGuides",
-    "inferEffectSizes"
-    # Add other API functions
+    "inferEffectSizes",
 ]
-
-# Version information
-__version__ = '0.1.0'
