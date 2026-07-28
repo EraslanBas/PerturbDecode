@@ -1,8 +1,8 @@
-# 06 · ComBVAE
+# 03 · ComBVAE
 
-:::{admonition} Step 6 of 8 — the pipeline walkthrough
+:::{admonition} Step 3 of 8 — the pipeline walkthrough
 :class: tip, dropdown
-You are on **step 6**, *ComBVAE*. See the [full stage list](index.md), or start from the [quickstart](quickstart.md) for the whole pipeline on one page.
+You are on **step 3**, *ComBVAE*. See the [full stage list](index.md), or start from the [quickstart](quickstart.md) for the whole pipeline on one page.
 :::
 
 :::{admonition} Draft
@@ -61,8 +61,8 @@ import perturbdecode as pd
 ## Next step
 
 ::::{grid} 1
-:::{grid-item-card} 07 · Predicting combinations
-:link: 07_prediction
+:::{grid-item-card} 04 · Guide selection
+:link: 04_guide_selection
 :link-type: doc
 
 Continue the walkthrough.

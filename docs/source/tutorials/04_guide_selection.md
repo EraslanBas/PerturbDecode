@@ -1,8 +1,8 @@
-# 03 · Guide quality control
+# 04 · Guide selection
 
-:::{admonition} Step 3 of 8 — the pipeline walkthrough
+:::{admonition} Step 4 of 8 — the pipeline walkthrough
 :class: tip, dropdown
-You are on **step 3**, *Guide quality control*. See the [full stage list](index.md), or start from the [quickstart](quickstart.md) for the whole pipeline on one page.
+You are on **step 4**, *Guide selection*. See the [full stage list](index.md), or start from the [quickstart](quickstart.md) for the whole pipeline on one page.
 :::
 
 :::{admonition} Draft
@@ -61,8 +61,8 @@ import perturbdecode as pd
 ## Next step
 
 ::::{grid} 1
-:::{grid-item-card} 04 · Effect sizes
-:link: 04_effect_sizes
+:::{grid-item-card} 05 · Effect sizes
+:link: 05_effect_sizes
 :link-type: doc
 
 Continue the walkthrough.

@@ -1,8 +1,8 @@
-# 04 · Effect sizes
+# 05 · Effect sizes
 
-:::{admonition} Step 4 of 8 — the pipeline walkthrough
+:::{admonition} Step 5 of 8 — the pipeline walkthrough
 :class: tip, dropdown
-You are on **step 4**, *Effect sizes*. See the [full stage list](index.md), or start from the [quickstart](quickstart.md) for the whole pipeline on one page.
+You are on **step 5**, *Effect sizes*. See the [full stage list](index.md), or start from the [quickstart](quickstart.md) for the whole pipeline on one page.
 :::
 
 :::{admonition} Draft
@@ -61,8 +61,8 @@ import perturbdecode as pd
 ## Next step
 
 ::::{grid} 1
-:::{grid-item-card} 05 · Gene and knockout modules
-:link: 05_modules
+:::{grid-item-card} 06 · Gene and knockout modules
+:link: 06_modules
 :link-type: doc
 
 Continue the walkthrough.

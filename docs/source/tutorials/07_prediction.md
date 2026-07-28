@@ -1,8 +1,8 @@
-# 07 · Predicting combinations
+# 07 · Combination prediction
 
 :::{admonition} Step 7 of 8 — the pipeline walkthrough
 :class: tip, dropdown
-You are on **step 7**, *Predicting combinations*. See the [full stage list](index.md), or start from the [quickstart](quickstart.md) for the whole pipeline on one page.
+You are on **step 7**, *Combination prediction*. See the [full stage list](index.md), or start from the [quickstart](quickstart.md) for the whole pipeline on one page.
 :::
 
 :::{admonition} Draft

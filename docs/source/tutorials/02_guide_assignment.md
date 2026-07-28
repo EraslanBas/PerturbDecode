@@ -61,8 +61,8 @@ import perturbdecode as pd
 ## Next step
 
 ::::{grid} 1
-:::{grid-item-card} 03 · Guide quality control
-:link: 03_guide_qc
+:::{grid-item-card} 03 · ComBVAE
+:link: 03_combvae
 :link-type: doc
 
 Continue the walkthrough.

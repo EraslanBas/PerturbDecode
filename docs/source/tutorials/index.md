@@ -50,39 +50,39 @@ Empty droplets, UMI and gene thresholds, mitochondrial fraction.
 Merging hashing and CRISPR libraries; assigning guides to cells.
 :::
 
-:::{grid-item-card} 03 · Guide QC
-:link: 03_guide_qc
-:link-type: doc
-
-Depleted guides, control-guide selection, target filtering.
-:::
-
-:::{grid-item-card} 04 · Effect sizes
-:link: 04_effect_sizes
-:link-type: doc
-
-Per-perturbation transcriptional effects and the beta matrix.
-:::
-
-:::{grid-item-card} 05 · Modules
-:link: 05_modules
-:link-type: doc
-
-Grouping genes and knockouts into co-regulated programmes.
-:::
-
-:::{grid-item-card} 06 · ComBVAE
-:link: 06_combvae
+:::{grid-item-card} 03 · ComBVAE
+:link: 03_combvae
 :link-type: doc
 
 Training the conditional VAE; extracting perturbation embeddings.
 :::
 
-:::{grid-item-card} 07 · Prediction
+:::{grid-item-card} 04 · Guide selection
+:link: 04_guide_selection
+:link-type: doc
+
+Using the embeddings to find guides with reproducible phenotypes.
+:::
+
+:::{grid-item-card} 05 · Effect sizes
+:link: 05_effect_sizes
+:link-type: doc
+
+Per-perturbation transcriptional effects and the beta matrix.
+:::
+
+:::{grid-item-card} 06 · Modules
+:link: 06_modules
+:link-type: doc
+
+Grouping genes and perturbations into co-regulated programmes.
+:::
+
+:::{grid-item-card} 07 · Combination prediction
 :link: 07_prediction
 :link-type: doc
 
-Predicting and evaluating unseen perturbation combinations.
+Predicting and evaluating unmeasured perturbation combinations.
 :::
 
 :::{grid-item-card} 08 · Enrichment
@@ -108,10 +108,10 @@ quickstart
 
 01_quality_control
 02_guide_assignment
-03_guide_qc
-04_effect_sizes
-05_modules
-06_combvae
+03_combvae
+04_guide_selection
+05_effect_sizes
+06_modules
 07_prediction
 08_enrichment
 ```

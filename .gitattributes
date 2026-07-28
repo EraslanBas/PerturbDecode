@@ -1,1 +1,8 @@
+# Notebook outputs are stripped at commit time everywhere...
 *.ipynb filter=nbstrip
+
+# ...EXCEPT the documentation tutorials, which are executed once on the full
+# dataset and committed WITH their outputs, so the published site shows real
+# figures without shipping the data. Do not add nbstrip here.
+docs/source/tutorials/**/*.ipynb -filter
+docs/source/tutorials/*.ipynb -filter
