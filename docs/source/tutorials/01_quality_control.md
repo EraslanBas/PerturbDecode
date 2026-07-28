@@ -9,9 +9,21 @@ You are on **step 1**, *Quality control*. See the [full stage list](index.md), o
 
 Everything downstream operates on a single {class}`~anndata.AnnData` object in
 which each row is a cell that passed quality control and carries a known
-perturbation. Building that object from sequencing output takes four steps:
-calling real cells, filtering and merging the channels, resolving which sample
-each cell came from, and attaching the guides each cell received.
+perturbation.
+
+That object is never generated in one piece. Droplet capture has a fixed
+capacity, so the cells of a screen are split across many channels, and screens
+large enough to cover a gene family are usually run in several batches on
+different days. The E3 ligase screen spans 47 channels across two experimental
+rounds. Every channel is captured, sequenced and processed on its own, which
+means the first task is to bring them together into one object while recording
+which channel and which batch each cell came from. That provenance is not
+bookkeeping: batch is a technical source of variation that later stages need to
+account for, and it cannot be recovered once the channels are merged without it.
+
+Building the object takes four steps: calling real cells, filtering and merging
+the channels, resolving which sample each cell came from, and attaching the
+guides each cell received.
 
 :::{important}
 **This part is not the package.** PerturbDecode begins once the combined
