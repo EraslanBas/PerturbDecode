@@ -1,8 +1,8 @@
-# 08 · Enrichment and interpretation
+# 04 · Combination prediction
 
-:::{admonition} Step 8 of 8: the pipeline walkthrough
+:::{admonition} Step 4 of 5: the pipeline walkthrough
 :class: tip, dropdown
-You are on **step 8**, *Enrichment and interpretation*. See the [full stage list](index.md), or start from the [quickstart](quickstart.md) for the whole pipeline on one page.
+You are on **step 4**, *Combination prediction*. See the [full stage list](index.md), or start from the [quickstart](quickstart.md) for the whole pipeline on one page.
 :::
 
 :::{admonition} Draft
@@ -10,7 +10,14 @@ You are on **step 8**, *Enrichment and interpretation*. See the [full stage list
 This page is a scaffold. Content to be written.
 :::
 
-Connect the modules and embeddings back to biology: protein complexes, transcription factors and pathways.
+Predict the transcriptional response to perturbation combinations that were not measured, and evaluate those predictions.
+
+## The problem this step addresses
+
+<!-- TODO: write this section. Points to cover:
+     - Why the combinatorial space cannot be measured exhaustively, and what that means for experiment design.
+     - How a continuous perturbation representation supports generating unseen combinations.
+-->
 
 ## What this stage does
 
@@ -19,11 +26,11 @@ Connect the modules and embeddings back to biology: protein complexes, transcrip
 
 ## Inputs
 
-- Gene/knockout modules from stage 05
+- Trained ComBVAE model; held-out combination set
 
 ## Outputs
 
-- Enrichment tables and figures
+- Predicted expression profiles; evaluation metrics
 
 ## Walkthrough
 
@@ -60,14 +67,18 @@ import perturbdecode as pd
 
 ## Next step
 
-That is the end of the pipeline walkthrough. From here:
+::::{grid} 1
+:::{grid-item-card} 05 · Enrichment and interpretation
+:link: 05_enrichment
+:link-type: doc
 
-- Revisit the [concepts](../concepts/index.md) behind each stage
-- Browse the [API reference](../api/index.md)
+Continue the walkthrough.
+:::
+::::
 
 ## Source material
 
 <!-- Provenance: the analyses this stage is derived from. Remove once the page
      is written. -->
 
-`E3LigasePerturbSeq` (R): `13_ProteinComplexAnalysis_*`, `14_TFEnrichmentAnalysis`, `15_AnalyseEffectsOnCytokines`
+`E3LigasePerturbSeq`: `11_01_PredictCombKO_BayesianLM_*`, `13_01_EvaluateCombKOPredR2`, `13_02_EvaluateCombKOPredOTDist`

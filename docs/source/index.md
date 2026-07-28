@@ -67,14 +67,11 @@ you can enter the pipeline at any point.
 
 | | Stage | Status | What it produces |
 |---|---|---|---|
-| 01 | [Quality control](tutorials/01_quality_control.md) | {bdg-secondary}`v1 notebooks` | Filtered, concatenated expression object |
-| 02 | [Guide assignment](tutorials/02_guide_assignment.md) | {bdg-secondary}`v1 notebooks` | Cells labelled with the guides they carry |
-| 03 | [ComBVAE](tutorials/03_combvae.md) | {bdg-success}`Available` | Perturbation embeddings; cell embeddings with perturbation factored out |
-| 04 | [Guide selection](tutorials/04_guide_selection.md) | {bdg-success}`Available` | The subset of guides with reproducible phenotypes |
-| 05 | [Effect sizes](tutorials/05_effect_sizes.md) | {bdg-warning}`Partial` | Coefficient and FDR matrices, the beta matrix |
-| 06 | [Modules](tutorials/06_modules.md) | {bdg-secondary}`Planned` | Gene programmes and perturbation groups |
-| 07 | [Combination prediction](tutorials/07_prediction.md) | {bdg-secondary}`Planned` | Predicted responses to unmeasured combinations |
-| 08 | [Enrichment](tutorials/08_enrichment.md) | {bdg-secondary}`Planned` | Complexes, transcription factors, pathways |
+| 01 | [Quality control](tutorials/01_quality_control.md) | {bdg-warning}`Partial` | A filtered object of properly perturbed cells, with working guides pooled to their target genes |
+| 02 | [Effect sizes](tutorials/02_effect_sizes.md) | {bdg-warning}`Partial` | Coefficient and FDR matrices, the beta matrix |
+| 03 | [Modules](tutorials/03_modules.md) | {bdg-secondary}`Planned` | Gene programmes and perturbation groups |
+| 04 | [Combination prediction](tutorials/04_prediction.md) | {bdg-secondary}`Planned` | Predicted responses to unmeasured combinations |
+| 05 | [Enrichment](tutorials/05_enrichment.md) | {bdg-secondary}`Planned` | Complexes, transcription factors, pathways |
 
 :::{note}
 PerturbDecode is under active development, and each stage above carries its

@@ -1,8 +1,8 @@
-# 02 · Guide assignment
+# 05 · Enrichment and interpretation
 
-:::{admonition} Step 2 of 8: the pipeline walkthrough
+:::{admonition} Step 5 of 5: the pipeline walkthrough
 :class: tip, dropdown
-You are on **step 2**, *Guide assignment*. See the [full stage list](index.md), or start from the [quickstart](quickstart.md) for the whole pipeline on one page.
+You are on **step 5**, *Enrichment and interpretation*. See the [full stage list](index.md), or start from the [quickstart](quickstart.md) for the whole pipeline on one page.
 :::
 
 :::{admonition} Draft
@@ -10,7 +10,7 @@ You are on **step 2**, *Guide assignment*. See the [full stage list](index.md), 
 This page is a scaffold. Content to be written.
 :::
 
-Merge the hashing and CRISPR libraries with the expression data and assign a perturbation identity to every cell.
+Connect the modules and embeddings back to biology: protein complexes, transcription factors and pathways.
 
 ## What this stage does
 
@@ -19,11 +19,11 @@ Merge the hashing and CRISPR libraries with the expression data and assign a per
 
 ## Inputs
 
-- Filtered expression `AnnData`\n- Hashing and CRISPR count matrices
+- Gene/knockout modules from stage 05
 
 ## Outputs
 
-- `AnnData` with a perturbation column in `.obs`
+- Enrichment tables and figures
 
 ## Walkthrough
 
@@ -60,18 +60,14 @@ import perturbdecode as pd
 
 ## Next step
 
-::::{grid} 1
-:::{grid-item-card} 03 · ComBVAE
-:link: 03_combvae
-:link-type: doc
+That is the end of the pipeline walkthrough. From here:
 
-Continue the walkthrough.
-:::
-::::
+- Revisit the [concepts](../concepts/index.md) behind each stage
+- Browse the [API reference](../api/index.md)
 
 ## Source material
 
 <!-- Provenance: the analyses this stage is derived from. Remove once the page
      is written. -->
 
-`E3LigasePerturbSeq`: `03-mergeWithHash.ipynb`, `04-mergeWithCrispr.ipynb`
+`E3LigasePerturbSeq` (R): `13_ProteinComplexAnalysis_*`, `14_TFEnrichmentAnalysis`, `15_AnalyseEffectsOnCytokines`

@@ -40,53 +40,32 @@ What PerturbDecode expects in `.X`, `.obs` and `.uns`.
 :link: 01_quality_control
 :link-type: doc
 
-Empty droplets, UMI and gene thresholds, mitochondrial fraction.
+Building the object, cell states, guide-level ComBVAE, guide and cell filtering.
 :::
 
-:::{grid-item-card} 02 · Guide assignment
-:link: 02_guide_assignment
-:link-type: doc
-
-Merging hashing and CRISPR libraries; assigning guides to cells.
-:::
-
-:::{grid-item-card} 03 · ComBVAE
-:link: 03_combvae
-:link-type: doc
-
-Training the conditional VAE; extracting perturbation embeddings.
-:::
-
-:::{grid-item-card} 04 · Guide selection
-:link: 04_guide_selection
-:link-type: doc
-
-Using the embeddings to find guides with reproducible phenotypes.
-:::
-
-:::{grid-item-card} 05 · Effect sizes
-:link: 05_effect_sizes
+:::{grid-item-card} 02 · Effect sizes
+:link: 02_effect_sizes
 :link-type: doc
 
 Per-perturbation transcriptional effects and the beta matrix.
 :::
 
-:::{grid-item-card} 06 · Modules
-:link: 06_modules
+:::{grid-item-card} 03 · Modules
+:link: 03_modules
 :link-type: doc
 
 Grouping genes and perturbations into co-regulated programmes.
 :::
 
-:::{grid-item-card} 07 · Combination prediction
-:link: 07_prediction
+:::{grid-item-card} 04 · Combination prediction
+:link: 04_prediction
 :link-type: doc
 
 Predicting and evaluating unmeasured perturbation combinations.
 :::
 
-:::{grid-item-card} 08 · Enrichment
-:link: 08_enrichment
+:::{grid-item-card} 05 · Enrichment
+:link: 05_enrichment
 :link-type: doc
 
 Protein complexes, transcription factors and pathway enrichment.
@@ -107,11 +86,8 @@ quickstart
 :caption: Pipeline stages
 
 01_quality_control
-02_guide_assignment
-03_combvae
-04_guide_selection
-05_effect_sizes
-06_modules
-07_prediction
-08_enrichment
+02_effect_sizes
+03_modules
+04_prediction
+05_enrichment
 ```

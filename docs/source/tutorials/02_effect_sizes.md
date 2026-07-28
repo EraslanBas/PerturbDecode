@@ -1,8 +1,8 @@
-# 07 · Combination prediction
+# 02 · Effect sizes
 
-:::{admonition} Step 7 of 8: the pipeline walkthrough
+:::{admonition} Step 2 of 5: the pipeline walkthrough
 :class: tip, dropdown
-You are on **step 7**, *Combination prediction*. See the [full stage list](index.md), or start from the [quickstart](quickstart.md) for the whole pipeline on one page.
+You are on **step 2**, *Effect sizes*. See the [full stage list](index.md), or start from the [quickstart](quickstart.md) for the whole pipeline on one page.
 :::
 
 :::{admonition} Draft
@@ -10,13 +10,13 @@ You are on **step 7**, *Combination prediction*. See the [full stage list](index
 This page is a scaffold. Content to be written.
 :::
 
-Predict the transcriptional response to perturbation combinations that were not measured, and evaluate those predictions.
+Estimate the transcriptional effect of each perturbation relative to controls, producing the beta matrix that downstream stages consume.
 
 ## The problem this step addresses
 
 <!-- TODO: write this section. Points to cover:
-     - Why the combinatorial space cannot be measured exhaustively, and what that means for experiment design.
-     - How a continuous perturbation representation supports generating unseen combinations.
+     - Why computation becomes the limiting factor at screen scale, and how estimation is batched.
+     - How multiplicity is handled across the full perturbation-by-gene matrix.
 -->
 
 ## What this stage does
@@ -26,11 +26,11 @@ Predict the transcriptional response to perturbation combinations that were not 
 
 ## Inputs
 
-- Trained ComBVAE model; held-out combination set
+- QC-passed `AnnData` with perturbation labels
 
 ## Outputs
 
-- Predicted expression profiles; evaluation metrics
+- Beta matrix (perturbations x genes) with significance statistics
 
 ## Walkthrough
 
@@ -63,13 +63,13 @@ import perturbdecode as pd
 
 ## API
 
-<!-- TODO -->
+{func}`~perturbdecode.inferEffectSizes`
 
 ## Next step
 
 ::::{grid} 1
-:::{grid-item-card} 08 · Enrichment and interpretation
-:link: 08_enrichment
+:::{grid-item-card} 03 · Gene and knockout modules
+:link: 03_modules
 :link-type: doc
 
 Continue the walkthrough.
@@ -81,4 +81,4 @@ Continue the walkthrough.
 <!-- Provenance: the analyses this stage is derived from. Remove once the page
      is written. -->
 
-`E3LigasePerturbSeq`: `11_01_PredictCombKO_BayesianLM_*`, `13_01_EvaluateCombKOPredR2`, `13_02_EvaluateCombKOPredOTDist`
+`E3LigasePerturbSeq`: `08-00-MixedEffectLinearRegressionModel*.ipynb`, R `04_ProcessMixedEfLMPValues`

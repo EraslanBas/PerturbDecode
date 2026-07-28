@@ -1,8 +1,8 @@
-# 04 · Guide selection
+# 03 · Gene and knockout modules
 
-:::{admonition} Step 4 of 8: the pipeline walkthrough
+:::{admonition} Step 3 of 5: the pipeline walkthrough
 :class: tip, dropdown
-You are on **step 4**, *Guide selection*. See the [full stage list](index.md), or start from the [quickstart](quickstart.md) for the whole pipeline on one page.
+You are on **step 3**, *Gene and knockout modules*. See the [full stage list](index.md), or start from the [quickstart](quickstart.md) for the whole pipeline on one page.
 :::
 
 :::{admonition} Draft
@@ -10,14 +10,13 @@ You are on **step 4**, *Guide selection*. See the [full stage list](index.md), o
 This page is a scaffold. Content to be written.
 :::
 
-Identify guides that are depleted or non-functional, choose a trustworthy set of control guides, and filter the targets carried forward.
+Factorise the beta matrix to group genes into co-regulated programmes and knockouts into functionally similar groups.
 
 ## The problem this step addresses
 
 <!-- TODO: write this section. Points to cover:
-     - Why guide efficacy cannot be established before the experiment, only from the data it produced.
-     - How concordance between guides for the same target is tested, and why conditioning on controls matters.
-     - Planned: filtering individual cells that carry a guide but show no perturbation response.
+     - Why correlating gene-level effect vectors is a fragile way to connect perturbations.
+     - How grouping on latent factors instead gives a more robust measure of functional connection.
 -->
 
 ## What this stage does
@@ -27,11 +26,11 @@ Identify guides that are depleted or non-functional, choose a trustworthy set of
 
 ## Inputs
 
-- `AnnData` with assigned guides
+- Beta matrix from stage 04
 
 ## Outputs
 
-- Filtered `AnnData`; per-guide QC statistics
+- Gene modules, knockout modules, factor loadings
 
 ## Walkthrough
 
@@ -64,13 +63,13 @@ import perturbdecode as pd
 
 ## API
 
-{func}`~perturbdecode.selectWorkingGuides`
+<!-- TODO -->
 
 ## Next step
 
 ::::{grid} 1
-:::{grid-item-card} 05 · Effect sizes
-:link: 05_effect_sizes
+:::{grid-item-card} 04 · Combination prediction
+:link: 04_prediction
 :link-type: doc
 
 Continue the walkthrough.
@@ -82,4 +81,4 @@ Continue the walkthrough.
 <!-- Provenance: the analyses this stage is derived from. Remove once the page
      is written. -->
 
-`E3LigasePerturbSeq`: `07_01`-`07_04`, `08_RunEM`, `08_SelectCellsAfterEM`
+`E3LigasePerturbSeq` (R): `06_IdentifyGeneGuideModules`, `07_FactorizeBetaMatrix_ICA`, `08-01-GenerateGeneAndKOModules_*`
