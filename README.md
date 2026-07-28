@@ -22,8 +22,8 @@ error telling you to install the `[r]` extra.
 ### Development install
 
 ```bash
-git clone https://github.com/EraslanBas/PerturbDecodeMulti.git
-cd PerturbDecodeMulti
+git clone https://github.com/EraslanBas/PerturbDecode.git
+cd PerturbDecode
 pip install -e '.[dev]'
 ```
 

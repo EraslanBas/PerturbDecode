@@ -50,8 +50,8 @@ dev = ["pytest>=7.0", "pytest-cov", "ruff"]
 docs = ["sphinx>=5.0", "sphinx_rtd_theme", "myst-parser"]
 
 [project.urls]
-Homepage = "https://github.com/EraslanBas/PerturbDecodeMulti"
-Repository = "https://github.com/EraslanBas/PerturbDecodeMulti"
+Homepage = "https://github.com/EraslanBas/PerturbDecode"
+Repository = "https://github.com/EraslanBas/PerturbDecode"
 
 [project.scripts]
 perturbdecode = "perturbdecode.cli:main"
