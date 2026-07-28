@@ -1,0 +1,25 @@
+# Dependencies for building the documentation only.
+#
+# The package itself is NOT installed on the docs builder: conf.py puts the
+# repository root on sys.path, and the heavy runtime dependencies (torch,
+# scanpy, rpy2, anndata2ri, pingouin) are mocked via autodoc_mock_imports.
+# That keeps the docs build small and fast enough for Read the Docs' limits.
+
+# Documentation toolchain
+sphinx>=5.0,<8
+pydata-sphinx-theme>=0.14
+myst-nb>=0.17
+sphinx-copybutton>=0.5
+sphinx-design>=0.5
+linkify-it-py>=2.0
+
+# Light runtime dependencies that autodoc imports for real
+numpy>=1.20
+pandas>=1.3
+scipy>=1.7
+anndata>=0.8
+scikit-learn>=1.0
+statsmodels>=0.13
+matplotlib>=3.4
+seaborn>=0.11
+tqdm>=4.60
