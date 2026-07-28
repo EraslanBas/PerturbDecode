@@ -2,7 +2,7 @@
 
 A complete walkthrough of a Perturb-seq screen analysis, one stage at a time.
 Each tutorial is self-contained: it states what it takes as input, what it
-produces, and which parameters matter — so you can start from the beginning or
+produces, and which parameters matter, so you can start from the beginning or
 jump to the stage you need.
 
 :::{note}

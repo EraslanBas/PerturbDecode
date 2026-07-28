@@ -28,7 +28,7 @@ conditioned on perturbation identity.
 - **Decoder**: `Linear(n_latents + n_cond, 512)` → `ReLU` →
   `Linear(512, n_inputs)`.
 - **Embedding**: a linear map from the one-hot perturbation vector to a dense
-  `n_cond`-dimensional representation. This is the object of interest — the
+  `n_cond`-dimensional representation. This is the object of interest: the
   learned perturbation embedding.
 
 ## Loss

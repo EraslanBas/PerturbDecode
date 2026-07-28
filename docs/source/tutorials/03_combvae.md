@@ -1,6 +1,6 @@
 # 03 · ComBVAE
 
-:::{admonition} Step 3 of 8 — the pipeline walkthrough
+:::{admonition} Step 3 of 8: the pipeline walkthrough
 :class: tip, dropdown
 You are on **step 3**, *ComBVAE*. See the [full stage list](index.md), or start from the [quickstart](quickstart.md) for the whole pipeline on one page.
 :::

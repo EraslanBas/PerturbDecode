@@ -1,6 +1,6 @@
 # 06 · Gene and knockout modules
 
-:::{admonition} Step 6 of 8 — the pipeline walkthrough
+:::{admonition} Step 6 of 8: the pipeline walkthrough
 :class: tip, dropdown
 You are on **step 6**, *Gene and knockout modules*. See the [full stage list](index.md), or start from the [quickstart](quickstart.md) for the whole pipeline on one page.
 :::

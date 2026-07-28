@@ -61,7 +61,7 @@ perturbdecode list-steps
 ```
 
 Or run the bundled smoke test, which builds a synthetic screen and runs a
-forward pass through the model — no real data required:
+forward pass through the model. No real data is required:
 
 ```bash
 python examples/python_example.py

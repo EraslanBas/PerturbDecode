@@ -1,6 +1,6 @@
 # 04 · Guide selection
 
-:::{admonition} Step 4 of 8 — the pipeline walkthrough
+:::{admonition} Step 4 of 8: the pipeline walkthrough
 :class: tip, dropdown
 You are on **step 4**, *Guide selection*. See the [full stage list](index.md), or start from the [quickstart](quickstart.md) for the whole pipeline on one page.
 :::

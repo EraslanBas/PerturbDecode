@@ -71,9 +71,9 @@ pd.visualizePerturbationEmbeddings(embeddings, perturbationsList=categories)
 
 ## Where to go next
 
-- {doc}`00_data_preparation` — what PerturbDecode expects of your `AnnData`
-- {doc}`01_quality_control` — start of the full pipeline
-- {doc}`../concepts/combvae` — how the model works
+- {doc}`00_data_preparation`: what PerturbDecode expects of your `AnnData`
+- {doc}`01_quality_control`: start of the full pipeline
+- {doc}`../concepts/combvae`: how the model works
 
 <!-- TODO: replace the synthetic example above with a real public Perturb-seq
      dataset (candidates: Norman 2019, a Replogle subset) so that readers see

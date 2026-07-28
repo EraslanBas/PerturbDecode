@@ -70,10 +70,10 @@ perturbdecode list-steps
 
 ## Models
 
-- **`CVAE_basic`** — conditional VAE; perturbation covariates pass through a
+- **`CVAE_basic`**: conditional VAE; perturbation covariates pass through a
   linear embedding and are concatenated into both encoder and decoder.
   Loss: `(MSE + α·KL) / batch_size`.
-- **`CVAE_Gumbel`** — as above, with a Gumbel-sigmoid relaxation masking the
+- **`CVAE_Gumbel`**: as above, with a Gumbel-sigmoid relaxation masking the
   perturbation embedding (temperature `tau`).
 
 ## Testing

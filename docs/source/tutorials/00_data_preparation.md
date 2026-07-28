@@ -21,7 +21,7 @@ describes what each stage expects to find.
 ## The perturbation column
 
 Perturbation labels must be an **ordered categorical**, and the **first
-category is the reference level** — normally your non-targeting controls.
+category is the reference level**, normally your non-targeting controls.
 Effect sizes and the model's embedding are both defined relative to it.
 
 ```python

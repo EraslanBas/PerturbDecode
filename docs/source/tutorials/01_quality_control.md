@@ -1,6 +1,6 @@
 # 01 · Quality control
 
-:::{admonition} Step 1 of 8 — the pipeline walkthrough
+:::{admonition} Step 1 of 8: the pipeline walkthrough
 :class: tip, dropdown
 You are on **step 1**, *Quality control*. See the [full stage list](index.md), or start from the [quickstart](quickstart.md) for the whole pipeline on one page.
 :::

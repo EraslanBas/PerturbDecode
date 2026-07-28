@@ -13,8 +13,7 @@ PerturbDecode
 :::{grid-item}
 :class: sd-text-center sd-fs-5 sd-text-secondary
 
-A probabilistic framework for large-scale perturbation screens — from deciding
-which measurements to trust, to predicting the experiments you never ran
+A PROBABILISTIC FRAMEWORK FOR LARGE SINGLE CELL PERTURBATION SCREENS
 :::
 ::::
 
@@ -44,12 +43,24 @@ stages are usable today. Nothing here is claimed as working before it is.
 {bdg-success}`Available`
 ^^^
 Single-gene perturbations detected by Perturb-seq produce sparse, subtle
-transcriptional changes. Testing each perturbation against controls in isolation
+transcriptional changes. Testing each perturbation gene by gene against controls
 is badly underpowered.
 
-**Approach.** ComBVAE places every perturbation in a shared latent space, so
-each is estimated with support from the entire screen rather than only its own
-cells.
+**Approach.** ComBVAE learns the geometry of the whole perturbation space at
+once, so each perturbation is estimated with support from the entire screen
+rather than from its own cells alone.
+
+Because it is a **beta-VAE**, the model also learns the embeddings of
+transcriptional programs in a disentangled fashion, which makes subtle shifts in
+the transcriptome detectable.
+
+Measuring perturbation shifts at the level of these embeddings is more
+informative than measuring them gene by gene, where the estimate is confounded
+by correlation structure between genes. Consider a perturbation that affects two
+distinct pathways, one containing 1,000 genes and the other 10. A gene-level
+analysis is dominated by the larger pathway, and the smaller one is effectively
+invisible. At the embedding level both pathways are represented as programs, so
+each registers on its own terms.
 ::::
 
 ::::{grid-item-card} The effect varies across cells
@@ -69,7 +80,7 @@ package.
 {bdg-success}`Available`
 ^^^
 Whether the guides targeting a gene actually agree cannot be determined at
-design time — it is a property of the data you have already generated.
+design time. It is a property of the data you have already generated.
 
 **Approach.** ComBVAE learns an embedding per guide; guides nominally targeting
 the same gene are then tested for concordant phenotypes by partial correlation
@@ -82,7 +93,7 @@ before any judgement is made. See
 {bdg-success}`Available`
 ^^^
 Linear models cannot represent effects that depend on cell state or that combine
-non-additively — which is much of the interesting biology.
+non-additively, which is much of the interesting biology.
 
 **Approach.** The conditional VAE uses non-linear encoders and decoders, so
 perturbation effects are modelled as non-linear functions of latent state rather
@@ -129,7 +140,7 @@ implementations stop being practical.
 
 **Approach.** GPU training for the model, and batched, parallel estimation for
 the effect-size stage. The parallel effect-size path is written but not yet
-wired up — see the {doc}`release notes <changelog>`.
+wired up. See the {doc}`release notes <changelog>`.
 ::::
 
 :::::
@@ -144,14 +155,14 @@ Each stage is an importable function operating on {class}`~anndata.AnnData`.
 | 02 | [Guide assignment](tutorials/02_guide_assignment.md) | {bdg-secondary}`v1 notebooks` | Cells labelled with the guides they carry |
 | 03 | [ComBVAE](tutorials/03_combvae.md) | {bdg-success}`Available` | Perturbation embeddings; cell embeddings with perturbation factored out |
 | 04 | [Guide selection](tutorials/04_guide_selection.md) | {bdg-success}`Available` | The subset of guides with reproducible phenotypes |
-| 05 | [Effect sizes](tutorials/05_effect_sizes.md) | {bdg-warning}`Partial` | Coefficient and FDR matrices — the beta matrix |
+| 05 | [Effect sizes](tutorials/05_effect_sizes.md) | {bdg-warning}`Partial` | Coefficient and FDR matrices, the beta matrix |
 | 06 | [Modules](tutorials/06_modules.md) | {bdg-secondary}`Planned` | Gene programmes and perturbation groups |
 | 07 | [Combination prediction](tutorials/07_prediction.md) | {bdg-secondary}`Planned` | Predicted responses to unmeasured combinations |
 | 08 | [Enrichment](tutorials/08_enrichment.md) | {bdg-secondary}`Planned` | Complexes, transcription factors, pathways |
 
 :::{note}
 Stages 03 and 04 are what distinguish PerturbDecode. The generative model is not
-only a downstream analysis — it is the instrument used to decide which of your
+only a downstream analysis. It is the instrument used to decide which of your
 measurements to trust.
 
 Stages marked *v1 notebooks* were performed for the manuscript using
@@ -191,7 +202,7 @@ primary mouse dendritic cells, available from
 ## Citation
 
 If you use PerturbDecode in your research, please cite the accompanying
-manuscript — see {doc}`about/citation`. The analysis code used for the
+manuscript. See {doc}`about/citation`. The analysis code used for the
 manuscript is archived at
 [PerturbDecode_v1](https://github.com/EraslanBas/PerturbDecode_v1); it predates
 this package and does not reflect the current API.
