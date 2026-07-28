@@ -331,47 +331,100 @@ adata.obs["KONo"]   = fbar.sum(axis=1).to_numpy()
 adata.obs["KOType"] = np.where(adata.obs.KONo > 1, "MultipleKO", "SingleKO")
 ```
 
-## 3. Fitting ComBVAE at the guide level
+## 3. Fitting ComBVAE three times
+
+The model is not fitted once. Quality control runs it three times, each on a
+different labelling of the same cells, because each pass answers a different
+question and each depends on the previous one having cleaned the data it uses.
+
+| Fit | Perturbation label | Purpose |
+|---|---|---|
+| First | Individual guide | Remove untrustworthy guides |
+| Second | Target gene | Remove cells that were not properly perturbed |
+| Third | Target gene, clean data | Produce the perturbation embeddings used downstream |
+
+The ordering matters. Guides have to be judged before cells, because a cell
+assigned to a dead guide cannot be assessed for whether it responded. Cells have
+to be filtered before the final embedding, because unperturbed cells drag every
+perturbation towards the control.
+
+### First fit: at the guide level
+
+The first fit treats **each guide as its own perturbation**, with no pooling by
+target gene. At this point guide identity is the only label that is certain,
+and pooling guides by their annotated target would assume exactly what is being
+tested.
+
+Two kinds of guide are removed using the resulting embeddings.
+
+**Outlier non-targeting controls.** A screen carries many non-targeting guides,
+and together they define the reference against which everything else is
+measured. A control guide whose embedding sits away from the control population
+is behaving like a perturbation, whether through an unintended cut site or an
+effect of the guide sequence itself. Leaving it in corrupts the reference.
+
+**Targeting guides with outlier off-target effects.** A guide can produce a
+strong phenotype that has nothing to do with its intended target. These are
+identified as guides whose embeddings are inconsistent with the other guides
+against the same gene.
+
+What remains are the guides retained on the **conditional dependency structure**
+of the whole embedding space: guides against the same gene are kept when their
+phenotypes are concordant, given the controls.
 
 :::{admonition} Draft
 :class: caution
-This subsection is a scaffold. Content to be written.
+Code, figures and counts for this subsection still to be written.
 :::
 
-<!-- TODO: write this subsection. Points to cover:
-     - Why the model is fitted per guide rather than per target gene at this
-       stage: guide identity is the only label that is certain, and pooling
-       guides before checking them assumes the thing being tested.
-     - The screen contains several guides per target gene plus a large set of
-       non-targeting controls.
-     - Filtering OUT outlier non-targeting guides using their ComBVAE
-       embeddings. A control guide that sits away from the control population
-       is behaving like a perturbation and should not define the reference.
-     - Filtering IN targeting guides using the conditional dependency structure
-       across the whole guide embedding space: guides for the same gene are
-       kept when their phenotypes are concordant given the controls.
-     - Which functions do this: runTrainingComBVAE, extract_model_embeddings,
+<!-- TODO:
+     - Functions: runTrainingComBVAE, extract_model_embeddings,
        visualizePerturbationEmbeddings, selectWorkingGuides.
-     - Figures needed: guide embedding space, control guide distribution with
-       outliers marked, concordance statistics for retained versus dropped
-       guides.
+     - Figures: guide embedding space; control guide distribution with outliers
+       marked; concordance statistics for retained versus dropped guides.
+     - Counts: guides in, guides out, at each of the two removal criteria.
 -->
 
-## 4. Filtering cells that were not properly perturbed
+### Second fit: at the target gene level
+
+With trustworthy guides selected, the model is fitted again, now with cells
+labelled by **target gene** rather than by individual guide. This pass is what
+identifies cells that carry a guide but show no evidence of having been
+perturbed, whether through incomplete editing or escape.
+
+Filtering cells here, rather than earlier, is deliberate. Whether a cell
+responded can only be judged against what the perturbation does in general, and
+that is only estimable once the guides defining it are known to work.
 
 :::{admonition} Draft
 :class: caution
-This subsection is a scaffold. Content to be written.
+Not yet implemented in the package. Method and figures to be written.
 :::
 
-<!-- TODO: write this subsection. Points to cover:
-     - Carrying a guide is not the same as being perturbed: incomplete editing
-       and escaping cells leave a fraction of cells unaffected.
-     - Why this filtering happens after guide selection but before pooling
-       cells across guides that target the same gene.
-     - How unperturbed cells are identified from the model.
-     - The effect on the final object, with counts.
-     - Not yet implemented in the package; state the status plainly.
+<!-- TODO:
+     - How unperturbed cells are identified from this fit.
+     - Where the threshold sits and how it is chosen.
+     - Counts before and after.
+     - State the implementation status plainly.
+-->
+
+### Third fit: on the clean data
+
+The final fit runs on the filtered object: working guides only, properly
+perturbed cells only, pooled to target gene. Its output is the perturbation
+embedding that the rest of the pipeline consumes, and it is the object that
+[effect sizes](02_effect_sizes.md), [modules](03_modules.md) and
+[combination prediction](04_prediction.md) are all built on.
+
+:::{admonition} Draft
+:class: caution
+Code, figures and counts for this subsection still to be written.
+:::
+
+<!-- TODO:
+     - Show that this embedding is cleaner than the first-fit embedding.
+     - Final object dimensions.
+     - What is handed to the downstream stages.
 -->
 
 ## Next step
