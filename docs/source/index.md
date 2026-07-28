@@ -100,15 +100,22 @@ perturbation effects are modelled as non-linear functions of latent state rather
 than as additive shifts.
 ::::
 
-::::{grid-item-card} Grouping genes by disentangled latent factors
+::::{grid-item-card} Connecting perturbations to each other
 {bdg-secondary}`Planned`
 ^^^
-Grouping perturbed genes by correlation of their raw effect vectors is
-noise-sensitive. Grouping them by the *latent factors they affect* is a more
-robust measure of functional connection.
+Deciding which perturbed genes act together is usually done by correlating
+their gene-level effect vectors. That measure inherits every problem described
+above: it is dominated by large, highly correlated gene sets, so two
+perturbations can look connected merely because both touch the same broad
+program, while a shared effect on a small pathway goes unnoticed.
 
-**Approach.** Perturbations will be grouped through the disentangled factors of
-the learned representation rather than through raw expression correlation.
+**Approach.** Perturbations are compared by *which disentangled latent factors
+they affect* rather than by raw expression correlation. Because the beta-VAE
+separates transcriptional programs into distinct factors, two perturbations
+that act on the same small program register as connected even when their
+gene-level profiles are dominated by something else. Grouping at the factor
+level is therefore a more robust measure of functional connection than
+correlating effect vectors.
 ::::
 
 ::::{grid-item-card} No tool handles multiome perturbation screens
