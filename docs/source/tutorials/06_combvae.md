@@ -1,5 +1,10 @@
 # 06 · ComBVAE
 
+:::{admonition} Step 6 of 8 — the pipeline walkthrough
+:class: tip, dropdown
+You are on **step 6**, *ComBVAE*. See the [full stage list](index.md), or start from the [quickstart](quickstart.md) for the whole pipeline on one page.
+:::
+
 :::{admonition} Draft
 :class: caution
 This page is a scaffold. Content to be written.
@@ -52,6 +57,17 @@ import perturbdecode as pd
 ## API
 
 {func}`~perturbdecode.createTrainValData`, {func}`~perturbdecode.runTrainingComBVAE`, {func}`~perturbdecode.extract_model_embeddings`, {func}`~perturbdecode.visualizePerturbationEmbeddings`
+
+## Next step
+
+::::{grid} 1
+:::{grid-item-card} 07 · Predicting combinations
+:link: 07_prediction
+:link-type: doc
+
+Continue the walkthrough.
+:::
+::::
 
 ## Source material
 

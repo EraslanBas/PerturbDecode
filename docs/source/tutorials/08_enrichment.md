@@ -1,5 +1,10 @@
 # 08 · Enrichment and interpretation
 
+:::{admonition} Step 8 of 8 — the pipeline walkthrough
+:class: tip, dropdown
+You are on **step 8**, *Enrichment and interpretation*. See the [full stage list](index.md), or start from the [quickstart](quickstart.md) for the whole pipeline on one page.
+:::
+
 :::{admonition} Draft
 :class: caution
 This page is a scaffold. Content to be written.
@@ -52,6 +57,13 @@ import perturbdecode as pd
 ## API
 
 <!-- TODO -->
+
+## Next step
+
+That is the end of the pipeline walkthrough. From here:
+
+- Revisit the [concepts](../concepts/index.md) behind each stage
+- Browse the [API reference](../api/index.md)
 
 ## Source material
 

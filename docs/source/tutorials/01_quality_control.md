@@ -1,5 +1,10 @@
 # 01 · Quality control
 
+:::{admonition} Step 1 of 8 — the pipeline walkthrough
+:class: tip, dropdown
+You are on **step 1**, *Quality control*. See the [full stage list](index.md), or start from the [quickstart](quickstart.md) for the whole pipeline on one page.
+:::
+
 :::{admonition} Draft
 :class: caution
 This page is a scaffold. Content to be written.
@@ -52,6 +57,17 @@ import perturbdecode as pd
 ## API
 
 <!-- TODO: {func}`~perturbdecode...` once the stage is implemented -->
+
+## Next step
+
+::::{grid} 1
+:::{grid-item-card} 02 · Guide assignment
+:link: 02_guide_assignment
+:link-type: doc
+
+Continue the walkthrough.
+:::
+::::
 
 ## Source material
 

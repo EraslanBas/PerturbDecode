@@ -1,5 +1,10 @@
 # 04 · Effect sizes
 
+:::{admonition} Step 4 of 8 — the pipeline walkthrough
+:class: tip, dropdown
+You are on **step 4**, *Effect sizes*. See the [full stage list](index.md), or start from the [quickstart](quickstart.md) for the whole pipeline on one page.
+:::
+
 :::{admonition} Draft
 :class: caution
 This page is a scaffold. Content to be written.
@@ -52,6 +57,17 @@ import perturbdecode as pd
 ## API
 
 {func}`~perturbdecode.inferEffectSizes`
+
+## Next step
+
+::::{grid} 1
+:::{grid-item-card} 05 · Gene and knockout modules
+:link: 05_modules
+:link-type: doc
+
+Continue the walkthrough.
+:::
+::::
 
 ## Source material
 

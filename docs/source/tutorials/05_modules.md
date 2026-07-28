@@ -1,5 +1,10 @@
 # 05 · Gene and knockout modules
 
+:::{admonition} Step 5 of 8 — the pipeline walkthrough
+:class: tip, dropdown
+You are on **step 5**, *Gene and knockout modules*. See the [full stage list](index.md), or start from the [quickstart](quickstart.md) for the whole pipeline on one page.
+:::
+
 :::{admonition} Draft
 :class: caution
 This page is a scaffold. Content to be written.
@@ -52,6 +57,17 @@ import perturbdecode as pd
 ## API
 
 <!-- TODO -->
+
+## Next step
+
+::::{grid} 1
+:::{grid-item-card} 06 · ComBVAE
+:link: 06_combvae
+:link-type: doc
+
+Continue the walkthrough.
+:::
+::::
 
 ## Source material
 

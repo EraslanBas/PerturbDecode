@@ -114,6 +114,11 @@ html_theme_options = {
     "show_toc_level": 2,
     "show_nav_level": 1,
     "header_links_before_dropdown": 5,
+    # "Edit this page" links straight to the source on GitHub.
+    "use_edit_page_button": True,
+    "show_prev_next": True,
+    # Right-hand sidebar: on-page contents plus the edit link.
+    "secondary_sidebar_items": ["page-toc", "edit-this-page"],
     "icon_links": [
         {
             "name": "PyPI",
