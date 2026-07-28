@@ -13,19 +13,49 @@ perturbation. Building that object from sequencing output takes four steps:
 calling real cells, filtering and merging the channels, resolving which sample
 each cell came from, and attaching the guides each cell received.
 
-:::{admonition} This section documents the v1 pipeline
-:class: note
-These four steps were run with
-[PerturbDecode_v1](https://github.com/EraslanBas/PerturbDecode_v1) for the
-manuscript and are recorded here as a methods reference. They are not yet part
-of the package API, and the figures below come from the full E3 ligase screen.
+:::{important}
+**This part is not the package.** PerturbDecode begins once the combined
+`AnnData` object exists. Assembling it is highly experiment dependent, so
+rather than impose one procedure, we provide the notebooks used for the E3
+ligase screen as a worked example that you can adapt.
+:::
 
-They also consume per-channel CellRanger output, hashtag demultiplexing results
-and feature-barcode tables, which are intermediate files not deposited in GEO.
-To follow the walkthrough without rebuilding the object, download the assembled
-screen from [GEO GSE327057](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE327057)
-and start at [step 03](03_combvae.md). To rebuild it from scratch, start from
-the raw reads under BioProject PRJNA1449386.
+### Using these notebooks for your own screen
+
+The four notebooks are in the repository under
+[`notebooks/build_anndata/`](https://github.com/EraslanBas/PerturbDecode/tree/main/notebooks/build_anndata).
+They run against two files you fill in for your experiment:
+
+- **`samples.csv`**, one row per channel. `sample_name` and `raw` are required;
+  any other column you add is copied into `.obs`.
+- **`parameters.py`**, holding paths and thresholds. Every value in it is
+  experiment specific and must be reviewed before use.
+
+Adapt the steps to your design rather than running all four blindly. The E3
+ligase screen multiplexed samples with hashtag oligos and read out guides
+through a CRISPR feature-barcode library, so it needs the full sequence. A
+screen without hashing skips step 3 entirely; a screen whose guide calls arrive
+in a different format replaces step 4 with its own join.
+
+| Notebook | Purpose | Skip it if |
+|---|---|---|
+| `01-upstream-qc` | Cell calling with `emptyDrops`, QC metrics, diagnostics | never, some form of cell calling is always required |
+| `02-downstream-qc` | Per-cell filtering, concatenation, gene filtering | never |
+| `03-mergeWithHash` | Hashtag demultiplexing, keeping singlets | you did not multiplex with hashing |
+| `04-mergeWithCrispr` | Attaching guide calls from the feature-barcode table | your guide calls arrive in another format |
+
+The figures and counts below come from running these notebooks on the full E3
+ligase screen, described in
+[Eraslan et al., bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.01.23.525198v1).
+
+:::{note}
+These steps consume per-channel CellRanger output, hashtag demultiplexing
+results and feature-barcode tables. Those are intermediate files, and they are
+not deposited in GEO. To follow the rest of the walkthrough without rebuilding
+anything, download the assembled screen from
+[GEO GSE327057](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE327057)
+and start at [step 03](03_combvae.md). To rebuild from scratch, begin with the
+raw reads under BioProject PRJNA1449386.
 :::
 
 The E3 ligase screen enters this process as 47 channels across two experimental

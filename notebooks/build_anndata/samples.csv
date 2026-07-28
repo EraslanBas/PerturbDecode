@@ -1,0 +1,6 @@
+h5ad_or_h5_path,sample_name,raw,round,channel
+E3-1-raw.h5,E3-1,True,E3,1
+E3-2-raw.h5,E3-2,True,E3,2
+E3-3-raw.h5,E3-3,True,E3,3
+E4-1-raw.h5,E4-1,True,E4,1
+E4-2-raw.h5,E4-2,True,E4,2
