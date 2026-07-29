@@ -52,8 +52,8 @@ in a different format replaces step 4 with its own join.
 | `03-mergeWithHash` | Hashtag demultiplexing, keeping singlets | you did not multiplex with hashing |
 | `04-mergeWithCrispr` | Attaching guide calls from the feature-barcode table | your guide calls arrive in another format |
 
-The figures and counts below come from running these notebooks on the full E3
-ligase screen, described in
+The figures below come from running these notebooks on the full E3 ligase
+screen, described in
 [Geiger-Schuller, Eraslan et al., bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.01.23.525198v1),
 *Systematically characterizing the roles of E3-ligase family members in
 inflammatory responses with massively parallel Perturb-seq*.
@@ -67,16 +67,6 @@ anything, download the assembled screen from
 and pick up at subsection 2 below. To rebuild from scratch, begin with the
 raw reads under BioProject PRJNA1449386.
 :::
-
-The E3 ligase screen enters this process as 47 channels across two experimental
-rounds and leaves it as one object:
-
-| Step | Operation | Cells |
-|---|---|---|
-| 1 | Per-channel cell calling | ~21,000 to 28,000 per channel |
-| 2 | Filter and concatenate 47 channels | **1,071,671** |
-| 3 | Hashtag demultiplexing, singlets only | |
-| 4 | Attach guides, drop cells without a confident call | **519,535** |
 
 ### Step 1: call real cells in each channel
 
@@ -116,7 +106,7 @@ with the two red lines marking the `ignore` and `lower` bounds given to
 drop into the ambient population.
 
 ```{image} ../_static/figures/qc/barcode_rank.png
-:alt: Barcode rank against UMI count for each of the 47 channels
+:alt: Barcode rank against UMI count for each channel
 :width: 100%
 ```
 
@@ -182,8 +172,6 @@ computed from the full transcriptome but the genes themselves do not contribute
 to downstream variation. Requiring a gene in at least 400 cells removes those
 too rare to estimate an effect on.
 
-This yields **1,071,671 cells by 31,040 genes** across the 47 channels.
-
 ### Step 3: resolve which sample each cell came from
 
 Channels are multiplexed, so cells from several samples share a lane and are
@@ -233,10 +221,9 @@ handles chimeric reads: a guide contributing less than 20% of a cell's CRISPR
 reads is treated as contamination from another cell rather than as a real
 perturbation.
 
-The effect is substantial. The guide matrix goes from 1,166,357 cells to 757,147
-after the single-read filter, and to 754,450 after the chimeric filter. Joining
-against the hash-filtered expression object leaves **519,535 cells**, each with
-a confident sample assignment and a confident set of guides.
+Both filters remove a substantial share of cells. What survives the join
+against the hash-filtered expression object is the working object: every cell
+with a confident sample assignment and a confident set of guides.
 
 ### Parameters
 
@@ -358,10 +345,9 @@ cleaner option when states are strongly distinct, but it requires each
 perturbation to retain enough cells within each state to be estimable, which
 becomes the limiting constraint in a large screen.
 
-In the E3 ligase screen the model was fitted on the **DC2 population alone**,
-the largest of the states identified above, giving **144,138 cells**. That
-sidesteps the confounding entirely at the cost of discarding the other states,
-and is a reasonable choice when one population dominates.
+In the E3 ligase screen the model was fitted on the largest population alone.
+That sidesteps the confounding entirely at the cost of discarding the other
+states, and is a reasonable choice when one population dominates.
 
 :::{note}
 Whichever route you take, decide it here. Everything from this point rests on
@@ -413,10 +399,6 @@ phenotypes are concordant, given the controls.
 :class: caution
 Code, figures and counts for this subsection still to be written.
 :::
-
-For the E3 ligase screen this fit ran on the DC2 population with 2,132 guide
-covariates over 6,685 genes, using 64 latent dimensions and a 64 dimensional
-perturbation embedding, trained for 1,000 epochs.
 
 <!-- TODO:
      - Show the call: runTrainingComBVAE, extract_model_embeddings,
