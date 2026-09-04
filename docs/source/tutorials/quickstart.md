@@ -71,7 +71,8 @@ pd.visualizePerturbationEmbeddings(embeddings, perturbationsList=categories)
 
 ## Where to go next
 
-- {doc}`00_data_preparation`: what PerturbDecode expects of your `AnnData`
+- {doc}`00_data_preparation`: how the input object is assembled, and what
+  PerturbDecode expects of it
 - {doc}`01_quality_control`: start of the full pipeline
 - {doc}`../concepts/combvae`: how the model works
 

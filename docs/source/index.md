@@ -62,11 +62,14 @@ Every public function and class.
 
 ## The pipeline
 
-Each stage is an importable function operating on {class}`~anndata.AnnData`, so
-you can enter the pipeline at any point.
+Stages 01 onwards are importable functions operating on
+{class}`~anndata.AnnData`, so you can enter the pipeline at any point. Stage 00
+comes before the package: it assembles the object everything else starts from,
+and is provided as example notebooks to adapt rather than as API.
 
 | | Stage | Status | What it produces |
 |---|---|---|---|
+| 00 | [Generating the AnnData object](tutorials/00_data_preparation.md) | {bdg-info}`Example notebooks` | The assembled screen: called cells with their channel, sample and guide annotation |
 | 01 | [Quality control](tutorials/01_quality_control.md) | {bdg-warning}`Partial` | A filtered object of properly perturbed cells, with working guides pooled to their target genes |
 | 02 | [Effect sizes](tutorials/02_effect_sizes.md) | {bdg-warning}`Partial` | Coefficient and FDR matrices, the beta matrix |
 | 03 | [Modules](tutorials/03_modules.md) | {bdg-secondary}`Planned` | Gene programmes and perturbation groups |

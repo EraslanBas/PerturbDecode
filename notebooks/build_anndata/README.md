@@ -51,6 +51,9 @@ pip install 'PerturbDecode[r]'
 
 ## Where to go next
 
-Once the object exists, the package takes over. See the
-[quality control walkthrough](https://perturbdecode.readthedocs.io/en/latest/tutorials/01_quality_control.html)
-for the full narrative, including figures from the E3 ligase screen.
+These notebooks are documented step by step, with figures from the E3 ligase
+screen, on the
+[object generation page](https://perturbdecode.readthedocs.io/en/latest/tutorials/00_data_preparation.html).
+
+Once the object exists, the package takes over at
+[quality control](https://perturbdecode.readthedocs.io/en/latest/tutorials/01_quality_control.html).

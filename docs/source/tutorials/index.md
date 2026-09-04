@@ -12,7 +12,7 @@ end on a small dataset before working through the individual stages.
 
 ## Start here
 
-::::{grid} 1 2 2 2
+::::{grid} 1
 :gutter: 3
 
 :::{grid-item-card} {octicon}`zap;1.5em;sd-mr-1` Quickstart
@@ -22,13 +22,6 @@ end on a small dataset before working through the individual stages.
 The whole pipeline on a small public dataset, in one page.
 :::
 
-:::{grid-item-card} {octicon}`database;1.5em;sd-mr-1` Preparing your data
-:link: 00_data_preparation
-:link-type: doc
-
-What PerturbDecode expects in `.X`, `.obs` and `.uns`.
-:::
-
 ::::
 
 ## The pipeline, stage by stage
@@ -36,11 +29,18 @@ What PerturbDecode expects in `.X`, `.obs` and `.uns`.
 ::::{grid} 1 2 3 3
 :gutter: 3
 
+:::{grid-item-card} 00 · Generating the AnnData object
+:link: 00_data_preparation
+:link-type: doc
+
+Assembling the screen from per-channel output. Precedes the package.
+:::
+
 :::{grid-item-card} 01 · Quality control
 :link: 01_quality_control
 :link-type: doc
 
-Building the object, cell states, guide-level ComBVAE, guide and cell filtering.
+Cell states, guide-level ComBVAE, guide and cell filtering.
 :::
 
 :::{grid-item-card} 02 · Effect sizes
@@ -78,13 +78,13 @@ Protein complexes, transcription factors and pathway enrichment.
 :caption: Getting started
 
 quickstart
-00_data_preparation
 ```
 
 ```{toctree}
 :hidden:
 :caption: Pipeline stages
 
+00_data_preparation
 01_quality_control
 02_effect_sizes
 03_modules
