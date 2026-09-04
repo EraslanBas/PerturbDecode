@@ -9,12 +9,10 @@ the whole pipeline on one page.
 :::
 
 Everything downstream operates on a single {class}`~anndata.AnnData` object in
-which each row is a cell that passed quality control and carries a known
-perturbation. This stage builds that object; [quality control](01_quality_control.md)
-begins once it exists.
+which each row is a cell that passed the first basic quality control and carries a known
+perturbation. This stage builds that object; [quality control](01_quality_control.md) which does additional quality checks begins once it exists.
 
-That object is never generated in one piece. Droplet capture has a fixed
-capacity, so a screen is split across many channels, and larger screens run in
+In large scale Perturb-seq experiments, the initial output object is never generated in one piece. Droplet capture has a fixed capacity, so a screen is split across many channels, and larger screens run in
 several batches. These have to be combined first, carrying the channel and batch
 of origin with them, since batch is a technical source of variation that later
 stages account for.
