@@ -60,6 +60,8 @@
 # ---- Template files shipped with the example notebooks ----
 # Exact paths only: CSVs are data by default and stay excluded.
 !notebooks/build_anndata/samples.csv
+# Cell-cycle gene list vendored because its upstream URL now 404s
+!notebooks/manuscript_figures/regev_lab_cell_cycle_genes.txt
 
 # ---- Documentation figures ----
 # Scoped to docs/ on purpose: raster images elsewhere in the repo are result

@@ -6,3 +6,8 @@
 # figures without shipping the data. Do not add nbstrip here.
 docs/source/tutorials/**/*.ipynb -filter
 docs/source/tutorials/*.ipynb -filter
+
+# The manuscript figure notebooks are executed once against the E3 ligase
+# screen and committed WITH their outputs, so the published figures are
+# visible without shipping the data. Same rationale as the tutorials above.
+notebooks/manuscript_figures/*.ipynb -filter
