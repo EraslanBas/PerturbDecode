@@ -1,3 +1,72 @@
+annoCols<-list(GeneGroup=c(G0='#A6CEE3',
+                           G1='#1F78B4',
+                           G2='#B2DF8A',
+                           G3='#33A02C', 
+                           G4='#FB9A99', 
+                           G5='#FDBF6F', 
+                           G6='#FF7F00', 
+                           G7='#CAB2D6',
+                           G8='#6A3D9A', 
+                           G9='#FFFF99', 
+                           G10="#B5651D",
+                           G11="black"),
+                 # GuideGroup=c(K0="#1f77b4",
+                 #              K1="#ff7f0e",
+                 #              K2="#279e68",
+                 #              K3="#d62728", 
+                 #              K4="#aa40fc", 
+                 #              K5="#8c564b"),
+                NewGuideGroup=c(M2="#1f77b4",
+                             M3="#ff7f0e",
+                             M6="#279e68",
+                             M5="#d62728", 
+                             M1="#aa40fc", 
+                             M4="#8c564b"),
+                 NewGeneGroup=c(
+                           GP_1='#FF7F00',
+                           GP_2='#FFFF99', 
+                           GP_3="#B5651D",
+                           GP_4='#FDBF6F', 
+                           GP_5='#FB9A99',
+                           GP_6='#CAB2D6',
+                           GP_7='#A6CEE3',
+                           GP_8='#1F78B4',
+                           GP_9='#33A02C',
+                           GP_10='#B2DF8A',
+                           GP_11='#6A3D9A'    
+                           #,GP_12="black"
+                 ),
+                 NewGeneAllGroups=c(
+                           GP_1='#FF7F00',
+                           GP_2='#FFFF99', 
+                           GP_3="#B5651D",
+                           GP_4='#FDBF6F', 
+                           GP_5='#FB9A99',
+                           GP_6='#CAB2D6',
+                           GP_7='#A6CEE3',
+                           GP_8='#1F78B4',
+                           GP_9='#33A02C',
+                           GP_10='#B2DF8A',
+                           GP_11='#6A3D9A',
+                           GPC_1="blue",
+                           GPC_2="magenta",
+                           GPC_3="cyan",
+                           GPC_4="orange",
+                           GPC_5="red"
+                           
+                           
+                 ),
+                NewPrograms = c(GPC_1="blue",
+                           GPC_2="magenta",
+                           GPC_3="cyan",
+                           GPC_4="orange",
+                           GPC_5="red"),
+                 GuideGroupCombo=c(
+                              M3_M3="blue",
+                              M3_M5="green", 
+                              M5_M5="red"))
+
+
 "%ni%" = Negate( "%in%" )
 
 computeR2 <- function(response, prediction){
@@ -7,6 +76,15 @@ computeR2 <- function(response, prediction){
     return(R2)
 }
   
+save_pheatmap_pdf <- function(x, filename, width=7, height=7) {
+   stopifnot(!missing(x))
+   stopifnot(!missing(filename))
+   pdf(filename, width=width, height=height)
+   grid::grid.newpage()
+   grid::grid.draw(x$gtable)
+   dev.off()
+}
+
 
 lappend <- function(lst, obj) {
   lst[[length(lst)+1]] <- obj
@@ -106,6 +184,7 @@ getJaccardDistanceMatrix <- function(inList){
     return(tmpDF)
 }
 
+# --- functions present only in the archived PerturbDecode_v1 copy ---
 
 writePathwayFile <- function(pathwayGenes, fileName, cNames=F){
   maxlen <- max(lengths(pathwayGenes))

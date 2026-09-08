@@ -1,5 +1,5 @@
 # Parameters
-projectDir="/home/eraslab1/Projects/E3Ligase/analysisSingle"
+projectDir="/home/eraslab1/Projects/PerturbDecode/notebooks/manuscript_figures"
 anndataFileName="outputs/anndata/adata-hash-features_singlets_05232020.h5ad"
 anndataFileName2="outputs/anndata/adata-hash-features_singlets_05242020.h5ad"
 
