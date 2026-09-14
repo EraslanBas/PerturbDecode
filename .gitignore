@@ -60,6 +60,12 @@
 # ---- Template files shipped with the example notebooks ----
 # Exact paths only: CSVs are data by default and stay excluded.
 !notebooks/build_anndata/samples.csv
+
+# Reference tables the replication notebooks read, and the small result tables
+# they write. Narrow exception to the no-data rule above: these are what lets
+# the analysis be rerun, and checked, from the screen object alone. Large
+# objects still never enter the repository.
+!notebooks/build_anndata/TextFiles/*.csv
 # Cell-cycle gene list vendored because its upstream URL now 404s
 !notebooks/manuscript_figures/regev_lab_cell_cycle_genes.txt
 
