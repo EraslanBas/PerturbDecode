@@ -20,19 +20,3 @@ without rerunning them. Rerunning overwrites them in place.
 | File | Written by | What it is |
 |---|---|---|
 | `NoOfCellsPerGuide_GeneLevel.csv` | `07_AnalyseGuideDepletion` | One row per target gene: its cell count in the pool and in the screen, both as proportions, with the depletion p-value and FDR. 1,130 genes; 419 are depleted at FDR < 0.1, led by *Mdm2*, *Copa*, *Gnb4*, *Traip* and *Cdc20*. |
-
-## Notes on `GuidePoolSummary_2.csv`
-
-3,719 guides, matching 3,710 of the 3,720 in the screen object. The ten that do
-not match are accounted for:
-
-- Nine are genes whose names contain a hyphen — `Rnf8-cmtr1`, `Siah1-ps1`,
-  `Siah1-ps2`, three guides each. The pool table writes them with underscores,
-  and notebook 07 restores the hyphens before merging.
-- `ONE_NONGENE_SITE_330` appears in the screen but has no pool entry, so it
-  drops out of the comparison.
-
-Line 890 is a totals row, `Fullstats,2361996`, sitting among the guides rather
-than at the top or bottom of the file. Notebook 07 removes it by name. Left in,
-it would be treated as a guide contributing 2.4 million cells and would distort
-every proportion in the depletion test.
