@@ -11,3 +11,9 @@ docs/source/tutorials/*.ipynb -filter
 # screen and committed WITH their outputs, so the published figures are
 # visible without shipping the data. Same rationale as the tutorials above.
 notebooks/manuscript_figures/*.ipynb -filter
+
+# The object-building and screen-replication notebooks are likewise executed
+# against the E3 ligase screen and committed WITH their outputs, so their
+# figures and cell counts are readable on GitHub without shipping the data.
+# Same rationale again.
+notebooks/build_anndata/*.ipynb -filter
