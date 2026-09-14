@@ -118,6 +118,11 @@ par_control_guide_contamination = 0.1
 ## original analysis set no seed; see the note in notebook 08.
 par_control_guide_random_state = 0
 
+## Notebook 08 writes its recomputed list here. The list the rest of the
+## analysis reads, par_outlier_controlguides_file, is provided in TextFiles and
+## is left untouched by a re-run.
+par_outlier_controlguides_recomputed_file = "outputs/OutlierControlGuides_recomputed.csv"
+
 par_guide_depletion_file = "TextFiles/NoOfCellsPerGuide_GeneLevel.csv"
 ## Guide distribution across DC subtypes, written by notebook 14.
 par_guide_subtype_dist_file = "TextFiles/GuideDistAcrossSubtypes.csv"
