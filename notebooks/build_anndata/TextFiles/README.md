@@ -10,6 +10,7 @@ Read by the notebooks, produced by none of them.
 
 | File | Read by | What it is |
 |---|---|---|
+| `OutlierControlGuides.csv` | `09_FilterGenesAndCells` | The 31 control guides that showed a transcriptional effect and are dropped from the control population. This is the list the published results were built on. Notebook 08 documents how it was derived but does not reproduce it — the selection uses detectors that are internally stochastic and was originally run without a seed, so re-running gives a different set. Treat this file as the input, not as something to regenerate. |
 | `GuidePoolSummary_2.csv` | `07_AnalyseGuideDepletion` | One row per guide: the number of cells that guide contributed to the delivered plasmid pool. Notebook 07 compares each gene's share of the pool with its share of the screen to find guides whose targets are essential. |
 
 ## Outputs

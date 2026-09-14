@@ -114,6 +114,9 @@ par_control_guide_n_pcs = 100
 par_control_guide_outlier_votes = 2
 ## Contamination rate for the outlier detectors that take one.
 par_control_guide_contamination = 0.1
+## Seed for the two outlier detectors that are internally stochastic. The
+## original analysis set no seed; see the note in notebook 08.
+par_control_guide_random_state = 0
 
 par_guide_depletion_file = "TextFiles/NoOfCellsPerGuide_GeneLevel.csv"
 ## Guide distribution across DC subtypes, written by notebook 14.
