@@ -36,7 +36,3 @@ Line 890 is a totals row, `Fullstats,2361996`, sitting among the guides rather
 than at the top or bottom of the file. Notebook 07 removes it by name. Left in,
 it would be treated as a guide contributing 2.4 million cells and would distort
 every proportion in the depletion test.
-
-A second file named `GuidePoolSummary.csv` exists in the original analysis tree.
-It is a different table and matches the screen object far less well (3,519 of
-3,720 guides). It is not the one to use.
