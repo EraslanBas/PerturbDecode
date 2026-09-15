@@ -124,8 +124,6 @@ par_control_guide_random_state = 0
 par_outlier_controlguides_recomputed_file = "outputs/OutlierControlGuides_recomputed.csv"
 
 par_guide_depletion_file = "TextFiles/NoOfCellsPerGuide_GeneLevel.csv"
-## Guide distribution across DC subtypes, written by notebook 14.
-par_guide_subtype_dist_file = "TextFiles/GuideDistAcrossSubtypes.csv"
 
 ## Per-guide negative binomial fits, written by notebook 10.
 ## The fit runs one model per response gene with a block of guides as
