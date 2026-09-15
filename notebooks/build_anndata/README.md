@@ -39,6 +39,63 @@ library) and are meant to be read and adapted rather than run unchanged.
 Run them in order. Notebook 01 writes `session_01.pkl`, which 02 reads; 02
 onwards write the `AnnData` object named by `par_save_filename_1`.
 
+## Reproducing the published analysis
+
+Notebooks 05 to 19 are a different kind of thing from the four above, and it is
+worth being explicit about it.
+
+They reproduce the analysis published for the E3 ligase screen. They were
+written for that one experiment, before PerturbDecode existed — the package is
+what came out of doing this work and finding a more general way to do it. They
+are kept here so the published results can be reproduced and checked, not as a
+route to follow for a new screen. For a new screen, start from the package at
+[quality control](https://perturbdecode.readthedocs.io/en/latest/tutorials/01_quality_control.html).
+
+For that reason they are **not part of the documentation**. The tutorial pages
+cover notebooks 01 to 04 and then hand over to the package.
+
+### What they do
+
+They embed and cluster the object, decide which guides worked, estimate each
+knockout's effect on each gene, group those effects into modules, and build the
+train/test objects the combinatorial models read.
+
+[`WORKFLOW.md`](WORKFLOW.md) lists all nineteen notebooks with what each
+produces, and describes the five stages they fall into.
+
+They follow the same conventions as 01 to 04 — `from parameters import *`,
+`os.chdir(projectDir)`, every path and threshold in `parameters.py`.
+
+### Running them
+
+`07_AnalyseGuideDepletion` is a diagnostic that nothing downstream reads and
+can be skipped.
+
+Four steps take days or longer and are not meant to be rerun: the two guide
+fits (10 and 11), the cell selection (14) and the effect-size fit (15). Their
+results are provided in `TextFiles/`, each notebook documents how it was
+produced, and each writes its own copy under `outputs/` so nothing provided is
+overwritten.
+
+Notebook 10 comes in two versions, `_NegativeBinomial` and `_OLS`. Run one, then
+set `par_guide_lm_model` to match so notebook 12 reads it. Each writes into its
+own subdirectory, so both can be fitted and compared.
+
+Notebooks 10 and 16 are the long ones. The negative binomial fit can be
+parallelised by setting `par_guide_block_start` to one guide block per process.
+All the fitting notebooks write each block as it completes and skip blocks
+already on disk, so an interrupted run resumes.
+
+One further input is not produced by any notebook:
+`par_initial_guide_pool_file`, the cells-per-guide composition of the delivered
+plasmid pool. It is used only by the diagnostic notebook 07.
+
+### Before you rely on the output
+
+Compare the counts each notebook prints against the numbers in the paper before
+treating a result as reproduced. Notebooks 16 to 19 have not been run here at
+all.
+
 ## Requirements
 
 Beyond the PerturbDecode dependencies these notebooks need R with
@@ -51,7 +108,7 @@ pip install 'PerturbDecode[r]'
 
 ## Where to go next
 
-These notebooks are documented step by step, with figures from the E3 ligase
+Notebooks 01 to 04 are documented step by step, with figures from the E3 ligase
 screen, on the
 [object generation page](https://perturbdecode.readthedocs.io/en/latest/tutorials/00_data_preparation.html).
 
