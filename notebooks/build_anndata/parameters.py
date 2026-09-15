@@ -199,7 +199,13 @@ par_effect_nb_dir = "outputs/MixedEffectNegativeBinomialLMOutputs"
 ## par_selected_coef_matrix_file, is small and is provided in TextFiles.
 par_effect_coefs_file = "outputs/ME_LMBetaCoefsALL.csv"
 par_effect_pvals_file = "outputs/ME_LMPValuesALL.csv"
-par_effect_fdr_file = "outputs/ME_AdjustedPValues.csv"
+par_effect_fdr_file = "outputs/ME_LMBetaFDRALL.csv"
+## The reduced FDR matrix, matching par_selected_coef_matrix_file.
+par_effect_adjusted_pvals_file = "outputs/ME_AdjustedPValues.csv"
+## The same model run over control guides, which are not perturbations. Used
+## by notebook 16 as the null when choosing the cutoff. Downloaded separately.
+par_effect_control_coefs_input = par_downloaded_data_dir + "/ME_LMBetaCoefsALL_Control.csv"
+par_effect_control_pvals_input = par_downloaded_data_dir + "/ME_LMPValuesALL_Control.csv"
 par_selected_coef_matrix_recomputed_file = "outputs/ME_SignificantBetaCoefs_recomputed.csv"
 par_effect_fdr_cutoff = 0.1
 ## A knockout is kept when it moves more than this many genes at that FDR;
@@ -233,6 +239,8 @@ par_save_filename_testcontrol = par_dataset_dir + "/adataTestControl.h5ad"
 ## Notebooks 15 and 17 subset the per-gene object to these before fitting, so
 ## the large intermediate object never has to exist.
 par_em_selected_cells_file = "TextFiles/selectedCellsAfterEM.csv"
+## Notebook 14 writes its own selection here, leaving the provided list alone.
+par_em_selected_cells_recomputed_file = "outputs/selectedCellsAfterEM_recomputed.csv"
 
 par_em_probability_cutoff = 0.7
 

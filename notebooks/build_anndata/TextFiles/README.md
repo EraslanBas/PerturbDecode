@@ -10,8 +10,9 @@ Read by the notebooks, produced by none of them.
 
 | File | Read by | What it is |
 |---|---|---|
+| `selectedCellsAfterEM.csv` | `15_EstimateKnockoutEffects`, `18_BuildCombinedKOObject` | The 242,938 cells the expectation-maximisation step judged to be genuinely perturbed, one barcode per row in a column named `x`. A cell can carry a guide and show no transcriptional response to it; those are excluded here so they do not dilute the effect estimates. Notebook 14 records how the selection was made and writes its own copy under `outputs/`. |
 | `OutlierControlGuides.csv` | `09_FilterGenesAndCells` | The 31 control guides that showed a transcriptional effect and are dropped from the control population. Notebook 08 records how they were selected and writes its own result to a separate file, so this one is left untouched by a re-run. |
-| `ME_SignificantBetaCoefs.csv` | `16_IdentifyGeneAndGuideModules` | The knockout-by-gene effect-size matrix, reduced to the knockouts and genes carrying signal. A knockout is kept when it moves more than `par_significant_target_cutoff` genes at `par_effect_fdr_cutoff`, a gene when more than `par_significant_gene_cutoff` knockouts move it. Rows are knockouts as `GENE_<target>_`, columns are response genes, values are fitted coefficients. This is the matrix notebook 16 clusters into gene and guide modules. |
+| `ME_SignificantBetaCoefs.csv` | `17_IdentifyGeneAndGuideModules` | The knockout-by-gene effect-size matrix, reduced to the knockouts and genes carrying signal. A knockout is kept when it moves more than `par_significant_target_cutoff` genes at `par_effect_fdr_cutoff`, a gene when more than `par_significant_gene_cutoff` knockouts move it. Rows are knockouts as `GENE_<target>_`, columns are response genes, values are fitted coefficients. Produced by notebook 16 from the full matrices; notebook 17 clusters it into gene and guide modules. |
 | `GuideSelect_BadKOGuides.csv` | `13_ReduceGuidesToGenes` | The 958 knockout guides whose effect profile did not agree with another guide against the same gene, dropped before guides are collapsed onto their target. Notebooks 10 and 12 record how they were identified; that fit takes days across all guides, so its result is provided here. |
 | `GuideSelect_GoodGuides.csv` | — | The 2,256 guides that were kept, as the gene and guide pairs that agreed. Companion to the file above; the two are disjoint and together cover the knockout guides that survived filtering. |
 | `GuidePoolSummary_2.csv` | `07_AnalyseGuideDepletion` | One row per guide: the number of cells that guide contributed to the delivered plasmid pool. Notebook 07 compares each gene's share of the pool with its share of the screen to find guides whose targets are essential. |
@@ -36,6 +37,17 @@ are shared as files, and the notebooks look for them **by these exact names**:
 | `GuideSelect_pvals.csv` | 379 MB | nothing; the matching p-values, kept for completeness |
 | `Control_coefs.csv` | 43 MB | the supplementary figure notebooks |
 | `Control_pValues.csv` | 40 MB | the supplementary figure notebooks |
+| `ME_LMBetaCoefsALL.csv` | 44 MB | `16_SelectSignificantEffects` |
+| `ME_LMPValuesALL.csv` | 41 MB | `16_SelectSignificantEffects` |
+| `ME_LMBetaFDRALL.csv` | 120 MB | the manuscript figure notebooks |
+| `ME_LMBetaCoefsALL_Control.csv` | 17 MB | `16_SelectSignificantEffects`, as the null |
+| `ME_LMPValuesALL_Control.csv` | 16 MB | `16_SelectSignificantEffects`, as the null |
+
+The `ME_LM*ALL` files are notebook 15's result: every knockout against every
+response gene, 1,035 fitted rows by 6,685 genes. Notebook 16 reduces them to
+`ME_SignificantBetaCoefs.csv` above. The `_Control` pair is the same model run
+over control guides, which notebook 16 uses as the null when choosing its
+cutoff.
 
 The two `Control_*` files are notebook 11's result: each control guide's fitted
 effect on each gene, and the matching p-values. They are the null distribution
