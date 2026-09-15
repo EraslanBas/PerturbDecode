@@ -90,7 +90,7 @@ par_test_target_dist='NB'
 par_test_target_model='MixedEfNB'
 par_test_target_interval=10
 par_test_target_file='./TextFiles/TargetTestRes_2.csv'
-par_selected_coef_matrix_file='./TextFiles/SignificantBetaCoefs.csv'
+par_selected_coef_matrix_file='TextFiles/ME_SignificantBetaCoefs.csv'
 par_guideModules_file="Leiden_guide_modules.csv"
 par_geneModules_file="Leiden_gene_modules.csv"
 
@@ -182,9 +182,25 @@ par_guide_pair_corr_threshold = 0.015
 # ---------------------------------------------------------------------------
 # Notebooks 12 and 13: effect sizes and modules
 # ---------------------------------------------------------------------------
-par_effect_coefs_file = "TextFiles/ME_LMBetaCoefsALL.csv"
-par_effect_pvals_file = "TextFiles/ME_LMPValuesALL.csv"
-par_effect_fdr_file = "TextFiles/ME_AdjustedPValues.csv"
+## Which model notebook 15 fits. "NB" uses a negative binomial mixed model
+## (lme4::glmer.nb) on raw counts; anything else uses a linear mixed model
+## (statsmodels MixedLM) on normalised expression.
+##
+## The two differ in more than the likelihood. glmer.nb cannot carry a thousand
+## fixed effects, so the NB path fits par_target_block_size knockouts at a time
+## against a fixed panel of control cells, while the linear path fits all
+## knockouts together against the whole population.
+par_target_block_size = 10
+par_nb_target_control_cells = 5000
+par_effect_nb_dir = "outputs/MixedEffectNegativeBinomialLMOutputs"
+
+## Notebook 15 writes these; they are tens of megabytes, so they stay out of
+## the tracked directory. The reduced matrix it derives,
+## par_selected_coef_matrix_file, is small and is provided in TextFiles.
+par_effect_coefs_file = "outputs/ME_LMBetaCoefsALL.csv"
+par_effect_pvals_file = "outputs/ME_LMPValuesALL.csv"
+par_effect_fdr_file = "outputs/ME_AdjustedPValues.csv"
+par_selected_coef_matrix_recomputed_file = "outputs/ME_SignificantBetaCoefs_recomputed.csv"
 par_effect_fdr_cutoff = 0.1
 ## A knockout is kept when it moves more than this many genes at that FDR;
 ## a gene is kept when more than this many knockouts move it.
@@ -213,6 +229,11 @@ par_save_filename_testcontrol = par_dataset_dir + "/adataTestControl.h5ad"
 
 ## Probability cutoff for the EM in notebook 11. Cells at or below this carry a
 ## guide but show no transcriptional response to it.
+## The cells the EM judged to be genuinely perturbed, written by notebook 14.
+## Notebooks 15 and 17 subset the per-gene object to these before fitting, so
+## the large intermediate object never has to exist.
+par_em_selected_cells_file = "TextFiles/selectedCellsAfterEM.csv"
+
 par_em_probability_cutoff = 0.7
 
 ## Control cells held out by notebook 15. The split is positional, not seeded.
