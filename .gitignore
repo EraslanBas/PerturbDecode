@@ -66,6 +66,7 @@
 # the analysis be rerun, and checked, from the screen object alone. Large
 # objects still never enter the repository.
 !notebooks/build_anndata/TextFiles/*.csv
+!notebooks/build_anndata/TextFiles/*.csv.gz
 # Cell-cycle gene list vendored because its upstream URL now 404s
 !notebooks/manuscript_figures/regev_lab_cell_cycle_genes.txt
 

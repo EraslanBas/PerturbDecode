@@ -197,6 +197,12 @@ par_effect_nb_dir = "outputs/MixedEffectNegativeBinomialLMOutputs"
 ## Notebook 15 writes these; they are tens of megabytes, so they stay out of
 ## the tracked directory. The reduced matrix it derives,
 ## par_selected_coef_matrix_file, is small and is provided in TextFiles.
+## Provided, gzipped: the assembled fit from notebook 15 and the corrected
+## matrix from notebook 16. Notebook 16 reads the first if notebook 15 has not
+## been run. pandas reads .gz directly, so no decompression is needed.
+par_effect_coefs_input = "TextFiles/ME_LMBetaCoefsALL.csv.gz"
+par_effect_fdr_input = "TextFiles/ME_LMBetaFDRALL.csv.gz"
+
 par_effect_coefs_file = "outputs/ME_LMBetaCoefsALL.csv"
 par_effect_pvals_file = "outputs/ME_LMPValuesALL.csv"
 par_effect_fdr_file = "outputs/ME_LMBetaFDRALL.csv"
