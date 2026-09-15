@@ -23,3 +23,43 @@ without rerunning them. Rerunning overwrites them in place.
 | File | Written by | What it is |
 |---|---|---|
 | `NoOfCellsPerGuide_GeneLevel.csv` | `07_AnalyseGuideDepletion` | One row per target gene: its cell count in the pool and in the screen, both as proportions, with the depletion p-value and FDR. 1,130 genes; 419 are depleted at FDR < 0.1, led by *Mdm2*, *Copa*, *Gnb4*, *Traip* and *Cdc20*. |
+
+## Downloaded separately
+
+Four tables from the guide-effect fits are too large for this repository. They
+are shared as files, and the notebooks look for them **by these exact names**:
+
+| File | Size | Read by |
+|---|---|---|
+| `GuideSelect_weights.csv` | 402 MB | `12_SelectKnockoutGuides` |
+| `GuideSelect_pvals.csv` | 379 MB | nothing; the matching p-values, kept for completeness |
+| `Control_coefs.csv` | 43 MB | the supplementary figure notebooks |
+| `Control_pValues.csv` | 40 MB | the supplementary figure notebooks |
+
+The two `Control_*` files are notebook 11's result: each control guide's fitted
+effect on each gene, and the matching p-values. They are the null distribution
+the knockout effects are read against.
+
+`GuideSelect_weights.csv` holds each guide's fitted effect on each gene, 6,560
+genes by 3,204 guides, with the gene and guide names already in the file.
+
+To use it, put it in the directory named by `par_downloaded_data_dir`, which is
+`data/` by default, keeping the file name:
+
+```
+notebooks/build_anndata/
+  data/
+    GuideSelect_weights.csv
+    GuideSelect_pvals.csv
+    Control_coefs.csv
+    Control_pValues.csv
+```
+
+Notebook 12 then reads it instead of assembling the per-block fits from
+notebook 10, which takes days across all guides. If neither is present the
+notebook stops and says so rather than failing part way through.
+
+Neither file is needed to run the rest of the analysis: the selection they lead
+to is provided above as `GuideSelect_BadKOGuides.csv` and
+`GuideSelect_GoodGuides.csv`, and notebook 13 reads the first of those
+directly.

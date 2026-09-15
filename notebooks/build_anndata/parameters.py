@@ -152,10 +152,29 @@ par_good_guides_file = "TextFiles/GuideSelect_GoodGuides.csv"
 par_bad_KO_guides_recomputed_file = "outputs/GuideSelect_BadKOGuides_recomputed.csv"
 par_good_guides_recomputed_file = "outputs/GuideSelect_GoodGuides_recomputed.csv"
 
+## Files that are too large for the repository and are downloaded separately.
+## Put them in this directory, keeping their names; see TextFiles/README.md.
+par_downloaded_data_dir = "data"
+
+## The fitted guide coefficients, genes by guides, from the published analysis.
+## If this file is present, notebook 12 reads it instead of assembling the
+## per-block fits from notebook 10, which takes days to produce.
+par_guide_lm_weights_input = par_downloaded_data_dir + "/GuideSelect_weights.csv"
+## The matching p-values. Not read by anything; listed so the pair is documented.
+par_guide_lm_pvals_input = par_downloaded_data_dir + "/GuideSelect_pvals.csv"
+
+## The control-guide fits from the published analysis, assembled. Read by the
+## supplementary figure notebooks rather than by anything here.
+par_control_coefs_input = par_downloaded_data_dir + "/Control_coefs.csv"
+par_control_pvals_input = par_downloaded_data_dir + "/Control_pValues.csv"
+
 ## Control-guide effect sizes, written by notebook 11 and read by SuppFigure1_F.
 par_control_lm_dir = "outputs/ControlGuideEffects"
-par_control_coefs_file = "TextFiles/Control_coefs.csv"
-par_control_pvals_file = "TextFiles/Control_pValues.csv"
+## Notebook 11 writes its assembled control-guide fits here. They are large, so
+## they stay out of the repository; the published versions are downloaded
+## separately as par_control_coefs_input / par_control_pvals_input below.
+par_control_coefs_file = "outputs/Control_coefs.csv"
+par_control_pvals_file = "outputs/Control_pValues.csv"
 
 ## Two guides against the same gene agree when the correlation between their
 ## beta profiles exceeds this. If every pair for a gene clears it, all are kept;
