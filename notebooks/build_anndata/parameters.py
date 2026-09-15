@@ -146,6 +146,12 @@ par_guide_lm_weights_file = par_guide_lm_dir + "/GuideSelect_weights.csv"
 par_guide_lm_pvals_file = par_guide_lm_dir + "/GuideSelect_pvals.csv"
 par_good_guides_file = "TextFiles/GuideSelect_GoodGuides.csv"
 
+## Notebook 12 writes its recomputed lists here. The lists the rest of the
+## analysis reads, par_bad_KO_guides_file and par_good_guides_file, are provided
+## in TextFiles and are left untouched by a re-run.
+par_bad_KO_guides_recomputed_file = "outputs/GuideSelect_BadKOGuides_recomputed.csv"
+par_good_guides_recomputed_file = "outputs/GuideSelect_GoodGuides_recomputed.csv"
+
 ## Control-guide effect sizes, written by notebook 11 and read by SuppFigure1_F.
 par_control_lm_dir = "outputs/ControlGuideEffects"
 par_control_coefs_file = "TextFiles/Control_coefs.csv"

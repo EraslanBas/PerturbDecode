@@ -11,6 +11,8 @@ Read by the notebooks, produced by none of them.
 | File | Read by | What it is |
 |---|---|---|
 | `OutlierControlGuides.csv` | `09_FilterGenesAndCells` | The 31 control guides that showed a transcriptional effect and are dropped from the control population. Notebook 08 records how they were selected and writes its own result to a separate file, so this one is left untouched by a re-run. |
+| `GuideSelect_BadKOGuides.csv` | `13_ReduceGuidesToGenes` | The 958 knockout guides whose effect profile did not agree with another guide against the same gene, dropped before guides are collapsed onto their target. Notebooks 10 and 12 record how they were identified; that fit takes days across all guides, so its result is provided here. |
+| `GuideSelect_GoodGuides.csv` | — | The 2,256 guides that were kept, as the gene and guide pairs that agreed. Companion to the file above; the two are disjoint and together cover the knockout guides that survived filtering. |
 | `GuidePoolSummary_2.csv` | `07_AnalyseGuideDepletion` | One row per guide: the number of cells that guide contributed to the delivered plasmid pool. Notebook 07 compares each gene's share of the pool with its share of the screen to find guides whose targets are essential. |
 
 ## Outputs
