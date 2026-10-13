@@ -14,7 +14,7 @@ variable ``PERTURBDECODE_DATA`` to put it somewhere else, or make
 import os
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
-_REPO = os.path.abspath(os.path.join(_HERE, "..", ".."))
+_REPO = os.path.abspath(os.path.join(_HERE, "..", "..", ".."))
 
 SCREEN_DATA = os.environ.get("PERTURBDECODE_DATA",
                              os.path.join(_REPO, "data", "large_screen"))

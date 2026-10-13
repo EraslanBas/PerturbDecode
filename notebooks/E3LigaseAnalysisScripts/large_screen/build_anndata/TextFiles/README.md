@@ -103,7 +103,7 @@ already provided above. The `_Control` pair is the same model run over control g
 Put them in place and the notebooks find them:
 
 ```
-notebooks/large_screen/build_anndata/
+notebooks/E3LigaseAnalysisScripts/large_screen/build_anndata/
   data/
     GuideSelect_weights.csv
     ME_LMBetaCoefsALL.csv

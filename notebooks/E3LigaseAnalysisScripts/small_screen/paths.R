@@ -20,7 +20,7 @@ LARGE_SCREEN_DATA <- Sys.getenv("PERTURBDECODE_DATA")
 if (!nzchar(LARGE_SCREEN_DATA)) LARGE_SCREEN_DATA <- file.path(.repoRoot, "data", "large_screen")
 
 # Committed reference tables, shared with the large screen.
-REFERENCE <- file.path(.repoRoot, "notebooks", "large_screen", "reference")
+REFERENCE <- file.path(.repoRoot, "notebooks", "E3LigaseAnalysisScripts", "large_screen", "reference")
 
 screenPath      <- function(...) file.path(SCREEN_DATA, ...)
 largeScreenPath <- function(...) file.path(LARGE_SCREEN_DATA, ...)

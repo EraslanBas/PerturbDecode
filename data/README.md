@@ -34,5 +34,5 @@ on. Starting from nothing, the raw reads come from
 and `build_anndata/WORKFLOW.md` is the chain that turns them into the rest.
 
 Small reference tables are **not** here: they are committed under
-`notebooks/large_screen/reference/`, and the combinatorial fits under
-`notebooks/large_screen/combinatorial_perturbations/RDSFiles/`.
+`notebooks/E3LigaseAnalysisScripts/large_screen/reference/`, and the combinatorial fits under
+`notebooks/E3LigaseAnalysisScripts/large_screen/combinatorial_perturbations/RDSFiles/`.

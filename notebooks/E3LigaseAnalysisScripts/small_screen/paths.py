@@ -17,7 +17,7 @@ import importlib.util
 import os
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
-_REPO = os.path.abspath(os.path.join(_HERE, "..", ".."))
+_REPO = os.path.abspath(os.path.join(_HERE, "..", "..", ".."))
 
 SCREEN_DATA = os.environ.get("PERTURBDECODE_SMALL_DATA",
                              os.path.join(_REPO, "data", "small_screen"))
@@ -25,7 +25,8 @@ SCREEN_DATA = os.environ.get("PERTURBDECODE_SMALL_DATA",
 # The large screen's root and its committed reference tables, reused rather
 # than duplicated: the module definitions are the same ones. Loaded by path
 # because that file is also called paths.py, so a plain import finds this one.
-_LARGE = os.path.join(_REPO, "notebooks", "large_screen", "paths.py")
+_LARGE = os.path.join(_REPO, "notebooks", "E3LigaseAnalysisScripts",
+                       "large_screen", "paths.py")
 _spec = importlib.util.spec_from_file_location("_large_screen_paths", _LARGE)
 _large = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_large)

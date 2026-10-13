@@ -21,10 +21,10 @@ SCREEN_DATA <- Sys.getenv("PERTURBDECODE_DATA")
 if (!nzchar(SCREEN_DATA)) SCREEN_DATA <- file.path(.repoRoot, "data", "large_screen")
 
 # Committed reference tables, small enough to live in the repository.
-REFERENCE <- file.path(.repoRoot, "notebooks", "large_screen", "reference")
+REFERENCE <- file.path(.repoRoot, "notebooks", "E3LigaseAnalysisScripts", "large_screen", "reference")
 
 # Reference tables that build_anndata both reads and writes.
-TEXTFILES <- file.path(.repoRoot, "notebooks", "large_screen", "build_anndata", "TextFiles")
+TEXTFILES <- file.path(.repoRoot, "notebooks", "E3LigaseAnalysisScripts", "large_screen", "build_anndata", "TextFiles")
 
 screenPath    <- function(...) file.path(SCREEN_DATA, ...)
 referencePath <- function(...) file.path(REFERENCE, ...)
