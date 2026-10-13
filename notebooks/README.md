@@ -6,7 +6,7 @@ answer different questions.
 ```
 notebooks/
   E3LigaseAnalysisScripts/   what was done to one dataset
-    large_screen/            the genome-scale screen
+    large_screen/            the 1,130-gene E3 ligase screen
     small_screen/            the combinatorial screen
   PerturbDecodePackageUsage/ how to use PerturbDecode on your own data
 ```

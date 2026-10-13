@@ -1,19 +1,29 @@
 # Large screen
 
-The genome-scale E3 ligase Perturb-seq screen of Geiger-Schuller, Eraslan et al.,
-[doi:10.1101/2023.01.23.525198](https://doi.org/10.1101/2023.01.23.525198) —
-the screen the manuscript is built on, and the one every notebook below reads.
+The E3 ligase Perturb-seq screen of Geiger-Schuller, Eraslan et al.,
+*Systematically characterizing the roles of E3-ligase family members in
+inflammatory responses with massively parallel Perturb-seq*,
+[doi:10.1101/2023.01.23.525198](https://doi.org/10.1101/2023.01.23.525198).
+
+It is a **family-focused** screen, not a genome-wide one: the paper interrogates
+"the function of 1,130 E3 ligases, partners and substrates in the inflammatory
+response in primary dendritic cells". The tables in this repository agree —
+1,130 target genes, 3,719 guides in the delivered pool, 242,938 cells surviving
+selection. "Large" here means large relative to the combinatorial screen in
+`../small_screen/`, which perturbs 14 genes.
 
 | Folder | What it does |
 |---|---|
 | `build_anndata/` | raw CellRanger output to the model inputs, 19 notebooks — see `WORKFLOW.md` |
-| `combinatorial_perturbations/` | the regression models behind the Figure 5 panels |
 | `manuscript_figures/` | the published figure panels, kept as a methods record |
+| `combinatorial_perturbations/` | the regression models behind the Figure 5 panels |
+| `ica_factorisation/` | the 15-component decomposition of the effect-size matrix, and how 15 was chosen |
+| `revision_analyses/` | the knockout modules against the DC subtypes, and two robustness checks |
 
-They are grouped under `large_screen/` because a second, smaller screen with
-newer data is to be added alongside as `small_screen/`. The two share the
-analysis approach but not the data, the module definitions or the cell counts,
-so results from one should never be read as results from the other.
+The combinatorial screen sits alongside as `../small_screen/`. The two share
+the module definitions, which the small screen reads from this one, but not the
+data, the guide set or the cell counts — so a result from one should never be
+read as a result from the other.
 
 ## Paths
 

@@ -1,9 +1,12 @@
 # Small screen
 
 The combinatorial E3 ligase screen: 14 knockout genes and two control guides,
-delivered in combination. A separate experiment from the genome-scale screen in
-`../large_screen/`, sharing its module definitions but not its data, its cell
-counts or its guide set.
+delivered in combination. This is the experiment behind the paper's claim that
+genetic interactions are more common within the knockout modules than between
+them, and the data the prediction model is judged on.
+
+A separate experiment from the 1,130-gene screen in `../large_screen/`, sharing
+its module definitions but not its data, its cell counts or its guide set.
 
 Ported from `ComboData_v2/Src_v2` in the E3 ligase analysis tree.
 
