@@ -73,6 +73,10 @@
 # interaction splits among them cannot be regenerated at all, because the
 # half-split in notebook 04 is unseeded.
 !notebooks/large_screen/combinatorial_perturbations/RDSFiles/*.rds
+# Small tables the figure notebooks read that no notebook here produces. Same
+# narrow exception: without them nothing in manuscript_figures can be re-run.
+!notebooks/large_screen/reference/*.csv
+!notebooks/large_screen/reference/*.rds
 # Cell-cycle gene list vendored because its upstream URL now 404s
 !notebooks/large_screen/manuscript_figures/regev_lab_cell_cycle_genes.txt
 
@@ -150,8 +154,10 @@ docs/_build/
 .DS_Store
 Thumbs.db
 
-# Custom data/output folders
-data/
+# Custom data/output folders.
+# data/* rather than data/, so that data/README.md can be re-included below:
+# git cannot re-include a file whose parent directory is excluded.
+data/*
 output/
 results/
 

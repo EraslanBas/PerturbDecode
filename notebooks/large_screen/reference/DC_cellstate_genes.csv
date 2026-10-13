@@ -1,0 +1,662 @@
+Mitochondrial genes,pDC genes,RBC genes,Mast cell genes,T/NK genes,B cell genes,Neutrophil genes,Macrophage genes,DC1 genes,DC2 genes,mregDC genes
+mt-Nd1,Sell,Hbb-bs,Cma1,Khdc1a,Fcmr,S100a8,Rnf149,Tram2,Sdhaf4,Slco5a1
+mt-Nd2,Atp1b1,Hba-a1,Tpsab1,Zap70,Ralgps2,S100a9,Creg2,Sema4c,Arid5a,Ly96
+mt-Co1,Fcrla,Hba-a2,Cpa3,2010300C02Rik,Cr2,Retnlg,Fn1,Tbc1d8,Mgat4a,Ogfrl1
+mt-Co2,Hsd11b1,Hbb-bt,Tpsb2,Il18r1,St8sia6,Gm5483,Tns1,Inpp1,Rnf149,Kansl3
+mt-Atp8,Slpi, ,Mcpt4,Il18rap,Spg11,G0s2,Slc11a1,Slc11a1,Il1r2,Tmem131
+mt-Atp6,Gm43291, ,Fcer1a,Fhl2,Cables2,Wfdc17,B3gnt7,Chpf,Il1rl2,Tbc1d8
+mt-Co3,Cd8b1, , ,Gm17767,Srpk3,Stfa2l1,Tmem37,Ap1s3,Il1rl1,Map4k4
+mt-Nd3,Cd8a, , ,Stat4,D3Ertd254e,Lcn2,Mgat5,Serpinb8,Il18rap,Nabp1
+mt-Nd4l,Klk1, , ,Cd28,Fcrl1,Wfdc21,Ikbke,Rab7b,Stat4,Stat4
+mt-Nd4,Siglech, , ,Ctla4,Gm43603,Gcnt2,Rgl1,Cyb5r1,Stk17b,Stat1
+mt-Nd5,Cox6a2, , ,Icos,Bank1,Hdc,Rnasel,Cacna1s,Coq10b,Cflar
+mt-Nd6,Bst2, , ,Ikzf2,Pax5,Lrg1,Soat1,Cfh,Casp8,Icos
+mt-Cytb,Rpgrip1, , ,Serpine2,Bend5,Id1,Creg1,Gm9530,Adam23,Nrp2
+ ,Ccr9, , ,Pdcd1,Gm43291,Il1f9,Fcgr2b,Rabgap1l,Fn1,Ino80d
+ ,Ly6d, , ,Bcl2,Egr4,Ifitm6,Fcgr4,Pbx1,Bcl2,Gm20342
+ ,Ly6c2, , ,Tmem163,Irgc1,Trem3,Fcgr3,Fcrla,Tmem185b,Adam23
+ ,Mzb1, , ,Cd55,Cd79a,Asprv1,Cd84,Mnda,Ptpn4,Idh1
+ , , , ,Il10,Zfp574,F630028O10Rik,Slamf6,Ifi205,Cxcr4,Mreg
+ , , , ,Lax1,Cd22,4833407H14Rik,Rab3gap2,Psen2,Rgs1,Dnajb2
+ , , , ,Atp2b4,Siglecg, ,Il1rn,Dusp10,Ptgs2,C130026I21Rik
+ , , , ,Rgs16,Spib, ,Pnpla7,Camk1d,Ncf2,A530032D15Rik
+ , , , ,Rabgap1l,Rab30, ,Dpp7,Proser2,Uck2,Sp140
+ , , , ,Fasl,Cd19, ,Uap1l1,Itga8,Sh2d1b1,Sh3bp4
+ , , , ,Xcl1,Vpreb3, ,Ralgds,Fnbp1,Fcgr2b,Agap1
+ , , , ,Cd247,Fcer2a, ,Crat,Strbp,Fcgr3,Gpc1
+ , , , ,Fcrl6,Blk, ,Ptrh1,Nek6,Fcer1g,Tnfrsf11a
+ , , , ,Traf3ip3,Cxcr5, ,Ptgs1,Fmnl2,Slamf9,Phlpp1
+ , , , ,4930570N18Rik,Pou2af1, ,Zeb2,Tanc1,Fh1,Nuak2
+ , , , ,Lamb3,Ebf1, ,Zeb2os,Ly75,Zbtb18,Gm38399
+ , , , ,Hsd11b1,Trim7, ,Cd302,Sestd1,Hlx,Csrp1
+ , , , ,Gata3,Cd79b, ,Itga6,Prr5l,Atf3,Phlda3
+ , , , ,Itih5,Gm11690, ,Nr1h3,Gatm,Tmem206,Lad1
+ , , , ,Prkcq,Mef2c, ,Acp2,Atp8b4,Fam107b,Cacna1s
+ , , , ,Il2ra,Ly6d, ,Dgkz,Itpripl1,St8sia6,Kif21b
+ , , , ,Nrarp,Pick1, ,Ldlrad3,Plcb4,Hacd1,Rgs1
+ , , , ,Lcn4,Shisa8, ,Thbs1,Cst3,Mrc1,Cep350
+ , , , ,Qrfp,Tnfrsf13c, ,Sqrdl,Acss1,Plxdc2,Rabgap1l
+ , , , ,Fam102a,Snn, ,Mertk,Plp2,Il1rn,Rcsd1
+ , , , ,Neb,Ccr6, ,Tmem87b,Slc9a7,Fut7,Pogk
+ , , , ,Cobll1,Rrp1b, ,Il1a,Sept6,Slc2a6,Uap1
+ , , , ,Galnt3,Rasgrp3, ,Cenpb,Mospd1,Vav2,Slamf1
+ , , , ,Stk39,Atl2, ,Ap5s1,Cxx1a,St6galnac6,Pyhin1
+ , , , ,Ddb2,4930426D05Rik, ,Smox,Cxx1b,Eng,Mfsd7b
+ , , , ,Trp53i11,Mzb1, ,Slc23a2,Xlr,Mvb12b,G0s2
+ , , , ,Dusp2,Ms4a1, ,Rin2,Cd99l2,Kynu,Dclre1c
+ , , , ,Gm14029,Blnk, ,Thbd,Cxcr3,Zeb2,Frmd4a
+ , , , ,Cst7,Scd1, ,Cd93,A630033H20Rik,Zeb2os,Pfkfb3
+ , , , ,Sdcbp2, , ,Abhd12,Tsc22d3,Nr4a2,Gm10851
+ , , , ,a, , ,Srxn1,Phka2,Tank,Il2ra
+ , , , ,Sla2, , ,Trib3,Pir,Cers6,Il15ra
+ , , , ,Ppp1r16b, , ,Mafb,Hps3,Nfe2l2,Il1rn
+ , , , ,Eya2, , ,Slpi,Gnb4,Trp53i11,Traf2
+ , , , ,Phactr3, , ,Ctsa,P2ry14,Ehf,Tsc1
+ , , , ,Foxp3, , ,Tmem189,Lrba,Lmo2,Ass1
+ , , , ,Pim2, , ,Cebpb,Lmna,Depdc7,St6galnac6
+ , , , ,Sept6, , ,Cybb,BC028528,Rasgrp1,Stxbp1
+ , , , ,Sh2d1a, , ,Lamp2,Adora3,Stard9,Traf1
+ , , , ,Stk26, , ,Slc6a8,Dennd2d,AA467197,Ggta1
+ , , , ,Cd40lg, , ,Mpp1,Fndc7,Bcl2l11,Arl5a
+ , , , ,Xlr4a, , ,Gla,Hiat1,Il1b,Cytip
+ , , , ,Ar, , ,Bex1,Sec24d,Sirpa,Gm13546
+ , , , ,Cxcr3, , ,Rnf128,Ank2,Smox,Ly75
+ , , , ,Zdhhc15, , ,Ctps2,Lpar3,Flrt3,Tank
+ , , , ,P2ry10, , ,Tlr7,Ndufaf6,Tgm2,Gca
+ , , , ,Gpr174, , ,Tpd52,Fam92a,Mafb,Cers6
+ , , , ,Itm2a, , ,Zfp704,Gm11837,Pkig,Nostrin
+ , , , ,Tmsb15a, , ,Gm38335,Sigmar1,Ada,Itga4
+ , , , ,Tmsb15l, , ,Sirpb1b,Stx17,Sdc4,Dnajc10
+ , , , ,Zcchc18, , ,Sirpb1c,Tmem38b,Ctsa,Ube2l6
+ , , , ,Spin2c, , ,Gm5150,Slc31a2,Pltp,Arhgap1
+ , , , ,Gpm6b, , ,Nceh1,Plin2,Cd40,Phf21a
+ , , , ,Gm8817, , ,Fndc3b,Mllt3,Sulf2,Traf6
+ , , , ,Car2, , ,Slc7a11,Ttc39a,Cebpb,D330050G23Rik
+ , , , ,Pde7a, , ,Mfsd1,Ppt1,Ptpn1,Spred1
+ , , , ,Tnik, , ,Fnip2,Mycl,Fam217b,Bahd1
+ , , , ,Gm42921, , ,Nes,Tlr12,Ppdpf,Pla2g4f
+ , , , ,Gpr87, , ,Glmp,Zbtb8a,Cybb,Vps39
+ , , , ,Pear1, , ,S100a1,Ece1,Chst7,B2m
+ , , , ,Sh2d2a, , ,Snx27,4930455G09Rik,Timp1,Sema6d
+ , , , ,Fam189b, , ,Selenbp1,Gpr157,Cfp,Hdc
+ , , , ,Muc1, , ,Fam63a,Vwa1,Il2rg,Tmem127
+ , , , ,Cd160, , ,Ctsk,Fzd1,Tceal8,Stard7
+ , , , ,Cd2, , ,Ctss,Cdk14,Fabp5,Prnp
+ , , , ,Ptpn22, , ,Ecm1,Cd36,Car2,Rassf2
+ , , , ,Ppm1j, , ,Fcgr1,A630072M18Rik,Gm9733,Gpcpd1
+ , , , ,Gm42722, , ,Fam46c,Fgl2,Sirpb1a,Jag1
+ , , , ,Dennd2d, , ,Olfml3,Atg9b,Sirpb1c,Flrt3
+ , , , ,Csf1, , ,Chil3,Wdr86,Cyp7b1,Dstn
+ , , , ,S1pr1, , ,AI504432,Ept1,Nceh1,Ralgapa2
+ , , , ,Lef1, , ,Csf1,Otof,Gpr160,Srxn1
+ , , , ,Slc9b2, , ,Gstm5,Cgref1,Slc7a11,Procr
+ , , , ,St6galnac3, , ,Gstm1,Krtcap3,Fcrls,Src
+ , , , ,Penk, , ,Frrs1,Ift172,Etv3,Stk4
+ , , , ,Tox, , ,Snx7,Sh3tc1,Adam15,Slpi
+ , , , ,Gem, , ,Tspan5,Clnk,S100a4,Cd40
+ , , , ,Fam92a, , ,Mcoln3,Bst1,S100a6,Zmynd8
+ , , , ,Sit1, , ,Sdcbp,Zcchc4,S100a8,Rab22a
+ , , , ,D630039A03Rik, , ,Atp6v0d2,Pcdh7,S100a9,Ppdpf
+ , , , ,Bspry, , ,Il11ra1,0610040J01Rik,Ctss,Helz2
+ , , , ,Rgs3, , ,Stra6l,Naaa,Fcgr1,Arfrp1
+ , , , ,Tnfsf8, , ,Abca1,Stbd1,Rhoc,Kdm6a
+ , , , ,Mllt3, , ,Tmem38b,Antxr2,Gm5547,Chst7
+ , , , ,Sgip1, , ,Ptgr1,Tpst2,I830077J02Rik,Enox2
+ , , , ,Faah, , ,Tlr4,Hps4,Frrs1,Renbp
+ , , , ,Lck, , ,Plin2,Unc119b,Gbp7,Emd
+ , , , ,Adgrb2, , ,Dennd4c,Slc8b1,Gbp3,Gdi1
+ , , , ,Sytl1, , ,Hacd4,Atp6v0a2,Gbp2,Apool
+ , , , ,Ubxn11, , ,Prdx1,Slc12a9,Ptger3,Rab9
+ , , , ,Ncmap, , ,Plk3,Zfp157,Wls,Gm16685
+ , , , ,Camk2n1, , ,Hivep3,Flt3,Gem,Fabp5
+ , , , ,Padi2, , ,Csf3r,Slc46a3,Cdh17,Fabp4
+ , , , ,Tnfrsf9, , ,Man1c1,Hepacam2,Ripk2,Car13
+ , , , ,Tnfrsf25, , ,Ldlrap1,Met,Ggh,Car2
+ , , , ,Prkcz, , ,C1qb,Strip2,Ddx58,Gyg
+ , , , ,Tnfrsf4, , ,C1qc,Rab19,B4galt1,Gnb4
+ , , , ,Tnfrsf18, , ,C1qa,Zfp398,Cd72,Slc7a11
+ , , , ,Crot, , ,Atp13a2,Zfp282,Glipr2,Rap2b
+ , , , ,Gm8879, , ,Fblim1,Osbpl3,Nr4a3,E130311K13Rik
+ , , , ,Gm5861, , ,Pdpn,Gng12,Ptgr1,Slc33a1
+ , , , ,Krtcap3, , ,Dhrs3,Gadd45a,Hacd4,1110032F04Rik
+ , , , ,Jakmip1, , ,Plod1,Polr1a,Dhcr24,Etfdh
+ , , , ,Crmp1, , ,Agtrap,St3gal5,Skint3,D930015E06Rik
+ , , , ,Clnk, , ,Pgd,RP24-416M6.5,Slc2a1,Cd1d1
+ , , , ,Arap2, , ,Fam213b,Sftpb,Eva1b,Etv3
+ , , , ,Txk, , ,Ski,Cd207,Sesn2,Pmvk
+ , , , ,Hopxos, , ,Il6,Alms1,Ptafr,Slc27a3
+ , , , ,Areg, , ,Emilin1,2310040G24Rik,Fgr,Ints3
+ , , , ,Spp1, , ,Lrpap1,Rab43,Tcea3,Npr1
+ , , , ,Gfi1, , ,Bst1,Hmces,C1qb,S100a8
+ , , , ,Tesc, , ,Cd38,Gm1965,C1qc,S100a9
+ , , , ,A930024E05Rik, , ,Spink2,Iqsec1,C1qa,Golph3l
+ , , , ,Rhof, , ,Pf4,Pianp,Akr7a5,Ankrd35
+ , , , ,Hip1r, , ,Cxcl2,Vwf,Tnfrsf1b,Pias3
+ , , , ,Vps37b, , ,Scarb2,Clec12a,Eno1,Nudt17
+ , , , ,Abcb9, , ,Cxcl13,Clec9a,Tnfrsf9,Polr3c
+ , , , ,Pitpnm2, , ,Hpse,Klra3,Isg15,Rnf115
+ , , , ,Ccdc92, , ,Arhgap24,Bcl2l14,AI839979,Pde4dip
+ , , , ,Gm36551, , ,Spp1,Plbd1,Fosl2,Igsf3
+ , , , ,Card11, , ,Cmklr1,Gucy2c,Sh3bp2,Mab21l3
+ , , , ,Tecpr1, , ,Tmem119,Bbc3,Rgs12,Rhoc
+ , , , ,Wdr95, , ,Wsb2,Pglyrp1,Htra3,Gnai3
+ , , , ,Rab19, , ,Hcar2,Pafah1b3,Arap2,Stxbp3
+ , , , ,Gimap8, , ,Rilpl2,Zfp84,Rell1,Vcam1
+ , , , ,Gimap9, , ,Ccl24,Lsr,Rhoh,Plppr4
+ , , , ,Gimap4, , ,Plod3,Nav2,Bend4,Fnbp1l
+ , , , ,Gimap6, , ,Serpine1,Siglech,Jchain,Synpo2
+ , , , ,Gimap7, , ,Pilra,Mtmr10,Cxcl2,Dkk2
+ , , , ,Gimap1, , ,Fam20c,Slco3a1,Cxcl10,Gbp5
+ , , , ,Gimap5, , ,Pdgfa,Sv2b,Anxa3,Gbp2
+ , , , ,4833403J16Rik, , ,Prkar1b,Anpep,Rasgef1b,Pnrc1
+ , , , ,Gimap3, , ,Gna12,Arpin,Plac8,3110043O21Rik
+ , , , ,Osbpl3, , ,Gng11,Pde8a,Abcg3,Glipr2
+ , , , ,Gprin3, , ,Pon3,Homer2,Evi5,Nans
+ , , , ,Il12rb2, , ,Asns,Rab30,2900026A02Rik,Galnt12
+ , , , ,Cd8b1, , ,Tfec,Kctd14,Ssh1,Nr4a3
+ , , , ,Cd8a, , ,Hilpda,Fchsd2,Oasl2,Invs
+ , , , ,Gm44040, , ,Clec5a,Arap1,Oas1a,Akap2
+ , , , ,Vgll4, , ,Gpnmb,Ppfibp2,Camkk2,Col27a1
+ , , , ,Klrg1, , ,Hpgds,Dkk3,Rilpl2,Cdkn2a
+ , , , ,Slc2a3, , ,Capg,Sult1a1,Por,Cdkn2b
+ , , , ,Cd4, , ,Rab11fip5,Sept1,Mdh2,Nsun4
+ , , , ,Lag3, , ,Mgll,Itgal,Pilra,St3gal3
+ , , , ,Cd27, , ,Plxna1,Rgs10,Pilrb1,9530034E10Rik
+ , , , ,Klrb1a, , ,Mitf,6430531B16Rik,Pilrb2,Kdm4a
+ , , , ,Klrb1c, , ,Camk1,Tnni2,6330418K02Rik,Inpp5b
+ , , , ,Klrb1f, , ,Tatdn2,Cd81,Adap1,Mtf1
+ , , , ,Klre1, , ,Pparg,Slc22a18,3110082I17Rik,Gnl2
+ , , , ,Klrd1, , ,March8,Syne1,C130050O18Rik,Ago3
+ , , , ,Klrk1, , ,Atp6v1e1,Ipcef1,Gm20186,Ago1
+ , , , ,Klrc2, , ,Apobec1,Rab32,Fam3c,Rnf19b
+ , , , ,Klrc1, , ,C3ar1,Sgk1,Hilpda,Bsdc1
+ , , , ,Klri2, , ,Clec4a3,Arhgap18,Plxna4os1,Marcksl1
+ , , , ,Klra5, , ,Clec4n,Ncoa7,Clec5a,Epb41
+ , , , ,Klra6, , ,Clec4d,Cd24a,Tmem176b,Zdhhc18
+ , , , ,Klra4, , ,Clec4e,Aim1,Tmem176a,Extl1
+ , , , ,Klra8, , ,Cd9,Psap,Gpnmb,Clic4
+ , , , ,Klra9, , ,Olr1,Rhobtb1,Creb5,Sh2d5
+ , , , ,Klra7, , ,Klra2,Trpm2,Chn2,Iffo2
+ , , , ,Klra10, , ,Hebp1,Agpat3,Vopp1,Plekhm2
+ , , , ,Klra3, , ,Mgst1,Gna15,Tnip3,Vps13d
+ , , , ,Klra1, , ,Ldhb,Tmtc3,Capg,Tnfrsf1b
+ , , , ,Styk1, , ,Bhlhe41,Phlda1,Mxd1,Kif1b
+ , , , ,Lockd, , ,Tarm1,Lyz1,Plxna1,Spsb1
+ , , , ,Kcnj8, , ,Lair1,Kif5a,Bhlhe40,Tnfrsf9
+ , , , ,Ncr1, , ,Lilra5,Timeless,Arl8b,Mmp23
+ , , , ,Klc3, , ,C5ar1,Mmp19,Edem1,Fam132a
+ , , , ,Rinl, , ,Ptgir,Tespa1,Camk1,Tnfrsf4
+ , , , ,Lgals7, , ,Apoe,Tnfsf13b,Plxnd1,Isg15
+ , , , ,Hcst, , ,Plaur,Zdhhc2,Alox5,Krit1
+ , , , ,Zbtb32, , ,Ethe1,Fam149a,Il17ra,Sri
+ , , , ,Nkg7, , ,Atp1a3,Tlr3,Apobec1,Nub1
+ , , , ,Klk8, , ,B3gnt8,Gm3336,Slc2a3,Tmem128
+ , , , ,Flt3l, , ,Axl,Klf2,C3ar1,Sepsecs
+ , , , ,Dkkl1, , ,Blvrb,Irf8,Clec4a1,Pi4k2b
+ , , , ,Sult2b1, , ,Pld3,Zfp276,Clec4a3,Arap2
+ , , , ,Fam169b, , ,Cd22,Dnase1l3,Clec4b1,Tbc1d1
+ , , , ,Mctp2, , ,Mag,Adk,Clec4a2,Gm42726
+ , , , ,Fam174b, , ,Cebpa,Wdfy4,Clec4n,Nipal1
+ , , , ,Ntrk3, , ,Saa3,Sftpa1,Cd163,Rufy3
+ , , , ,Nmb, , ,Tmem86a,Ptger2,Ccnd2,Cxcl1
+ , , , ,Sytl2, , ,AU020206,Tlr11,Clec2i,Anxa3
+ , , , ,Lrrc32, , ,Ctsc,Rnase6,Gm15987,Bmp2k
+ , , , ,Dnajb13, , ,Myo7a,Phf11c,Cd69,Tmem150c
+ , , , ,Rras2, , ,Tpp1,Trim35,Klrd1,Klhl8
+ , , , ,Lat, , ,Gde1,Sftpc,Klri2,Nudt9
+ , , , ,Spn, , ,Igsf6,Lpar6,Gsg1,Gbp8
+ , , , ,Sept1, , ,Nupr1,Endod1,Emp1,Gbp9
+ , , , ,Stk32c, , ,Cox6a2,Naalad2,Tm7sf3,Gbp4
+ , , , ,Pkp3, , ,Pwwp2b,Barx2,Pira2,Pxmp2
+ , , , ,Sigirr, , ,Fuom,Ubash3b,Lilra6,Adrbk2
+ , , , ,Ifitm10, , ,Paox,Mpzl2,Lair1,Iscu
+ , , , ,Osbpl5, , ,Cracr2b,Amica1,Cox6b2,Ssh1
+ , , , ,Ipcef1, , ,Cd151,Cadm1,Fosb,Oasl1
+ , , , ,Samd3, , ,Tspan4,Rab39,Relb,Gm10399
+ , , , ,Themis, , ,Ctsd,Arid3b,Bcl3,Vsig10
+ , , , ,Scml4, , ,Tspan32,Gramd2,Pvr,Tesc
+ , , , ,Prf1, , ,Tpcn2,Myo9a,Plaur,Hvcn1
+ , , , ,Adora2a, , ,Sash1,Kif23,Pou2f2,Tmem120b
+ , , , ,Gzmm, , ,Sgk1,Hacd3,B3gnt8,Sbno1
+ , , , ,S1pr4, , ,Arg1,Plekho2,Axl,Asl
+ , , , ,1500009L16Rik, , ,Dse,Snx22,Blvrb,Rabgef1
+ , , , ,Ifng, , ,Slc16a10,Lrrc1,Pld3,Gatsl2
+ , , , ,Avil, , ,Prdm1,Myo6,2310022A10Rik,Ncf1
+ , , , ,Ikzf4, , ,Lilr4b,Hmgn3,Plekhg2,Clip2
+ , , , ,Dgka, , ,Lilrb4a,Bckdhb,Zfp36,Wbscr27
+ , , , ,Tespa1, , ,Pald1,Slc9a9,Ppp1r14a,Rasa4
+ , , , ,Cers4, , ,Aifm2,Pik3cb,Tyrobp,Adap1
+ , , , ,Gm29243, , ,Arid5b,Ppm1m,Nfkbid,Fbxl18
+ , , , ,Dusp4, , ,Chchd10,Slc25a20,Ffar2,Fscn1
+ , , , ,Inpp4b, , ,Cstb,Cyp8b1,Cd33,Cyth3
+ , , , ,2210011C24Rik, , ,Prtn3,Tmem42,Siglece,Smurf1
+ , , , ,Il27ra, , ,Mfsd12,Xcr1,Klk8,Lnx2
+ , , , ,Podnl1, , ,Appl2,Ccr2,Napsa,N4bp2l1
+ , , , ,Mt3, , ,Igf1,Morc2a,Il4i1,Tmem168
+ , , , ,Zfpm1, , ,Gas2l3,Vrk2,Isg20,B630005N14Rik
+ , , , ,Snai3, , ,Dusp6,Adam19,Cib1,Tes
+ , , , ,Fam213a, , ,Lyz2,Cyfip2,Man2a2,Ahcyl2
+ , , , ,Mcpt8, , ,Lyz1,2310031A07Rik,Crtc3,Strip2
+ , , , ,Ctsg, , ,Irak3,Havcr2,Kcne3,Tmem140
+ , , , ,Gzme, , ,Gns,Timd4,Relt,Zfp467
+ , , , ,Gzmd, , ,Lrp1,Trim7,Tpp1,Herc6
+ , , , ,Gzmg, , ,Mmp19,Col23a1,Rras2,Vopp1
+ , , , ,Gzmf, , ,F7,Anxa6,Igsf6,Ndnf
+ , , , ,Gzmc, , ,F10,Snap47,Gga2,Il12rb2
+ , , , ,Gzmb, , ,Cln8,Grap,Prkcb,Cd8a
+ , , , ,Phf11c, , ,Adam9,Cenpv,Il4ra,M1ap
+ , , , ,Ppp3cc, , ,Msr1,Gas7,Il21r,Dok1
+ , , , ,Cysltr2, , ,Slc7a2,Cldn7,Nupr1,Loxl3
+ , , , ,Serp2, , ,Mtus1,Itgae,Pycard,Htra2
+ , , , ,Tnfsf11, , ,Cyp4v3,Serpinf1,Athl1,Mthfd2
+ , , , ,Slain1, , ,Lpl,Rab11fip4,Ifitm2,Spr
+ , , , ,Spry2, , ,Gdf15,Cuedc1,Ifitm1,Asprv1
+ , , , ,1810041H14Rik, , ,Slc27a1,Plxdc1,Ifitm3,Mxd1
+ , , , ,Sesn3, , ,Cyp4f18,Rnf157,Ifitm6,Anxa4
+ , , , ,Izumo1r, , ,Tom1,Net1,Ctsd,Gfpt1
+ , , , ,Ets1, , ,Hmox1,A530099J19Rik,Tspan32,Slc6a6
+ , , , ,Nrgn, , ,Arhgap10,Mboat1,Tnfaip3,Ppp4r2
+ , , , ,Crtam, , ,Dnase2a,Serpinb6b,Fam26f,Wnk1
+ , , , ,Thy1, , ,Slc38a7,Tubb2a,Cd164,Mical3
+ , , , ,Cd3g, , ,Pla2g15,Rnf144b,Lilr4b,Usp18
+ , , , ,Cd3d, , ,Hp,Fbxw17,Lilrb4a,Apobec1
+ , , , ,Cd3e, , ,Mlkl,Prr7,Man1a,Eno2
+ , , , ,Acsbg1, , ,Maf,Dbn1,Micu1,Tapbpl
+ , , , ,Dnaja4, , ,Klhdc4,Txndc15,Ddit4,Clec2i
+ , , , ,Dapk2, , ,Aprt,Ctla2b,Pald1,Clec2d
+ , , , ,Rora, , ,Galns,Zfp367,Egr2,Bcl2l14
+ , , , ,Lysmd2, , ,Ntpcr,Lpcat1,Upb1,Crebl2
+ , , , ,Plscr4, , ,Samd8,Mctp1,Ggt5,Hebp1
+ , , , ,Bfsp2, , ,Comtd1,Arrdc3,Ddt,Aebp2
+ , , , ,Shisa5, , ,Stab1,Arsb,Plpp2,Etnk1
+ , , , ,Gm26614, , ,Fam213a,F2rl2,Gadd45b,Caprin2
+ , , , ,Eomes, , ,Lgals3,Cd180,Matk,Fam60a
+ , , , ,Cxcr6, , ,Rnase4,Plpp1,Ckap4,3010003L21Rik
+ , , , ,Emid1, , ,Mmp14,Itga1,Lta4h,Amn1
+ , , , ,Itk, , ,Slc7a8,Asap2,Tmcc3,Zfp524
+ , , , ,Tcf7, , ,Arl11,Id2,Plxnc1,Ceacam15
+ , , , ,Csf2, , ,Ctsb,Arl4a,Socs2,Zfp296
+ , , , ,Grap, , ,Slc25a37,Gpr33,Lrp1,Relb
+ , , , ,2810001G20Rik, , ,Rcbtb2,Arhgap5,Cd63,Clptm1
+ , , , ,Acap1, , ,Esd,Map4k5,Mcemp1,Ceacam1
+ , , , ,6330403K07Rik, , ,Rgcc,Gpr65,Fcor,Sertad1
+ , , , ,Atp2a3, , ,Irg1,Evl,Trappc5,Plekhg2
+ , , , ,Ccl1, , ,Mmp13,Ckb,Cd209a,Nfkbib
+ , , , ,Ccl5, , ,Mmp12,Fbxo4,Cd209d,Kcnk6
+ , , , ,Dusp14, , ,Slc36a4,Cpq,Cd209b,2200002D01Rik
+ , , , ,Cuedc1, , ,Tmem205,Laptm4b,Cd209c,Spint2
+ , , , ,Msi2, , ,Acp5,Sept3,Rab20,Alkbh6
+ , , , ,Skap1, , ,Slc37a2,Naga,Lamp1,Sdhaf1
+ , , , ,Tbx21, , ,Dmxl2,Prr5,Gm7676,Hspb6
+ , , , ,Ikzf3, , ,1700017B05Rik,Lrrk2,Ankrd37,Nkg7
+ , , , ,Arl4d, , ,Hexa,2610037D02Rik,Acsl1,Spib
+ , , , ,Arhgap27os3, , ,Vps13c,Lima1,Hpgd,Atf5
+ , , , ,Itgb3, , ,Myo1e,Smagp,Ifi30,Il4i1
+ , , , ,Gm11713, , ,Mapk6,Acvrl1,Jak3,Ftl1
+ , , , ,Prkca, , ,Nt5e,Pde1b,Cyp4f18,Rasip1
+ , , , ,Fam20a, , ,Alas1,Coro7,Junb,Ndnl2
+ , , , ,Rab37, , ,Tex264,Emp2,Mt2,Lrrk1
+ , , , ,Hid1, , ,Cx3cr1,Snx29,Mt1,RP23-49I18.5
+ , , , ,Rnf157, , ,Ctnnb1,Klhl6,Ccl17,Arpin
+ , , , ,St6galnac2, , ,Abhd5,P3h2,Cdh1,Mex3b
+ , , , ,Cd7, , ,Tcn2,Cldn1,Slc7a5,Zfand6
+ , , , ,Actn2, , ,Osm,Hes1,Mvd,Prkrir
+ , , , ,Edaradd, , ,Sept8,Pdia5,1810011H11Rik,Stard10
+ , , , ,Serpinb1a, , ,Fnip1,Ildr1,Ear2,Il18bp
+ , , , ,Serpinb6b, , ,Gpx3,Btla,Gch1,Pgap2
+ , , , ,Serpinb9, , ,Slc36a2,Cd200,Tep1,Swap70
+ , , , ,Serpinb9b, , ,Slc36a1,Gcsam,Dok2,Sbf2
+ , , , ,4930486L24Rik, , ,Pmp22,Dynlt1a,Gfra2,Rras2
+ , , , ,Ctla2b, , ,Cd68,Dynlt1c,Mycbp2,Gga2
+ , , , ,Ctla2a, , ,Tnfsf12,Igf2r,Gpr18,Il21r
+ , , , ,Arsb, , ,Abr,Zfp946,Casp4,Mvp
+ , , , ,F2r, , ,Cpd,Slc9a3r2,Mmp12,Cd2bp2
+ , , , ,F2rl2, , ,Adap2os,Lemd2,Panx1,Prr14
+ , , , ,Sv2c, , ,Ccl2,Fgd2,Slc44a2,Fam53b
+ , , , ,Gzma, , ,Ccl7,Psmb9,Acp5,Adam8
+ , , , ,Gzmk, , ,Ccl12,Notch4,Aplp2,Ptdss2
+ , , , ,Esm1, , ,Ccl8,Egfl8,Sorl1,Stx11
+ , , , ,Prkch, , ,Rffl,Ppt2,Sidt2,Adgrg6
+ , , , ,Gpr68, , ,Ccl9,Tcf19,Cib2,Ncoa7
+ , , , ,Gm20069, , ,Ccl6,Enpp4,Myo1e,Marcks
+ , , , ,Bcl11b, , ,Ccl3,Zfp318,Nedd4,Hsf2
+ , , , ,Ncald, , ,Wfdc21,Treml4,Lysmd2,Sgpl1
+ , , , ,Tmem71, , ,Gdpd1,Ankrd12,Fam46a,Gm5424
+ , , , ,Apol7e, , ,Abcc3,Rasgrp3,Ctsh,Dnajc12
+ , , , ,Il2rb, , ,Naglu,Cystm1,Mapkapk3,Nrbf2
+ , , , ,C1qtnf6, , ,Vat1,Gramd3,Cish,Ccdc6
+ , , , ,Bik, , ,Grn,Adrb2,Pfkfb4,Adora2a
+ , , , ,Pced1b, , ,Plekhm1,Ctdp1,Ccrl2,Gucd1
+ , , , ,Nlrc3, , ,Icam2,Tshz1,Cx3cr1,Gstt1
+ , , , ,Ypel1, , ,Cd300lb,Cyb5a,Csrnp1,Icosl
+ , , , ,Bdh1, , ,Cd300ld,Cd226,Ccr1,Cstb
+ , , , ,Tnk2, , ,Cd300e,Tbc1d10c,Tcn2,Cnn2
+ , , , ,Sidt1, , ,Cd300lf,Pla2g16,Osm,Efna2
+ , , , ,Plcxd2, , ,Tmem104,Scgb1a1,Ramp3,Mob3a
+ , , , ,Cd96, , ,Trim47,Mpeg1,Rel,Izumo4
+ , , , ,Gm15518, , ,Rhbdf2,Anxa1,Bcl11a,Gadd45b
+ , , , ,Cep97, , ,Timp2,Sgms1,Ifi47,Syn3
+ , , , ,St3gal6, , ,Lgals3bp,Ffar4,Ltc4s,Dram1
+ , , , ,D16Ertd472e, , ,Metrnl,Plce1,N4bp3,Chpt1
+ , , , ,Igsf5, , ,Inhba,Pi4k2a,Adora2b,Cdk17
+ , , , ,Sytl3, , ,Aoah,Mxi1,Trim16,Tmcc3
+ , , , ,Baiap3, , ,F13a1,Shtn1,Tmem88,Plxnc1
+ , , , ,1700097N02Rik, , ,Dtnbp1,Csprs,Kdm6b,Socs2
+ , , , ,Ubash3a, , ,Ninj1,Cd37,Tnfsf12,Btg1
+ , , , ,Rasal3, , ,Hk3,Sgsm3,Asgr2,Tmtc2
+ , , , ,Pglyrp2, , ,Dok3, ,Mgl2,Osbpl8
+ , , , ,Ly6g5b, , ,Cxcl14, ,Clec10a,Tbc1d15
+ , , , ,Ltb, , ,Tgfbi, ,Spns3,Rab21
+ , , , ,Lta, , ,2010111I01Rik, ,Atp2a3,Tmem19
+ , , , ,Runx2, , ,Ctsl, ,Camkk1,Thap2
+ , , , ,Unc5cl, , ,Lhfpl2, ,Slc43a2,Zfc3h1
+ , , , ,Satb1, , ,Serf1, ,Ssh2,Tmbim4
+ , , , ,Gm19585, , ,Naip2, ,Trp53i13,Rassf3
+ , , , ,Ehd3, , ,Zswim6, ,Tmem97,Ddit3
+ , , , ,Dsc2, , ,Dnmt3aos, ,Lgals9,Ikzf4
+ , , , ,Rnf125, , ,Rhob, ,Ccl2,Suox
+ , , , ,Camk4, , ,Adam17, ,Ccl9,Cd63
+ , , , ,Gramd3, , ,Slc38a6, ,Ccl6,Rab20
+ , , , ,Rab27b, , ,Arg2, ,Ccl3,Atp11a
+ , , , ,Setbp1, , ,Cipc, ,Ccl4,Lamp1
+ , , , ,Cd226, , ,Lgmn, ,Wfdc17,Polb
+ , , , ,BC021614, , ,Tnfaip2, ,Dhx40,Nrg1
+ , , , ,Ptprcap, , ,Adssl1, ,Ngfr,Ubxn8
+ , , , ,Tbc1d10c, , ,Ahnak2, ,Abi3,Gsr
+ , , , ,Cnih2, , ,Sepp1, ,Gngt2,Mfhas1
+ , , , ,Ctsw, , ,Fyb, ,Arl5c,Casp3
+ , , , ,Kcnk7, , ,Rai14, ,Ccr7,Nr2f6
+ , , , ,Cd5, , ,Atp6v1c1, ,Map3k14,Fam129c
+ , , , ,Cd6, , ,Lrp12, ,Limd2,Fam32a
+ , , , ,Gm28347, , ,Col14a1, ,Milr1,Large
+ , , , ,Gm28935, , ,Fbxo32, ,Slc16a6,Il15
+ , , , ,Ms4a4b, , ,Tmem65, ,Abca9,Hook2
+ , , , ,Gm37387, , ,Ly6i, ,Cd300a,9330175E14Rik
+ , , , ,Gm8369, , ,Ly6c2, ,Cd300ld,Nlrc5
+ , , , ,Pdcd4, , ,Grina, ,Cd300lf,Cpne2
+ , , , ,Ablim, , ,Mroh1, ,Smim5,Ccl22
+ , , , , , , ,Tst, ,Trim47,Cx3cl1
+ , , , , , , ,Syngr1, ,Socs3,Gins3
+ , , , , , , ,Abcd2, ,Timp2,Ndrg4
+ , , , , , , ,Fgd4, ,Tbc1d16,Nae1
+ , , , , , , ,Cldn5, ,Slc16a3,Rrad
+ , , , , , , ,Abcc5, ,Cd7,Nfat5
+ , , , , , , ,Itgb5, ,Lgals8,Hp
+ , , , , , , ,Fstl1, ,Gpr141,Mon1b
+ , , , , , , ,Atp6v1a, ,Irf4,Cmc2
+ , , , , , , ,Cd200r4, ,Serpinb1a,Atmin
+ , , , , , , ,Retnla, ,Pxdc1,Crispld2
+ , , , , , , ,St3gal6, ,Ly86,Fam89a
+ , , , , , , ,Ets2, ,Gcnt2,Itgb1
+ , , , , , , ,Sod2, ,Gadd45g,Arf4
+ , , , , , , ,Amdhd2, ,Syk,Arhgap22
+ , , , , , , ,Msrb1, ,Nfil3,Ccser2
+ , , , , , , ,Clcn7, ,Dok3,Ghitm
+ , , , , , , ,Capn15, ,2010111I01Rik,Ddhd1
+ , , , , , , ,Angptl4, ,Ctsl,Ktn1
+ , , , , , , ,Cfb, ,Fcho2,Ndrg2
+ , , , , , , ,Neu1, ,Gapt,Arhgef40
+ , , , , , , ,Lst1, ,Plk2,Psme2
+ , , , , , , ,Ier3, ,Emb,Kpna3
+ , , , , , , ,Pla2g7, ,Dnmt3a,Clu
+ , , , , , , ,Vegfa, ,Fam49a,Epsti1
+ , , , , , , ,Klc4, ,Rsad2,Sugt1
+ , , , , , , ,Trem3, ,Gm17056,Tbc1d4
+ , , , , , , ,Trem2, ,Stxbp6,Tmtc4
+ , , , , , , ,C3, ,Pygl,Tmem123
+ , , , , , , ,Adgre1, ,Hif1a,Birc2
+ , , , , , , ,Man2a1, ,Lgmn,Birc3
+ , , , , , , ,Emilin2, ,Ifi27,Fut4
+ , , , , , , ,Mcfd2, ,Ifi27l2a,Icam1
+ , , , , , , ,Npc1, ,Tnfaip2,Zfp809
+ , , , , , , ,Cd14, ,Sepp1,Vwa5a
+ , , , , , , ,Cdo1, ,Dab2,Gramd1b
+ , , , , , , ,Ap3s1, ,Lifr,Ddx6
+ , , , , , , ,Snx24, ,Il7r,Phldb1
+ , , , , , , ,Csf1r, ,Ank,Scn2b
+ , , , , , , ,Ppargc1b, ,Ctnnd2,Fxyd2
+ , , , , , , ,Cndp2, ,Dcstamp,Dscaml1
+ , , , , , , ,Socs6, ,Trps1,Sik3
+ , , , , , , ,Tcirg1, ,Mtss1,Zc3h12c
+ , , , , , , ,Aldh3b1, ,Ly6i,Tspan3
+ , , , , , , ,Prdx5, ,Ly6a,Peak1
+ , , , , , , ,Vegfb, ,Dgat1,Mpi
+ , , , , , , ,Fth1, ,Csf2rb2,Sema7a
+ , , , , , , ,Rab3il1, ,Csf2rb,Stoml1
+ , , , , , , ,Slc15a3, ,Rac2,Dennd4a
+ , , , , , , ,Ms4a8a, ,Pim3,Rab8b
+ , , , , , , ,Ms4a7, ,Plxnb2,Rps27l
+ , , , , , , ,Dtx4, ,Slc48a1,Lactb
+ , , , , , , ,Prune2, ,Vdr,Tpm1
+ , , , , , , ,Gda, ,Galnt6,Rora
+ , , , , , , ,A930007I19Rik, ,Rarg,Aqp9
+ , , , , , , ,Ch25h, ,Ppp1r1a,Aldh1a2
+ , , , , , , ,Lipa, ,Dexi,Gclc
+ , , , , , , ,Myof, ,Rtp4,Hmgn3
+ , , , , , , ,Blnk, ,Lpp,Mthfsl
+ , , , , , , ,Arhgap19, ,Bex6,Bcl2a1d
+ , , , , , , , , ,Tctex1d2,Bcl2a1a
+ , , , , , , , , ,Pcyt1a,Bcl2a1b
+ , , , , , , , , ,D930030I03Rik,Rasa2
+ , , , , , , , , ,Cd80,Nmnat3
+ , , , , , , , , ,Cd200r1,Pcbp4
+ , , , , , , , , ,Nfkbiz,Uba7
+ , , , , , , , , ,Samsn1,Bcl2a1c
+ , , , , , , , , ,Nrip1,Wdr48
+ , , , , , , , , ,D16Ertd472e,9530059O14Rik
+ , , , , , , , , ,Bach1,Tmem158
+ , , , , , , , , ,Runx1,Gatsl3
+ , , , , , , , , ,Ets2,Myo1g
+ , , , , , , , , ,Tagap,Ramp3
+ , , , , , , , , ,Mpc1,Aftph
+ , , , , , , , , ,Tnfrsf12a,Peli1
+ , , , , , , , , ,Msrb1,Pex13
+ , , , , , , , , ,Dusp1,Pus10
+ , , , , , , , , ,Cdkn1a,Rel
+ , , , , , , , , ,Pim1,Papolg
+ , , , , , , , , ,Abcg1,Ccdc88a
+ , , , , , , , , ,Cyp4f16,Cpeb4
+ , , , , , , , , ,Pram1,Il12b
+ , , , , , , , , ,H2-Oa,Trim7
+ , , , , , , , , ,H2-DMb2,Psme2b
+ , , , , , , , , ,Lst1,Sqstm1
+ , , , , , , , , ,Ltb,Ltc4s
+ , , , , , , , , ,Tnf,Tcf7
+ , , , , , , , , ,Ddr1,Irf1
+ , , , , , , , , ,Ier3,Gm12216
+ , , , , , , , , ,A530064D06Rik,Pdlim4
+ , , , , , , , , ,Trem1,Specc1
+ , , , , , , , , ,Treml2,Pik3r5
+ , , , , , , , , ,B430306N03Rik,Dnah2
+ , , , , , , , , ,Rftn1,Cxcl16
+ , , , , , , , , ,Adgre4,Zmynd15
+ , , , , , , , , ,Tnfsf9,Tm4sf5
+ , , , , , , , , ,Adgre1,Eno3
+ , , , , , , , , ,Emilin2,Nup88
+ , , , , , , , , ,Xdh,Txndc17
+ , , , , , , , , ,Prkce,Ccl5
+ , , , , , , , , ,B4galt6,Mtmr4
+ , , , , , , , , ,Bin1,Bzrap1
+ , , , , , , , , ,Cd14,Mmd
+ , , , , , , , , ,Ticam2,Gngt2
+ , , , , , , , , ,Eno1b,Nfe2l1
+ , , , , , , , , ,Csf1r,Mllt6
+ , , , , , , , , ,Malt1,Arl5c
+ , , , , , , , , ,Slc14a1,Ccr7
+ , , , , , , , , ,Rps6ka4,Smarce1
+ , , , , , , , , ,Rab3il1,Stat5a
+ , , , , , , , , ,Slc15a3,Stat3
+ , , , , , , , , ,Ms4a4c,Adam11
+ , , , , , , , , ,Ms4a4b,Map3k14
+ , , , , , , , , ,Ms4a6c,Ace
+ , , , , , , , , ,Ms4a6b,Nup85
+ , , , , , , , , ,Ms4a6d,Gga3
+ , , , , , , , , ,Gcnt1,Mif4gd
+ , , , , , , , , ,Gda,Mrpl38
+ , , , , , , , , ,Klf9,Cyth1
+ , , , , , , , , ,Plgrkt,Rptor
+ , , , , , , , , ,Cd274,Slc25a10
+ , , , , , , , , ,Pdcd1lg2,Net1
+ , , , , , , , , ,Ifit3,Klf6
+ , , , , , , , , ,Ifit1,Idi1
+ , , , , , , , , ,Blnk,Gtpbp4
+ , , , , , , , , ,Ubtd1,Gpr137b-ps
+ , , , , , , , , ,4833407H14Rik,Gpr137b
+ , , , , , , , , ,Dusp5,Sox4
+ , , , , , , , , ,Itgam,Cdkal1
+ , , , , , , , , , ,Serpinb1a
+ , , , , , , , , , ,Serpinb6b
+ , , , , , , , , , ,Serpinb9
+ , , , , , , , , , ,Serpinb6a
+ , , , , , , , , , ,Tubb2b
+ , , , , , , , , , ,Psmg4
+ , , , , , , , , , ,Slc22a23
+ , , , , , , , , , ,Hivep1
+ , , , , , , , , , ,Cd83
+ , , , , , , , , , ,Mylip
+ , , , , , , , , , ,Atxn1
+ , , , , , , , , , ,Kdm1b
+ , , , , , , , , , ,Auh
+ , , , , , , , , , ,Nfil3
+ , , , , , , , , , ,Cdc14b
+ , , , , , , , , , ,Gm10116
+ , , , , , , , , , ,Serinc5
+ , , , , , , , , , ,Pik3r1
+ , , , , , , , , , ,Pde4d
+ , , , , , , , , , ,Map3k1
+ , , , , , , , , , ,Gzma
+ , , , , , , , , , ,Fam49a
+ , , , , , , , , , ,Nampt
+ , , , , , , , , , ,Gdap10
+ , , , , , , , , , ,Atxn7l1
+ , , , , , , , , , ,Scin
+ , , , , , , , , , ,Pnpla8
+ , , , , , , , , , ,Fam177a
+ , , , , , , , , , ,Sav1
+ , , , , , , , , , ,Daam1
+ , , , , , , , , , ,Plek2
+ , , , , , , , , , ,Zfp36l1
+ , , , , , , , , , ,2310015A10Rik
+ , , , , , , , , , ,Ttll5
+ , , , , , , , , , ,Ift43
+ , , , , , , , , , ,Gtf2a1
+ , , , , , , , , , ,Nrde2
+ , , , , , , , , , ,Calm1
+ , , , , , , , , , ,Slc25a29
+ , , , , , , , , , ,Traf3
+ , , , , , , , , , ,Exoc3l4
+ , , , , , , , , , ,Inf2
+ , , , , , , , , , ,Gpr132
+ , , , , , , , , , ,Itgb8
+ , , , , , , , , , ,Capsl
+ , , , , , , , , , ,Il7r
+ , , , , , , , , , ,Basp1
+ , , , , , , , , , ,Ankrd33b
+ , , , , , , , , , ,Laptm4b
+ , , , , , , , , , ,Rnf19a
+ , , , , , , , , , ,Ndrg1
+ , , , , , , , , , ,Arc
+ , , , , , , , , , ,Ppp1r16a
+ , , , , , , , , , ,Apol7c
+ , , , , , , , , , ,Apol10b
+ , , , , , , , , , ,C1qtnf6
+ , , , , , , , , , ,Triobp
+ , , , , , , , , , ,Micall1
+ , , , , , , , , , ,Josd1
+ , , , , , , , , , ,Gtpbp1
+ , , , , , , , , , ,Apobec3
+ , , , , , , , , , ,Zc3h7b
+ , , , , , , , , , ,Slc38a2
+ , , , , , , , , , ,Adcy6
+ , , , , , , , , , ,Cacnb3
+ , , , , , , , , , ,Rhebl1
+ , , , , , , , , , ,Tuba1a
+ , , , , , , , , , ,Prph
+ , , , , , , , , , ,Lima1
+ , , , , , , , , , ,Dip2b
+ , , , , , , , , , ,Slc4a8
+ , , , , , , , , , ,Grasp
+ , , , , , , , , , ,Rogdi
+ , , , , , , , , , ,Socs1
+ , , , , , , , , , ,Snn
+ , , , , , , , , , ,Dnm1l
+ , , , , , , , , , ,B3gnt5
+ , , , , , , , , , ,Yeats2
+ , , , , , , , , , ,Ccdc50
+ , , , , , , , , , ,Pcyt1a
+ , , , , , , , , , ,Rubcn
+ , , , , , , , , , ,Sec22a
+ , , , , , , , , , ,Hspbap1
+ , , , , , , , , , ,Pla1a
+ , , , , , , , , , ,Cd80
+ , , , , , , , , , ,Poglut1
+ , , , , , , , , , ,Tmem39a
+ , , , , , , , , , ,Arhgap31
+ , , , , , , , , , ,Cd200
+ , , , , , , , , , ,Retnlg
+ , , , , , , , , , ,Ift57
+ , , , , , , , , , ,Cblb
+ , , , , , , , , , ,Filip1l
+ , , , , , , , , , ,Samsn1
+ , , , , , , , , , ,Nrip1
+ , , , , , , , , , ,Mir155hg
+ , , , , , , , , , ,Mx1
+ , , , , , , , , , ,Rnaset2a
+ , , , , , , , , , ,Mmp25
+ , , , , , , , , , ,Rpl3l
+ , , , , , , , , , ,Tmem8
+ , , , , , , , , , ,D17Wsu92e
+ , , , , , , , , , ,H2-K1
+ , , , , , , , , , ,H2-Eb2
+ , , , , , , , , , ,H2-Q4
+ , , , , , , , , , ,H2-Q6
+ , , , , , , , , , ,H2-Q7
+ , , , , , , , , , ,H2-M2
+ , , , , , , , , , ,Tmem63b
+ , , , , , , , , , ,Mrpl14
+ , , , , , , , , , ,Gtpbp2
+ , , , , , , , , , ,Foxp4
+ , , , , , , , , , ,Rftn1
+ , , , , , , , , , ,Stap2
+ , , , , , , , , , ,Cd70
+ , , , , , , , , , ,Trip10
+ , , , , , , , , , ,Wash1
+ , , , , , , , , , ,Arhgap28
+ , , , , , , , , , ,Cdc42ep3
+ , , , , , , , , , ,Fbxo11
+ , , , , , , , , , ,Foxn2
+ , , , , , , , , , ,Crem
+ , , , , , , , , , ,Cdh2
+ , , , , , , , , , ,Gypc
+ , , , , , , , , , ,Alpk2
+ , , , , , , , , , ,Chka
+ , , , , , , , , , ,Cdc42ep2
+ , , , , , , , , , ,Ehd1
+ , , , , , , , , , ,Atl3
+ , , , , , , , , , ,Cpsf7
+ , , , , , , , , , ,AW112010
+ , , , , , , , , , ,Ms4a7
+ , , , , , , , , , ,Nmrk1
+ , , , , , , , , , ,Jak2
+ , , , , , , , , , ,Insl6
+ , , , , , , , , , ,Plgrkt
+ , , , , , , , , , ,Cd274
+ , , , , , , , , , ,Pdcd1lg2
+ , , , , , , , , , ,Ric1
+ , , , , , , , , , ,Papss2
+ , , , , , , , , , ,Fas
+ , , , , , , , , , ,Pcgf5
+ , , , , , , , , , ,Fgfbp3
+ , , , , , , , , , ,March5
+ , , , , , , , , , ,Avpi1
+ , , , , , , , , , ,Got1
+ , , , , , , , , , ,Nfkb2
+ , , , , , , , , , ,Gsto1
+ , , , , , , , , , ,4833407H14Rik
+ , , , , , , , , , ,Dusp5
+ , , , , , , , , , ,Vti1a
+ , , , , , , , , , ,Tcf7l2
+ , , , , , , , , , ,Dclre1a
+ , , , , , , , , , ,Atrnl1
+ , , , , , , , , , ,PISD
+ , , , , , , , , , ,Umad1

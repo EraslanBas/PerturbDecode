@@ -1,14 +1,22 @@
 # Parameters for building the initial AnnData object.
 #
-# THIS FILE MUST BE EDITED. The values below are the ones used for the E3
-# ligase screen and are kept as a worked example. Paths in particular will not
-# exist on your system.
+# The thresholds below are the ones used for the E3 ligase screen and are kept
+# as a worked example; they will not all suit another experiment.
 #
-# projectDir      absolute path to your project root; the notebooks chdir here
+# projectDir      the screen's data root; the notebooks chdir here and every
+#                 path below is relative to it. Resolved by ../paths.py, so it
+#                 is <repo>/data/large_screen unless PERTURBDECODE_DATA says
+#                 otherwise. See data/README.md.
 # par_data_dir    directory holding the per-channel files listed in samples.csv
 # par_species     "mouse" or "human"; selects the mitochondrial gene prefix
 
-projectDir = "/home/eraslab1/Projects/E3Ligase/analysisSingle/"
+import os as _os
+import sys as _sys
+
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+from paths import SCREEN_DATA, REFERENCE, reference_path, screen_path  # noqa: F401
+
+projectDir = SCREEN_DATA
 anndataFileName="outputs/anndata/adata-hash-features_singlets_05232020.h5ad"
 anndataFileName2="outputs/anndata/adata-hash-features_singlets_05242020.h5ad"
 

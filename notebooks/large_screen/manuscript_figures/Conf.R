@@ -1,7 +1,15 @@
-# Paths repointed for re-execution: inputs read from the E3 ligase analysis
-# tree, outputs written beside these notebooks.
-dataDir="/home/eraslab1/Projects/E3Ligase/analysisSingle/outputs/anndata/"
-davidDir="/home/eraslab1/Projects/E3Ligase/analysisSingle/outputs/DAVID_queries/"
-rDir="/home/eraslab1/Projects/E3Ligase/analysisSingle/R/"
-rdsDir="/home/eraslab1/Projects/E3Ligase/analysisSingle/R/RDSFiles/"
-projectDir="/home/eraslab1/Projects/PerturbDecode/notebooks/manuscript_figures"
+# Paths for the R figure notebooks.
+#
+# Nothing here points outside this repository. SCREEN_DATA is the screen's data
+# root, resolved by ../paths.R -- <repo>/data/large_screen unless
+# PERTURBDECODE_DATA says otherwise. See data/README.md.
+
+source("../paths.R")
+
+dataDir   <- screenPath("outputs", "anndata")
+davidDir  <- screenPath("outputs", "DAVID_queries")
+rDir      <- screenPath("R")
+rdsDir    <- screenPath("R", "RDSFiles")
+
+# Outputs are written beside these notebooks.
+projectDir <- normalizePath(".", mustWork = FALSE)
