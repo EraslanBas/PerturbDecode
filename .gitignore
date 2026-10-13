@@ -155,11 +155,18 @@ docs/_build/
 Thumbs.db
 
 # Custom data/output folders.
+#
 # data/* rather than data/, so that data/README.md can be re-included below:
-# git cannot re-include a file whose parent directory is excluded.
+# git cannot re-include a file whose parent directory is excluded. Note the
+# slash makes this one anchored to the repository root, where the bare data/
+# it replaced matched a directory of that name at any depth. The directories
+# that relied on that are named explicitly below.
 data/*
 output/
 results/
+
+# Raw per-channel input, named by par_data_dir. Large, and never committed.
+notebooks/*/build_anndata/data/
 
 # Allow a placeholder to be kept
 !data/README.md
