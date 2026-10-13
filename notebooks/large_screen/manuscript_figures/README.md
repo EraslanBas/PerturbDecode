@@ -19,6 +19,8 @@ For the current, supported pipeline see the
 
 | Notebook | Kernel | Panels |
 |---|---|---|
+| `00_BuildGuideModuleObject.ipynb` | Python | builds the guide-module object the Figure 5 notebooks read |
+| `00_InteractionTerms.ipynb` | R | reference: the three combinatorial models and what each produced |
 | `00_LPSPlusMinusAnalysis.ipynb` | Python | LPS +/- comparison underlying Figure 1 |
 | `Figure1_CDEFGH.ipynb` | Python | Figure 1C-H |
 | `Figure1_I-GeneLevel.ipynb` | Python | Figure 1I, gene level |
@@ -29,11 +31,13 @@ For the current, supported pipeline see the
 | `Figure3_CD.ipynb` | Python | Figure 3C, 3D |
 | `Figure3_E.ipynb` | R | Figure 3E, Supp. 4D, 4E |
 | `Figure3_F.ipynb` | R | Figure 3F |
+| `Figure3_G.ipynb` | R | Figure 3G |
 | `Figure4_A.ipynb` | R | Figure 4A |
-| `Figure4_BCEFHI.ipynb` | Python | Figure 4B, C, E, F, H, I |
 | `Figure4_BEH.ipynb` | R | Figure 4B, E, H |
-| `Figure5_C.ipynb` | R | Figure 5C |
-| `Figure5_DE.ipynb` | R | Figure 5D, 5E, Supp. 6C |
+| `Figure4_CDFGIJ.ipynb` | Python | Figure 4C, D, F, G, I, J |
+| `Figure5_A.ipynb` | R | Figure 5A |
+| `Figure5_B.ipynb` | R | Figure 5B |
+| `Figure5_CD.ipynb` | R | Figure 5D and Supp. 6B; the 5C assignment is unsettled, see the notebook |
 | `Figure5_F.ipynb` | R | Figure 5F, Supp. 7D, 7E |
 | `Figure5_G.ipynb` | R | Figure 5G, Supp. 6O, 6P, 7F |
 | `SuppFigure1_F.ipynb` | R | Supp. 1F |
@@ -44,8 +48,7 @@ For the current, supported pipeline see the
 | `SuppFigure_5CD.ipynb` | R | Supp. 5C, 5D |
 | `SuppFigure_5E.ipynb` | R | Supp. 5E |
 
-Nine notebooks run on the IPython kernel (several calling into R through
-`rpy2`'s `%%R` magic) and fifteen on the IRkernel. `Main.R`, `Conf.R`,
+10 notebooks run on the IPython kernel, several calling into R through `rpy2`'s `%%R` magic, and 18 on the IRkernel. `Main.R`, `Conf.R`,
 `Utilities.R`, `libraries.py` and `parameters.py` are the shared setup they
 source.
 
@@ -72,7 +75,7 @@ corresponding inputs.
 
 The six notebooks that read the combinatorial-perturbation fits are the
 exception, and they need no data at all. `00_InteractionTerms`, `Figure5_A`,
-`Figure5_ACD`, `Figure5_B`, `Figure5_F` and `Figure5_G` read
+`Figure5_CD`, `Figure5_B`, `Figure5_F` and `Figure5_G` read
 `../combinatorial_perturbations/RDSFiles/`, which is committed — 5 MB of
 regression results. Four of them re-run from a clone as they stand. The
 exceptions are `Figure5_F` and `Figure5_G`, which have not been run since the
