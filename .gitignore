@@ -73,6 +73,10 @@
 # interaction splits among them cannot be regenerated at all, because the
 # half-split in notebook 04 is unseeded.
 !notebooks/large_screen/combinatorial_perturbations/RDSFiles/*.rds
+# The two intermediates the revision notebooks 01 and 03 produce. Committed so
+# that 02, 04 and 05 run without the 6 GB knockout object those two read.
+!notebooks/large_screen/revision_analyses/TextFiles/*.csv
+
 # Small tables the figure notebooks read that no notebook here produces. Same
 # narrow exception: without them nothing in manuscript_figures can be re-run.
 !notebooks/large_screen/reference/*.csv
