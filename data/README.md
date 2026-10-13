@@ -7,12 +7,13 @@ repository.
 ```
 data/
   large_screen/     the E3 ligase screen: what build_anndata/01-19 writes
-  small_screen/     the second, smaller screen (to come)
+  small_screen/     the combinatorial screen: what small_screen/01-07 writes
 ```
 
 A screen's root is resolved by `notebooks/<screen>/paths.py` and `paths.R`. It
-defaults to `data/<screen>` here, and the environment variable
-`PERTURBDECODE_DATA` overrides it:
+defaults to `data/<screen>` here, and an environment variable overrides it —
+`PERTURBDECODE_DATA` for the large screen, `PERTURBDECODE_SMALL_DATA` for the
+small one:
 
 ```bash
 export PERTURBDECODE_DATA=/mnt/somewhere/large_screen
