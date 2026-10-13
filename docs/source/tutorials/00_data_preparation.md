@@ -31,7 +31,7 @@ ligase screen as a worked example that you can adapt.
 ## Using these notebooks for your own screen
 
 The four notebooks are in the repository under
-[`notebooks/build_anndata/`](https://github.com/EraslanBas/PerturbDecode/tree/main/notebooks/build_anndata).
+[`notebooks/large_screen/build_anndata/`](https://github.com/EraslanBas/PerturbDecode/tree/main/notebooks/large_screen/build_anndata).
 They run against two files you fill in for your experiment:
 
 - **`samples.csv`**, one row per channel. `sample_name` and `raw` are required;

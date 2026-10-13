@@ -25,7 +25,9 @@ for that reason.
 The half-split is **not seeded**. `random.sample` draws a fresh half each run,
 so re-running notebook 04 will not reproduce the splits behind the published
 numbers. The saved per-iteration files are the only record of which genes went
-into which half.
+into which half, so all twenty-five are committed under `RDSFiles/`, and
+notebook 05 reads them from there rather than from notebook 04's `outputs/`.
+A re-run of 04 therefore cannot silently change a published number.
 
 ## The three models
 
@@ -52,15 +54,34 @@ does not.
 `00_InteractionTerms.ipynb` in `../manuscript_figures` states the same three
 models and counts what each one produced.
 
+## What these notebooks read
+
+| Input | Produced by | Where |
+|---|---|---|
+| `adataTrainSingles.h5ad`, `adataDoubles.h5ad`, `adataDoubles_sameGroup.h5ad`, `adataTestControl.h5ad` | `build_anndata/19_CreateTrainTestSplits` | not committed — too large |
+| `ME_GuideModules_leiden_6_Modules.csv` | `build_anndata/17_IdentifyGeneAndGuideModules`, as `par_guideModules_file` | not committed |
+| `ComboEffects_doublesResample_KO_<module>_<iteration>.rds`, 25 files | `04_FitSameModuleInteraction_SingleSplit` | `RDSFiles/`, committed |
+
+Every result these notebooks write is also committed under `RDSFiles/`, 5 MB in
+all, so the Figure 5 notebooks run from a clone without the `.h5ad` objects.
+`RDSFiles/README.md` lists each file with its producer and readers. A re-run
+here writes to `outputs/` and leaves `RDSFiles/` untouched.
+
+The `.h5ad` objects are far too large to commit; `build_anndata/WORKFLOW.md`
+has the chain that regenerates them from raw reads. Each notebook repeats its
+own inputs and their producers in an **Inputs** section at the top.
+
 ## Running these
 
 They are recorded for provenance rather than for routine re-execution. Each
 fits 1,041 models through `%%R` magic over the combinatorial-KO cell matrix,
 and the resample notebook does that twenty-five times.
 
-Paths have been repointed: inputs are read from the E3 ligase analysis tree,
-and `saveRDS` writes to `outputs/` here, so re-running produces local copies
-rather than overwriting the originals the figures currently read.
+Paths have been repointed: the `.h5ad` inputs are read from the E3 ligase
+analysis tree, the interaction splits from `RDSFiles/` here, and every
+`saveRDS` writes to `outputs/`, so re-running produces local copies rather
+than overwriting either the originals the figures currently read or the
+committed splits.
 
 One cell of `01_FitCombinationEffects_NoInteractionTerms.ipynb` reads
 `ComboEffects_lm_residuals_2.rds`, which no notebook in this folder writes and

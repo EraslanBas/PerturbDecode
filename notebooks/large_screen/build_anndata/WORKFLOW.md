@@ -178,8 +178,10 @@ row order and is not seeded.
 
 **Unseeded resampling.** `combinatorial_perturbations/04` draws a fresh random
 half-split on each run. `ComboEffects_doublesResampleRes.rds`, which Figures 5A
-and 5ACD read, is therefore not reproducible exactly; the 25 saved
-per-iteration files record the published splits.
+and 5ACD read, is therefore not reproducible exactly. The 25 saved
+per-iteration files record the published splits and are committed under
+`combinatorial_perturbations/RDSFiles/`; notebook 05 pools those rather than
+anything a re-run of 04 leaves in `outputs/`.
 
 **Cluster numbering.** Leiden labels depend on the graph and the implementation
 version. Rerunning notebook 5 or 17 can renumber clusters and modules even

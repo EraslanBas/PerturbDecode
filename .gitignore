@@ -59,16 +59,22 @@
 
 # ---- Template files shipped with the example notebooks ----
 # Exact paths only: CSVs are data by default and stay excluded.
-!notebooks/build_anndata/samples.csv
+!notebooks/large_screen/build_anndata/samples.csv
 
 # Reference tables the replication notebooks read, and the small result tables
 # they write. Narrow exception to the no-data rule above: these are what lets
 # the analysis be rerun, and checked, from the screen object alone. Large
 # objects still never enter the repository.
-!notebooks/build_anndata/TextFiles/*.csv
-!notebooks/build_anndata/TextFiles/*.csv.gz
+!notebooks/large_screen/build_anndata/TextFiles/*.csv
+!notebooks/large_screen/build_anndata/TextFiles/*.csv.gz
+
+# The combinatorial perturbation fits, 5 MB in all. Same narrow exception: they
+# are what lets the Figure 5 notebooks run from a clone, and the twenty-five
+# interaction splits among them cannot be regenerated at all, because the
+# half-split in notebook 04 is unseeded.
+!notebooks/large_screen/combinatorial_perturbations/RDSFiles/*.rds
 # Cell-cycle gene list vendored because its upstream URL now 404s
-!notebooks/manuscript_figures/regev_lab_cell_cycle_genes.txt
+!notebooks/large_screen/manuscript_figures/regev_lab_cell_cycle_genes.txt
 
 # ---- Documentation figures ----
 # Scoped to docs/ on purpose: raster images elsewhere in the repo are result

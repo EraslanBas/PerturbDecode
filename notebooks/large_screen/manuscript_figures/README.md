@@ -51,8 +51,9 @@ source.
 
 ## Why they are not executable as committed
 
-The notebooks are committed **without outputs**, and they cannot be re-run from
-this repository, for two reasons.
+The notebooks are committed **with** their outputs, so the published figures are
+readable on GitHub without the data. They cannot, for the most part, be re-run
+from this repository, for two reasons.
 
 **The data is not here and is not distributable.** They read the intermediate
 results of the full E3 ligase screen: effect-size matrices, gene and guide
@@ -63,11 +64,19 @@ assembled screen is available from
 rather than from here.
 
 **The paths they use are those of the original analysis tree.** Every notebook
-reads relative paths such as `./../TextFiles/`, `./../MixedEffectLMOutputs/` and
-`./../Notebooks/CombinatorialPerturbations/RDSFiles/`, and the Python ones
-`os.chdir(projectDir)` into an absolute path set in `parameters.py`. Those
-locations describe the analysis directory as it stood in 2023; reproducing a
-figure means pointing them at your own copy of the corresponding inputs.
+reads relative paths such as `./../TextFiles/` and `./../MixedEffectLMOutputs/`,
+and the Python ones `os.chdir(projectDir)` into an absolute path set in
+`parameters.py`. Those locations describe the analysis directory as it stood in
+2023; reproducing a figure means pointing them at your own copy of the
+corresponding inputs.
+
+The six notebooks that read the combinatorial-perturbation fits are the
+exception, and they need no data at all. `00_InteractionTerms`, `Figure5_A`,
+`Figure5_ACD`, `Figure5_B`, `Figure5_F` and `Figure5_G` read
+`../combinatorial_perturbations/RDSFiles/`, which is committed — 5 MB of
+regression results. Four of them re-run from a clone as they stand. The
+exceptions are `Figure5_F` and `Figure5_G`, which have not been run since the
+port and still `source("Main.R")`, which breaks ggplot.
 
 `Conf.R` still carries the absolute paths of the machine the analysis was
 originally run on, which no longer exist.
