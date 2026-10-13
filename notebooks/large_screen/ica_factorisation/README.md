@@ -47,27 +47,32 @@ knowing when citing the number.
 
 ## Reproducing the published factor table
 
-`04` reproduces **the membership of every factor exactly**. For all 15 factors,
-on both the gene and the guide side, the set of members matches
-`ICA_15_factors_effectedGenes_paper.csv` exactly, and 42 of its 60 columns are
-identical outright.
+`04` reproduces `ICA_15_factors_effectedGenes_paper.csv` **byte for byte** — all
+15 factors, both sides, the membership and the group 1 / group 2 split within
+each one.
 
-The remaining 18 columns differ in **how each factor's members are split into
-group 1 and group 2**, not in who belongs to the factor. That split comes from
-cutting a `ward.D2` dendrogram, and it could not be reproduced exactly. Tried:
-the height loop the notebook uses and `cutree(k = 2)` (identical results);
-`ward.D`, `complete` and `average` linkage; correlation distance; and clipping
-the matrix at 0.3, 0.5, 1.0 and not at all. The best of those matched 24 of the
-30 factor-and-side splits, against 21 for the notebook's own settings — so no
-setting in that space reaches all 30.
+That took finding one number. The ported copy clipped the per-factor matrix at
+±0.5 before clustering it; the published table was made at ±0.2. The clip only
+ever affected the `ward.D2` clustering that divides each factor in two, never
+which knockouts and genes belong to the factor, which is why membership matched
+from the start while 18 of the 60 columns did not. Scanning the threshold:
 
-The likely reason is that the committed `_paper` file was written by a version
-of this notebook that differed in the splitting step. In the copy that was
-ported, the entire tail that writes the file — the factor loop and everything
-after it — had never been executed: cells 49 to 65 carried no outputs.
+| clip | splits matching, of 30 |
+|---|---|
+| 0.10 | 25 |
+| 0.15 | 25 |
+| **0.20** | **30** |
+| 0.25 | 26 |
+| 0.30 | 24 |
+| 0.50 (as ported) | 21 |
 
-The decomposition itself is deterministic. `icaimax` defaults to `Rmat = diag(nc)`,
-so there is no random initialisation and no seed to set.
+Nothing else in that space came close: `ward.D`, `complete` and `average`
+linkage, correlation distance, and `cutree(k = 2)` against the height loop all
+left the same nine splits wrong.
+
+The decomposition is deterministic. `icaimax` defaults to `Rmat = diag(nc)`, so
+there is no random initialisation and no seed to set, and the factors come out
+the same on every run.
 
 ## Notes on the port
 
